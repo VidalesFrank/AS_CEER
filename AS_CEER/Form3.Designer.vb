@@ -24,15 +24,15 @@ Partial Class Form3
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form3))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.T_AnchoE = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.T_LargoE = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Figura_Planta = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.T_AnchoE = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.Figura_Planta, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -53,6 +53,36 @@ Partial Class Form3
         Me.Panel1.Size = New System.Drawing.Size(807, 372)
         Me.Panel1.TabIndex = 0
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(6, 123)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(141, 16)
+        Me.Label1.TabIndex = 25
+        Me.Label1.Text = "Dimensión transversal"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'T_AnchoE
+        '
+        Me.T_AnchoE.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.T_AnchoE.Location = New System.Drawing.Point(31, 142)
+        Me.T_AnchoE.Name = "T_AnchoE"
+        Me.T_AnchoE.Size = New System.Drawing.Size(70, 21)
+        Me.T_AnchoE.TabIndex = 24
+        Me.T_AnchoE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(107, 145)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(19, 16)
+        Me.Label2.TabIndex = 26
+        Me.Label2.Text = "m"
+        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -69,7 +99,7 @@ Partial Class Form3
         Me.T_LargoE.Location = New System.Drawing.Point(505, 274)
         Me.T_LargoE.Name = "T_LargoE"
         Me.T_LargoE.Size = New System.Drawing.Size(70, 21)
-        Me.T_LargoE.TabIndex = 21
+        Me.T_LargoE.TabIndex = 25
         Me.T_LargoE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label11
@@ -107,39 +137,9 @@ Partial Class Form3
         Me.Button1.Location = New System.Drawing.Point(349, 14)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 30)
-        Me.Button1.TabIndex = 1
+        Me.Button1.TabIndex = 26
         Me.Button1.Text = "OK"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(6, 123)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(141, 16)
-        Me.Label1.TabIndex = 25
-        Me.Label1.Text = "Dimensión transversal"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'T_AnchoE
-        '
-        Me.T_AnchoE.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.T_AnchoE.Location = New System.Drawing.Point(31, 142)
-        Me.T_AnchoE.Name = "T_AnchoE"
-        Me.T_AnchoE.Size = New System.Drawing.Size(70, 21)
-        Me.T_AnchoE.TabIndex = 24
-        Me.T_AnchoE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(107, 145)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(19, 16)
-        Me.Label2.TabIndex = 26
-        Me.Label2.Text = "m"
         '
         'Form3
         '
@@ -148,7 +148,9 @@ Partial Class Form3
         Me.ClientSize = New System.Drawing.Size(807, 372)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.MaximizeBox = False
         Me.Name = "Form3"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Dimensiones de la Estructura"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

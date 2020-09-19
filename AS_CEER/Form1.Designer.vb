@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,16 +20,19 @@ Partial Class Form1
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -38,7 +41,12 @@ Partial Class Form1
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Forma_Muro = New System.Windows.Forms.PictureBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Op_fc_Medido = New System.Windows.Forms.RadioButton()
+        Me.Op_fc_Nominal = New System.Windows.Forms.RadioButton()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.C_Nivel_Amenaza = New System.Windows.Forms.ComboBox()
+        Me.Label24 = New System.Windows.Forms.Label()
         Me.T_fc = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -47,14 +55,16 @@ Partial Class Form1
         Me.T_Area = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.T_Hn = New System.Windows.Forms.TextBox()
         Me.T_NP = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.T_Cantidad = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.C_Confinamiento = New System.Windows.Forms.ComboBox()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.T_Lw = New System.Windows.Forms.TextBox()
@@ -83,10 +93,28 @@ Partial Class Form1
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.P_6 = New System.Windows.Forms.PictureBox()
+        Me.L_FF = New System.Windows.Forms.Label()
+        Me.P_5 = New System.Windows.Forms.PictureBox()
+        Me.L_C = New System.Windows.Forms.Label()
+        Me.P_4 = New System.Windows.Forms.PictureBox()
+        Me.P_7 = New System.Windows.Forms.PictureBox()
+        Me.L_Es = New System.Windows.Forms.Label()
+        Me.L_Na = New System.Windows.Forms.Label()
+        Me.L_ALR = New System.Windows.Forms.Label()
+        Me.P_3 = New System.Windows.Forms.PictureBox()
+        Me.L_Ar = New System.Windows.Forms.Label()
+        Me.P_2 = New System.Windows.Forms.PictureBox()
+        Me.L_D = New System.Windows.Forms.Label()
+        Me.P_1 = New System.Windows.Forms.PictureBox()
+        Me.P_0 = New System.Windows.Forms.PictureBox()
+        Me.L_Grado = New System.Windows.Forms.Label()
+        Me.B_Verde = New System.Windows.Forms.Button()
+        Me.B_Amarillo = New System.Windows.Forms.Button()
+        Me.B_Rojo = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label22 = New System.Windows.Forms.Label()
         Me.Tabla_Resultados = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -101,6 +129,18 @@ Partial Class Form1
         Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevoProyectoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AbrirProyectoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GuardarProyectoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ÍndiceDeCalificaciónEstructuralICEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IngresarImagenDelProyectoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AcercaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Tool_Info = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -112,92 +152,82 @@ Partial Class Form1
         Me.GroupBox2.SuspendLayout()
         CType(Me.Tabla_Datos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
+        CType(Me.P_6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.P_5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.P_4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.P_7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.P_3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.P_2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.P_1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.P_0, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tabla_Resultados, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.Control
         Me.Panel1.Controls.Add(Me.TabControl1)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Controls.Add(Me.MenuStrip1)
+        resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1244, 711)
-        Me.Panel1.TabIndex = 0
         '
         'TabControl1
         '
-        Me.TabControl1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.TabControl1, "TabControl1")
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControl1.Location = New System.Drawing.Point(12, 35)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1211, 664)
-        Me.TabControl1.TabIndex = 8
         '
         'TabPage1
         '
+        Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage1.CausesValidation = False
         Me.TabPage1.Controls.Add(Me.Panel2)
-        Me.TabPage1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabPage1.Location = New System.Drawing.Point(4, 24)
+        resources.ApplyResources(Me.TabPage1, "TabPage1")
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1203, 636)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Información del proyecto"
-        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.Control
         Me.Panel2.Controls.Add(Me.GroupBox1)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(3, 3)
+        resources.ApplyResources(Me.Panel2, "Panel2")
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1197, 630)
-        Me.Panel2.TabIndex = 0
         '
         'GroupBox1
         '
-        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Controls.Add(Me.GroupBox4)
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.Tabla_Datos)
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1157, 607)
-        Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.Forma_Muro)
-        Me.GroupBox4.Location = New System.Drawing.Point(310, 21)
+        resources.ApplyResources(Me.GroupBox4, "GroupBox4")
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(408, 334)
-        Me.GroupBox4.TabIndex = 28
         Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Sección"
         '
         'Forma_Muro
         '
-        Me.Forma_Muro.Location = New System.Drawing.Point(7, 14)
+        resources.ApplyResources(Me.Forma_Muro, "Forma_Muro")
         Me.Forma_Muro.Name = "Forma_Muro"
-        Me.Forma_Muro.Size = New System.Drawing.Size(392, 314)
-        Me.Forma_Muro.TabIndex = 12
         Me.Forma_Muro.TabStop = False
         '
         'GroupBox3
         '
-        Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox3.Controls.Add(Me.Label18)
+        resources.ApplyResources(Me.GroupBox3, "GroupBox3")
+        Me.GroupBox3.Controls.Add(Me.Op_fc_Medido)
+        Me.GroupBox3.Controls.Add(Me.Op_fc_Nominal)
+        Me.GroupBox3.Controls.Add(Me.Label25)
+        Me.GroupBox3.Controls.Add(Me.Button5)
+        Me.GroupBox3.Controls.Add(Me.C_Nivel_Amenaza)
+        Me.GroupBox3.Controls.Add(Me.Label24)
         Me.GroupBox3.Controls.Add(Me.T_fc)
         Me.GroupBox3.Controls.Add(Me.Label20)
         Me.GroupBox3.Controls.Add(Me.Label19)
@@ -206,184 +236,124 @@ Partial Class Form1
         Me.GroupBox3.Controls.Add(Me.T_Area)
         Me.GroupBox3.Controls.Add(Me.Label16)
         Me.GroupBox3.Controls.Add(Me.Label17)
-        Me.GroupBox3.Controls.Add(Me.RadioButton2)
-        Me.GroupBox3.Controls.Add(Me.RadioButton1)
         Me.GroupBox3.Controls.Add(Me.Label10)
         Me.GroupBox3.Controls.Add(Me.T_Hn)
         Me.GroupBox3.Controls.Add(Me.T_NP)
         Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Controls.Add(Me.Label11)
-        Me.GroupBox3.Location = New System.Drawing.Point(733, 21)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(396, 334)
-        Me.GroupBox3.TabIndex = 27
         Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Información de la Estructura"
         '
-        'Label18
+        'Op_fc_Medido
         '
-        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(20, 89)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(104, 16)
-        Me.Label18.TabIndex = 32
-        Me.Label18.Text = "f'c"
-        Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        resources.ApplyResources(Me.Op_fc_Medido, "Op_fc_Medido")
+        Me.Op_fc_Medido.Name = "Op_fc_Medido"
+        Me.Op_fc_Medido.UseVisualStyleBackColor = True
+        '
+        'Op_fc_Nominal
+        '
+        Me.Op_fc_Nominal.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        resources.ApplyResources(Me.Op_fc_Nominal, "Op_fc_Nominal")
+        Me.Op_fc_Nominal.Checked = True
+        Me.Op_fc_Nominal.Name = "Op_fc_Nominal"
+        Me.Op_fc_Nominal.TabStop = True
+        Me.Op_fc_Nominal.UseVisualStyleBackColor = True
+        '
+        'Label25
+        '
+        resources.ApplyResources(Me.Label25, "Label25")
+        Me.Label25.Name = "Label25"
+        '
+        'Button5
+        '
+        resources.ApplyResources(Me.Button5, "Button5")
+        Me.Button5.Name = "Button5"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'C_Nivel_Amenaza
+        '
+        resources.ApplyResources(Me.C_Nivel_Amenaza, "C_Nivel_Amenaza")
+        Me.C_Nivel_Amenaza.Items.AddRange(New Object() {resources.GetString("C_Nivel_Amenaza.Items"), resources.GetString("C_Nivel_Amenaza.Items1"), resources.GetString("C_Nivel_Amenaza.Items2")})
+        Me.C_Nivel_Amenaza.Name = "C_Nivel_Amenaza"
+        Me.C_Nivel_Amenaza.Sorted = True
+        '
+        'Label24
+        '
+        resources.ApplyResources(Me.Label24, "Label24")
+        Me.Label24.Name = "Label24"
         '
         'T_fc
         '
-        Me.T_fc.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.T_fc.Location = New System.Drawing.Point(128, 86)
+        resources.ApplyResources(Me.T_fc, "T_fc")
         Me.T_fc.Name = "T_fc"
-        Me.T_fc.Size = New System.Drawing.Size(70, 21)
-        Me.T_fc.TabIndex = 31
-        Me.T_fc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label20
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(213, 89)
+        resources.ApplyResources(Me.Label20, "Label20")
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(36, 16)
-        Me.Label20.TabIndex = 33
-        Me.Label20.Text = "MPa"
         '
         'Label19
         '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(20, 206)
+        resources.ApplyResources(Me.Label19, "Label19")
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(135, 16)
-        Me.Label19.TabIndex = 30
-        Me.Label19.Text = "Fuerzas en los muros"
         '
         'Button4
         '
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(91, 232)
+        resources.ApplyResources(Me.Button4, "Button4")
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(220, 30)
-        Me.Button4.TabIndex = 29
-        Me.Button4.Text = "Ingresar fuerzas"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(148, 277)
+        resources.ApplyResources(Me.Button3, "Button3")
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(113, 30)
-        Me.Button3.TabIndex = 28
-        Me.Button3.Text = "Calcular"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'T_Area
         '
-        Me.T_Area.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.T_Area.Location = New System.Drawing.Point(128, 164)
+        resources.ApplyResources(Me.T_Area, "T_Area")
         Me.T_Area.Name = "T_Area"
-        Me.T_Area.Size = New System.Drawing.Size(70, 21)
-        Me.T_Area.TabIndex = 25
-        Me.T_Area.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.T_Area.Visible = False
         '
         'Label16
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(213, 167)
+        resources.ApplyResources(Me.Label16, "Label16")
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(26, 16)
-        Me.Label16.TabIndex = 27
-        Me.Label16.Text = "m2"
-        Me.Label16.Visible = False
         '
         'Label17
         '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(77, 167)
+        resources.ApplyResources(Me.Label17, "Label17")
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(37, 16)
-        Me.Label17.TabIndex = 26
-        Me.Label17.Text = "Área"
-        Me.Label17.Visible = False
-        '
-        'RadioButton2
-        '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(23, 140)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(149, 20)
-        Me.RadioButton2.TabIndex = 1
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Ingresar área exacta"
-        Me.RadioButton2.UseVisualStyleBackColor = True
-        '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(23, 115)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(181, 20)
-        Me.RadioButton1.TabIndex = 0
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Ingresar área simplificada"
-        Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'Label10
         '
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(20, 29)
+        resources.ApplyResources(Me.Label10, "Label10")
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(104, 16)
-        Me.Label10.TabIndex = 18
-        Me.Label10.Text = "Altura entre piso"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'T_Hn
         '
-        Me.T_Hn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.T_Hn.Location = New System.Drawing.Point(128, 26)
+        resources.ApplyResources(Me.T_Hn, "T_Hn")
         Me.T_Hn.Name = "T_Hn"
-        Me.T_Hn.Size = New System.Drawing.Size(70, 21)
-        Me.T_Hn.TabIndex = 8
-        Me.T_Hn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'T_NP
         '
-        Me.T_NP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.T_NP.Location = New System.Drawing.Point(128, 55)
+        resources.ApplyResources(Me.T_NP, "T_NP")
         Me.T_NP.Name = "T_NP"
-        Me.T_NP.Size = New System.Drawing.Size(70, 21)
-        Me.T_NP.TabIndex = 9
-        Me.T_NP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label9
         '
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(20, 58)
+        resources.ApplyResources(Me.Label9, "Label9")
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(104, 16)
-        Me.Label9.TabIndex = 19
-        Me.Label9.Text = "N° Pisos"
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label11
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(213, 29)
+        resources.ApplyResources(Me.Label11, "Label11")
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(19, 16)
-        Me.Label11.TabIndex = 20
-        Me.Label11.Text = "m"
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.ComboBox1)
+        Me.GroupBox2.Controls.Add(Me.T_Cantidad)
+        Me.GroupBox2.Controls.Add(Me.Label23)
+        Me.GroupBox2.Controls.Add(Me.C_Confinamiento)
         Me.GroupBox2.Controls.Add(Me.Label21)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Button2)
@@ -405,464 +375,564 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.T_Lw2)
         Me.GroupBox2.Controls.Add(Me.T_tw2)
         Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Location = New System.Drawing.Point(25, 21)
+        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(274, 334)
-        Me.GroupBox2.TabIndex = 26
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Geometría"
+        '
+        'T_Cantidad
+        '
+        resources.ApplyResources(Me.T_Cantidad, "T_Cantidad")
+        Me.T_Cantidad.Name = "T_Cantidad"
+        '
+        'Label23
+        '
+        resources.ApplyResources(Me.Label23, "Label23")
+        Me.Label23.Name = "Label23"
+        '
+        'C_Confinamiento
+        '
+        resources.ApplyResources(Me.C_Confinamiento, "C_Confinamiento")
+        Me.C_Confinamiento.Items.AddRange(New Object() {resources.GetString("C_Confinamiento.Items"), resources.GetString("C_Confinamiento.Items1")})
+        Me.C_Confinamiento.Name = "C_Confinamiento"
+        '
+        'Label21
+        '
+        resources.ApplyResources(Me.Label21, "Label21")
+        Me.Label21.Name = "Label21"
         '
         'Label6
         '
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(20, 29)
+        resources.ApplyResources(Me.Label6, "Label6")
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(100, 16)
-        Me.Label6.TabIndex = 9
-        Me.Label6.Text = "Nombre"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Button2
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(143, 280)
+        resources.ApplyResources(Me.Button2, "Button2")
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(110, 30)
-        Me.Button2.TabIndex = 11
-        Me.Button2.Text = "Modificar"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'T_Lw
         '
-        Me.T_Lw.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.T_Lw.Location = New System.Drawing.Point(128, 117)
+        resources.ApplyResources(Me.T_Lw, "T_Lw")
         Me.T_Lw.Name = "T_Lw"
-        Me.T_Lw.Size = New System.Drawing.Size(70, 21)
-        Me.T_Lw.TabIndex = 4
-        Me.T_Lw.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label15
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(213, 120)
+        resources.ApplyResources(Me.Label15, "Label15")
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(19, 16)
-        Me.Label15.TabIndex = 24
-        Me.Label15.Text = "m"
         '
         'Label2
         '
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(20, 120)
+        resources.ApplyResources(Me.Label2, "Label2")
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(100, 16)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Longitud (Lw)"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label14
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(213, 149)
+        resources.ApplyResources(Me.Label14, "Label14")
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(19, 16)
-        Me.Label14.TabIndex = 23
-        Me.Label14.Text = "m"
         '
         'T_tw
         '
-        Me.T_tw.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.T_tw.Location = New System.Drawing.Point(128, 146)
+        resources.ApplyResources(Me.T_tw, "T_tw")
         Me.T_tw.Name = "T_tw"
-        Me.T_tw.Size = New System.Drawing.Size(70, 21)
-        Me.T_tw.TabIndex = 5
-        Me.T_tw.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label13
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(213, 178)
+        resources.ApplyResources(Me.Label13, "Label13")
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(19, 16)
-        Me.Label13.TabIndex = 22
-        Me.Label13.Text = "m"
         '
         'Tipo_Muro
         '
-        Me.Tipo_Muro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tipo_Muro.FormattingEnabled = True
-        Me.Tipo_Muro.Items.AddRange(New Object() {"Muro Rectangular", "Muro en T", "Muro en L", "Muro en C"})
-        Me.Tipo_Muro.Location = New System.Drawing.Point(128, 55)
+        resources.ApplyResources(Me.Tipo_Muro, "Tipo_Muro")
+        Me.Tipo_Muro.Items.AddRange(New Object() {resources.GetString("Tipo_Muro.Items"), resources.GetString("Tipo_Muro.Items1"), resources.GetString("Tipo_Muro.Items2"), resources.GetString("Tipo_Muro.Items3")})
         Me.Tipo_Muro.Name = "Tipo_Muro"
-        Me.Tipo_Muro.Size = New System.Drawing.Size(126, 23)
-        Me.Tipo_Muro.TabIndex = 2
-        Me.Tipo_Muro.Text = "Muro Rectangular"
         '
         'Label12
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(213, 207)
+        resources.ApplyResources(Me.Label12, "Label12")
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(19, 16)
-        Me.Label12.TabIndex = 21
-        Me.Label12.Text = "m"
         '
         'Label1
         '
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(20, 58)
+        resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(100, 16)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Forma de Muro"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Button1
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(23, 280)
+        resources.ApplyResources(Me.Button1, "Button1")
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(110, 30)
-        Me.Button1.TabIndex = 10
-        Me.Button1.Text = "Agregar"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Label3
         '
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(20, 149)
+        resources.ApplyResources(Me.Label3, "Label3")
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(100, 16)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Espesor (tw)"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label5
         '
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(20, 89)
+        resources.ApplyResources(Me.Label5, "Label5")
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(100, 16)
-        Me.Label5.TabIndex = 7
-        Me.Label5.Text = "Dirección"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Direccion
         '
-        Me.Direccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        resources.ApplyResources(Me.Direccion, "Direccion")
         Me.Direccion.FormattingEnabled = True
-        Me.Direccion.Items.AddRange(New Object() {"X", "Y"})
-        Me.Direccion.Location = New System.Drawing.Point(128, 86)
+        Me.Direccion.Items.AddRange(New Object() {resources.GetString("Direccion.Items"), resources.GetString("Direccion.Items1")})
         Me.Direccion.Name = "Direccion"
-        Me.Direccion.Size = New System.Drawing.Size(70, 23)
-        Me.Direccion.TabIndex = 3
-        Me.Direccion.Text = "X"
         '
         'T_Name
         '
-        Me.T_Name.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.T_Name.Location = New System.Drawing.Point(128, 26)
+        resources.ApplyResources(Me.T_Name, "T_Name")
         Me.T_Name.Name = "T_Name"
-        Me.T_Name.Size = New System.Drawing.Size(70, 21)
-        Me.T_Name.TabIndex = 1
-        Me.T_Name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
         '
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(20, 207)
+        resources.ApplyResources(Me.Label7, "Label7")
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(100, 16)
-        Me.Label7.TabIndex = 15
-        Me.Label7.Text = "Espesor (tw2)"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'T_Lw2
         '
-        Me.T_Lw2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.T_Lw2.Location = New System.Drawing.Point(128, 175)
+        resources.ApplyResources(Me.T_Lw2, "T_Lw2")
         Me.T_Lw2.Name = "T_Lw2"
         Me.T_Lw2.ReadOnly = True
-        Me.T_Lw2.Size = New System.Drawing.Size(70, 21)
-        Me.T_Lw2.TabIndex = 6
-        Me.T_Lw2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'T_tw2
         '
-        Me.T_tw2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.T_tw2.Location = New System.Drawing.Point(128, 204)
+        resources.ApplyResources(Me.T_tw2, "T_tw2")
         Me.T_tw2.Name = "T_tw2"
         Me.T_tw2.ReadOnly = True
-        Me.T_tw2.Size = New System.Drawing.Size(70, 21)
-        Me.T_tw2.TabIndex = 7
-        Me.T_tw2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label8
         '
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(20, 178)
+        resources.ApplyResources(Me.Label8, "Label8")
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(100, 16)
-        Me.Label8.TabIndex = 14
-        Me.Label8.Text = "Longitud (Lw2)"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Tabla_Datos
         '
-        Me.Tabla_Datos.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.Tabla_Datos, "Tabla_Datos")
         Me.Tabla_Datos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.Tabla_Datos.BackgroundColor = System.Drawing.SystemColors.Control
         Me.Tabla_Datos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Tabla_Datos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.Tabla_Datos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Tabla_Datos.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Tabla_Datos.Location = New System.Drawing.Point(25, 378)
-        Me.Tabla_Datos.Name = "Tabla_Datos"
-        Me.Tabla_Datos.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Tabla_Datos.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.Tabla_Datos.RowHeadersVisible = False
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Tabla_Datos.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Tabla_Datos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
+        Me.Tabla_Datos.GridColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.Tabla_Datos.Name = "Tabla_Datos"
+        Me.Tabla_Datos.ReadOnly = True
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Tabla_Datos.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.Tabla_Datos.Size = New System.Drawing.Size(1107, 213)
-        Me.Tabla_Datos.TabIndex = 11
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Tabla_Datos.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.Tabla_Datos.RowHeadersVisible = False
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tabla_Datos.RowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.Tabla_Datos.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Tabla_Datos.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tabla_Datos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         '
         'Column1
         '
-        Me.Column1.HeaderText = "Nombre"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle2
+        resources.ApplyResources(Me.Column1, "Column1")
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
         '
         'Column2
         '
-        Me.Column2.HeaderText = "Forma"
+        resources.ApplyResources(Me.Column2, "Column2")
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
         '
         'Column3
         '
-        Me.Column3.HeaderText = "Dirección"
+        resources.ApplyResources(Me.Column3, "Column3")
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
         '
         'Column4
         '
-        Me.Column4.HeaderText = "Longitud (Lw) (m)"
+        resources.ApplyResources(Me.Column4, "Column4")
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
         '
         'Column5
         '
-        Me.Column5.HeaderText = "Espesor (tw) (m)"
+        resources.ApplyResources(Me.Column5, "Column5")
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
         '
         'Column6
         '
-        Me.Column6.HeaderText = "SismoX (%)"
+        resources.ApplyResources(Me.Column6, "Column6")
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
         '
         'Column7
         '
-        Me.Column7.HeaderText = "SismoY (%)"
+        resources.ApplyResources(Me.Column7, "Column7")
         Me.Column7.Name = "Column7"
         Me.Column7.ReadOnly = True
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(439, 15)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(357, 20)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "ANÁLISIS ESTRUCTURAL SIMPLIFICADO"
-        '
-        'Label21
-        '
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(20, 239)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(100, 16)
-        Me.Label21.TabIndex = 25
-        Me.Label21.Text = "Confinamiento"
-        Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Si", "No"})
-        Me.ComboBox1.Location = New System.Drawing.Point(128, 233)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(70, 23)
-        Me.ComboBox1.TabIndex = 26
-        Me.ComboBox1.Text = "Si"
         '
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage2.Controls.Add(Me.P_6)
+        Me.TabPage2.Controls.Add(Me.L_FF)
+        Me.TabPage2.Controls.Add(Me.P_5)
+        Me.TabPage2.Controls.Add(Me.L_C)
+        Me.TabPage2.Controls.Add(Me.P_4)
+        Me.TabPage2.Controls.Add(Me.P_7)
+        Me.TabPage2.Controls.Add(Me.L_Es)
+        Me.TabPage2.Controls.Add(Me.L_Na)
+        Me.TabPage2.Controls.Add(Me.L_ALR)
+        Me.TabPage2.Controls.Add(Me.P_3)
+        Me.TabPage2.Controls.Add(Me.L_Ar)
+        Me.TabPage2.Controls.Add(Me.P_2)
+        Me.TabPage2.Controls.Add(Me.L_D)
+        Me.TabPage2.Controls.Add(Me.P_1)
+        Me.TabPage2.Controls.Add(Me.P_0)
+        Me.TabPage2.Controls.Add(Me.L_Grado)
+        Me.TabPage2.Controls.Add(Me.B_Verde)
+        Me.TabPage2.Controls.Add(Me.B_Amarillo)
+        Me.TabPage2.Controls.Add(Me.B_Rojo)
+        Me.TabPage2.Controls.Add(Me.PictureBox1)
+        Me.TabPage2.Controls.Add(Me.Label22)
         Me.TabPage2.Controls.Add(Me.Tabla_Resultados)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 24)
+        resources.ApplyResources(Me.TabPage2, "TabPage2")
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1203, 636)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Resultados"
+        '
+        'P_6
+        '
+        resources.ApplyResources(Me.P_6, "P_6")
+        Me.P_6.Name = "P_6"
+        Me.P_6.TabStop = False
+        '
+        'L_FF
+        '
+        resources.ApplyResources(Me.L_FF, "L_FF")
+        Me.L_FF.Name = "L_FF"
+        '
+        'P_5
+        '
+        resources.ApplyResources(Me.P_5, "P_5")
+        Me.P_5.Name = "P_5"
+        Me.P_5.TabStop = False
+        '
+        'L_C
+        '
+        resources.ApplyResources(Me.L_C, "L_C")
+        Me.L_C.Name = "L_C"
+        '
+        'P_4
+        '
+        resources.ApplyResources(Me.P_4, "P_4")
+        Me.P_4.Name = "P_4"
+        Me.P_4.TabStop = False
+        '
+        'P_7
+        '
+        resources.ApplyResources(Me.P_7, "P_7")
+        Me.P_7.Name = "P_7"
+        Me.P_7.TabStop = False
+        '
+        'L_Es
+        '
+        resources.ApplyResources(Me.L_Es, "L_Es")
+        Me.L_Es.Name = "L_Es"
+        '
+        'L_Na
+        '
+        resources.ApplyResources(Me.L_Na, "L_Na")
+        Me.L_Na.Name = "L_Na"
+        '
+        'L_ALR
+        '
+        resources.ApplyResources(Me.L_ALR, "L_ALR")
+        Me.L_ALR.Name = "L_ALR"
+        '
+        'P_3
+        '
+        resources.ApplyResources(Me.P_3, "P_3")
+        Me.P_3.Name = "P_3"
+        Me.P_3.TabStop = False
+        '
+        'L_Ar
+        '
+        resources.ApplyResources(Me.L_Ar, "L_Ar")
+        Me.L_Ar.Name = "L_Ar"
+        '
+        'P_2
+        '
+        resources.ApplyResources(Me.P_2, "P_2")
+        Me.P_2.Name = "P_2"
+        Me.P_2.TabStop = False
+        '
+        'L_D
+        '
+        resources.ApplyResources(Me.L_D, "L_D")
+        Me.L_D.Name = "L_D"
+        '
+        'P_1
+        '
+        resources.ApplyResources(Me.P_1, "P_1")
+        Me.P_1.Name = "P_1"
+        Me.P_1.TabStop = False
+        '
+        'P_0
+        '
+        resources.ApplyResources(Me.P_0, "P_0")
+        Me.P_0.Name = "P_0"
+        Me.P_0.TabStop = False
+        '
+        'L_Grado
+        '
+        resources.ApplyResources(Me.L_Grado, "L_Grado")
+        Me.L_Grado.ForeColor = System.Drawing.Color.Red
+        Me.L_Grado.Name = "L_Grado"
+        '
+        'B_Verde
+        '
+        Me.B_Verde.BackColor = System.Drawing.Color.Black
+        Me.B_Verde.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.B_Verde.FlatAppearance.BorderSize = 0
+        resources.ApplyResources(Me.B_Verde, "B_Verde")
+        Me.B_Verde.Name = "B_Verde"
+        Me.B_Verde.UseVisualStyleBackColor = False
+        '
+        'B_Amarillo
+        '
+        Me.B_Amarillo.BackColor = System.Drawing.Color.Black
+        Me.B_Amarillo.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.B_Amarillo.FlatAppearance.BorderSize = 0
+        resources.ApplyResources(Me.B_Amarillo, "B_Amarillo")
+        Me.B_Amarillo.Name = "B_Amarillo"
+        Me.B_Amarillo.UseVisualStyleBackColor = False
+        '
+        'B_Rojo
+        '
+        Me.B_Rojo.BackColor = System.Drawing.Color.Black
+        Me.B_Rojo.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.B_Rojo.FlatAppearance.BorderSize = 0
+        resources.ApplyResources(Me.B_Rojo, "B_Rojo")
+        Me.B_Rojo.Name = "B_Rojo"
+        Me.B_Rojo.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        resources.ApplyResources(Me.PictureBox1, "PictureBox1")
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.TabStop = False
+        '
+        'Label22
+        '
+        resources.ApplyResources(Me.Label22, "Label22")
+        Me.Label22.Name = "Label22"
         '
         'Tabla_Resultados
         '
-        Me.Tabla_Resultados.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.Tabla_Resultados, "Tabla_Resultados")
         Me.Tabla_Resultados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.Tabla_Resultados.BackgroundColor = System.Drawing.SystemColors.Control
         Me.Tabla_Resultados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Tabla_Resultados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
-        Me.Tabla_Resultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.Column10, Me.DataGridViewTextBoxColumn4, Me.Column9, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.Column11, Me.DataGridViewTextBoxColumn7, Me.Column12, Me.Column13, Me.Column8})
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Tabla_Resultados.DefaultCellStyle = DataGridViewCellStyle6
-        Me.Tabla_Resultados.Location = New System.Drawing.Point(6, 212)
-        Me.Tabla_Resultados.Name = "Tabla_Resultados"
-        Me.Tabla_Resultados.ReadOnly = True
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Tabla_Resultados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.Tabla_Resultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.Column10, Me.DataGridViewTextBoxColumn4, Me.Column9, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.Column11, Me.DataGridViewTextBoxColumn7, Me.Column12, Me.Column13, Me.Column8})
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Tabla_Resultados.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
-        Me.Tabla_Resultados.RowHeadersVisible = False
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Tabla_Resultados.DefaultCellStyle = DataGridViewCellStyle7
+        Me.Tabla_Resultados.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
+        Me.Tabla_Resultados.Name = "Tabla_Resultados"
+        Me.Tabla_Resultados.ReadOnly = True
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Tabla_Resultados.RowsDefaultCellStyle = DataGridViewCellStyle8
-        Me.Tabla_Resultados.Size = New System.Drawing.Size(1191, 213)
-        Me.Tabla_Resultados.TabIndex = 12
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Tabla_Resultados.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        Me.Tabla_Resultados.RowHeadersVisible = False
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Tabla_Resultados.RowsDefaultCellStyle = DataGridViewCellStyle9
         '
         'DataGridViewTextBoxColumn1
         '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Nombre"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn1, "DataGridViewTextBoxColumn1")
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.ReadOnly = True
         '
         'DataGridViewTextBoxColumn2
         '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Sismo X (%)"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn2, "DataGridViewTextBoxColumn2")
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
         '
         'DataGridViewTextBoxColumn3
         '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Sismo Y (%)"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn3, "DataGridViewTextBoxColumn3")
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
         '
         'Column10
         '
-        Me.Column10.HeaderText = "Esbeltez"
+        resources.ApplyResources(Me.Column10, "Column10")
         Me.Column10.Name = "Column10"
         Me.Column10.ReadOnly = True
         '
         'DataGridViewTextBoxColumn4
         '
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Ar X"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn4, "DataGridViewTextBoxColumn4")
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
         '
         'Column9
         '
-        Me.Column9.HeaderText = "Ar Y"
+        resources.ApplyResources(Me.Column9, "Column9")
         Me.Column9.Name = "Column9"
         Me.Column9.ReadOnly = True
         '
         'DataGridViewTextBoxColumn5
         '
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Tipo de Muro"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn5, "DataGridViewTextBoxColumn5")
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         Me.DataGridViewTextBoxColumn5.ReadOnly = True
         '
         'DataGridViewTextBoxColumn6
         '
-        Me.DataGridViewTextBoxColumn6.HeaderText = "ALR CM (%)"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn6, "DataGridViewTextBoxColumn6")
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.ReadOnly = True
         '
         'Column11
         '
-        Me.Column11.HeaderText = "ALR CU (%)"
+        resources.ApplyResources(Me.Column11, "Column11")
         Me.Column11.Name = "Column11"
         Me.Column11.ReadOnly = True
         '
         'DataGridViewTextBoxColumn7
         '
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Nivel de Carga"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn7, "DataGridViewTextBoxColumn7")
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         Me.DataGridViewTextBoxColumn7.ReadOnly = True
         '
         'Column12
         '
-        Me.Column12.HeaderText = "Densidad X (%)"
+        resources.ApplyResources(Me.Column12, "Column12")
         Me.Column12.Name = "Column12"
         Me.Column12.ReadOnly = True
         '
         'Column13
         '
-        Me.Column13.HeaderText = "Densidad Y (%)"
+        resources.ApplyResources(Me.Column13, "Column13")
         Me.Column13.Name = "Column13"
         Me.Column13.ReadOnly = True
         '
         'Column8
         '
-        Me.Column8.HeaderText = "Confinamiento"
+        resources.ApplyResources(Me.Column8, "Column8")
         Me.Column8.Name = "Column8"
         Me.Column8.ReadOnly = True
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.OpcionesToolStripMenuItem, Me.AyudaToolStripMenuItem})
+        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
+        Me.MenuStrip1.Name = "MenuStrip1"
+        '
+        'ArchivoToolStripMenuItem
+        '
+        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoProyectoToolStripMenuItem, Me.AbrirProyectoToolStripMenuItem, Me.GuardarProyectoToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
+        resources.ApplyResources(Me.ArchivoToolStripMenuItem, "ArchivoToolStripMenuItem")
+        '
+        'NuevoProyectoToolStripMenuItem
+        '
+        Me.NuevoProyectoToolStripMenuItem.Name = "NuevoProyectoToolStripMenuItem"
+        resources.ApplyResources(Me.NuevoProyectoToolStripMenuItem, "NuevoProyectoToolStripMenuItem")
+        '
+        'AbrirProyectoToolStripMenuItem
+        '
+        Me.AbrirProyectoToolStripMenuItem.Name = "AbrirProyectoToolStripMenuItem"
+        resources.ApplyResources(Me.AbrirProyectoToolStripMenuItem, "AbrirProyectoToolStripMenuItem")
+        '
+        'GuardarProyectoToolStripMenuItem
+        '
+        Me.GuardarProyectoToolStripMenuItem.Name = "GuardarProyectoToolStripMenuItem"
+        resources.ApplyResources(Me.GuardarProyectoToolStripMenuItem, "GuardarProyectoToolStripMenuItem")
+        '
+        'SalirToolStripMenuItem
+        '
+        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        resources.ApplyResources(Me.SalirToolStripMenuItem, "SalirToolStripMenuItem")
+        '
+        'OpcionesToolStripMenuItem
+        '
+        Me.OpcionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ÍndiceDeCalificaciónEstructuralICEToolStripMenuItem, Me.IngresarImagenDelProyectoToolStripMenuItem})
+        Me.OpcionesToolStripMenuItem.Name = "OpcionesToolStripMenuItem"
+        resources.ApplyResources(Me.OpcionesToolStripMenuItem, "OpcionesToolStripMenuItem")
+        '
+        'ÍndiceDeCalificaciónEstructuralICEToolStripMenuItem
+        '
+        Me.ÍndiceDeCalificaciónEstructuralICEToolStripMenuItem.Name = "ÍndiceDeCalificaciónEstructuralICEToolStripMenuItem"
+        resources.ApplyResources(Me.ÍndiceDeCalificaciónEstructuralICEToolStripMenuItem, "ÍndiceDeCalificaciónEstructuralICEToolStripMenuItem")
+        '
+        'IngresarImagenDelProyectoToolStripMenuItem
+        '
+        Me.IngresarImagenDelProyectoToolStripMenuItem.Name = "IngresarImagenDelProyectoToolStripMenuItem"
+        resources.ApplyResources(Me.IngresarImagenDelProyectoToolStripMenuItem, "IngresarImagenDelProyectoToolStripMenuItem")
+        '
+        'AyudaToolStripMenuItem
+        '
+        Me.AyudaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AcercaToolStripMenuItem})
+        Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
+        resources.ApplyResources(Me.AyudaToolStripMenuItem, "AyudaToolStripMenuItem")
+        '
+        'AcercaToolStripMenuItem
+        '
+        Me.AcercaToolStripMenuItem.Name = "AcercaToolStripMenuItem"
+        resources.ApplyResources(Me.AcercaToolStripMenuItem, "AcercaToolStripMenuItem")
+        '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1244, 711)
         Me.Controls.Add(Me.Panel1)
+        Me.MainMenuStrip = Me.MenuStrip1
+        Me.MaximizeBox = False
         Me.Name = "Form1"
-        Me.Text = "Análisis Estructural Simplificado"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
@@ -877,7 +947,19 @@ Partial Class Form1
         Me.GroupBox2.PerformLayout()
         CType(Me.Tabla_Datos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        CType(Me.P_6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.P_5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.P_4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.P_7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.P_3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.P_2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.P_1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.P_0, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Tabla_Resultados, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -891,12 +973,10 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Tipo_Muro As ComboBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents Label4 As Label
     Friend WithEvents Direccion As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents T_Name As TextBox
-    Friend WithEvents Tabla_Datos As DataGridView
     Friend WithEvents Forma_Muro As PictureBox
     Friend WithEvents Label7 As Label
     Friend WithEvents T_tw2 As TextBox
@@ -922,10 +1002,14 @@ Partial Class Form1
     Friend WithEvents Label17 As Label
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Button3 As Button
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents Label19 As Label
     Friend WithEvents Button4 As Button
+    Friend WithEvents T_fc As TextBox
+    Friend WithEvents Label20 As Label
+    Friend WithEvents C_Confinamiento As ComboBox
+    Friend WithEvents Label21 As Label
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents Tabla_Resultados As DataGridView
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
@@ -933,13 +1017,14 @@ Partial Class Form1
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Label18 As Label
-    Friend WithEvents T_fc As TextBox
-    Friend WithEvents Label20 As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Label21 As Label
-    Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents Tabla_Resultados As DataGridView
+    Protected WithEvents Tabla_Datos As DataGridView
+    Friend WithEvents B_Rojo As Button
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label22 As Label
+    Friend WithEvents B_Verde As Button
+    Friend WithEvents B_Amarillo As Button
+    Friend WithEvents T_Cantidad As TextBox
+    Friend WithEvents Label23 As Label
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
@@ -953,4 +1038,38 @@ Partial Class Form1
     Friend WithEvents Column12 As DataGridViewTextBoxColumn
     Friend WithEvents Column13 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents L_Grado As Label
+    Friend WithEvents P_0 As PictureBox
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NuevoProyectoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GuardarProyectoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OpcionesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ÍndiceDeCalificaciónEstructuralICEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents C_Nivel_Amenaza As ComboBox
+    Friend WithEvents Label24 As Label
+    Friend WithEvents AbrirProyectoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Label25 As Label
+    Friend WithEvents IngresarImagenDelProyectoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents L_ALR As Label
+    Friend WithEvents P_3 As PictureBox
+    Friend WithEvents L_Ar As Label
+    Friend WithEvents P_2 As PictureBox
+    Friend WithEvents L_D As Label
+    Friend WithEvents P_1 As PictureBox
+    Friend WithEvents P_4 As PictureBox
+    Friend WithEvents P_7 As PictureBox
+    Friend WithEvents L_Es As Label
+    Friend WithEvents L_Na As Label
+    Friend WithEvents P_5 As PictureBox
+    Friend WithEvents L_C As Label
+    Friend WithEvents P_6 As PictureBox
+    Friend WithEvents L_FF As Label
+    Friend WithEvents Tool_Info As ToolTip
+    Friend WithEvents AyudaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AcercaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Op_fc_Medido As RadioButton
+    Friend WithEvents Op_fc_Nominal As RadioButton
 End Class
