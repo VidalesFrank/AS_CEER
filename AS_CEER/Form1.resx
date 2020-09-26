@@ -751,7 +751,7 @@
     <value>733, 21</value>
   </data>
   <data name="GroupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 350</value>
+    <value>363, 350</value>
   </data>
   <data name="GroupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -1567,7 +1567,7 @@
     <value>25, 385</value>
   </data>
   <data name="Tabla_Datos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1076, 201</value>
+    <value>1074, 201</value>
   </data>
   <data name="Tabla_Datos.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1591,7 +1591,7 @@
     <value>16, 12</value>
   </data>
   <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1126, 607</value>
+    <value>1124, 607</value>
   </data>
   <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1615,7 +1615,7 @@
     <value>3, 3</value>
   </data>
   <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1166, 630</value>
+    <value>1164, 630</value>
   </data>
   <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1645,7 +1645,7 @@
     <value>No</value>
   </data>
   <data name="TabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1172, 636</value>
+    <value>1170, 636</value>
   </data>
   <data name="TabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1664,6 +1664,300 @@
   </data>
   <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="Grafico_Esbeltez.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="Grafico_Esbeltez.Location" type="System.Drawing.Point, System.Drawing">
+    <value>175, 136</value>
+  </data>
+  <data name="Grafico_Esbeltez.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 126</value>
+  </data>
+  <data name="Grafico_Esbeltez.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="Grafico_Esbeltez.Text" xml:space="preserve">
+    <value>Chart1</value>
+  </data>
+  <data name="Grafico_Esbeltez.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Grafico_Esbeltez.Name" xml:space="preserve">
+    <value>Grafico_Esbeltez</value>
+  </data>
+  <data name="&gt;&gt;Grafico_Esbeltez.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataVisualization.Charting.Chart, System.Windows.Forms.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</value>
+  </data>
+  <data name="&gt;&gt;Grafico_Esbeltez.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Grafico_Esbeltez.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Grafico_Confinamiento.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="Grafico_Confinamiento.Location" type="System.Drawing.Point, System.Drawing">
+    <value>175, 0</value>
+  </data>
+  <data name="Grafico_Confinamiento.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 133</value>
+  </data>
+  <data name="Grafico_Confinamiento.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="Grafico_Confinamiento.Text" xml:space="preserve">
+    <value>Chart1</value>
+  </data>
+  <data name="Grafico_Confinamiento.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Grafico_Confinamiento.Name" xml:space="preserve">
+    <value>Grafico_Confinamiento</value>
+  </data>
+  <data name="&gt;&gt;Grafico_Confinamiento.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataVisualization.Charting.Chart, System.Windows.Forms.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</value>
+  </data>
+  <data name="&gt;&gt;Grafico_Confinamiento.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Grafico_Confinamiento.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Grafico_CargaAxial.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="Grafico_CargaAxial.Location" type="System.Drawing.Point, System.Drawing">
+    <value>325, 0</value>
+  </data>
+  <data name="Grafico_CargaAxial.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 262</value>
+  </data>
+  <data name="Grafico_CargaAxial.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="Grafico_CargaAxial.Text" xml:space="preserve">
+    <value>Chart1</value>
+  </data>
+  <data name="Grafico_CargaAxial.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Grafico_CargaAxial.Name" xml:space="preserve">
+    <value>Grafico_CargaAxial</value>
+  </data>
+  <data name="&gt;&gt;Grafico_CargaAxial.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataVisualization.Charting.Chart, System.Windows.Forms.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</value>
+  </data>
+  <data name="&gt;&gt;Grafico_CargaAxial.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Grafico_CargaAxial.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Grafico_Densidad.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="Grafico_Densidad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Grafico_Densidad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 262</value>
+  </data>
+  <data name="Grafico_Densidad.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="Grafico_Densidad.Text" xml:space="preserve">
+    <value>Chart1</value>
+  </data>
+  <data name="Grafico_Densidad.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Grafico_Densidad.Name" xml:space="preserve">
+    <value>Grafico_Densidad</value>
+  </data>
+  <data name="&gt;&gt;Grafico_Densidad.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataVisualization.Charting.Chart, System.Windows.Forms.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</value>
+  </data>
+  <data name="&gt;&gt;Grafico_Densidad.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Grafico_Densidad.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 347</value>
+  </data>
+  <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>469, 262</value>
+  </data>
+  <data name="Panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Name" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Parent" xml:space="preserve">
+    <value>TabPage2</value>
+  </data>
+  <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Button9.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="Button9.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="Button9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="Button9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Button9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>370, 306</value>
+  </data>
+  <data name="Button9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 35</value>
+  </data>
+  <data name="Button9.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="Button9.Text" xml:space="preserve">
+    <value>CONFINAMIENTO</value>
+  </data>
+  <data name="Button9.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Button9.Name" xml:space="preserve">
+    <value>Button9</value>
+  </data>
+  <data name="&gt;&gt;Button9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Button9.Parent" xml:space="preserve">
+    <value>TabPage2</value>
+  </data>
+  <data name="&gt;&gt;Button9.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Button8.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="Button8.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="Button8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="Button8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Button8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 306</value>
+  </data>
+  <data name="Button8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 35</value>
+  </data>
+  <data name="Button8.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="Button8.Text" xml:space="preserve">
+    <value>ASPECTO</value>
+  </data>
+  <data name="Button8.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Button8.Name" xml:space="preserve">
+    <value>Button8</value>
+  </data>
+  <data name="&gt;&gt;Button8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Button8.Parent" xml:space="preserve">
+    <value>TabPage2</value>
+  </data>
+  <data name="&gt;&gt;Button8.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Button7.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="Button7.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="Button7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="Button7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Button7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 306</value>
+  </data>
+  <data name="Button7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 35</value>
+  </data>
+  <data name="Button7.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="Button7.Text" xml:space="preserve">
+    <value>ALR</value>
+  </data>
+  <data name="Button7.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Button7.Name" xml:space="preserve">
+    <value>Button7</value>
+  </data>
+  <data name="&gt;&gt;Button7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Button7.Parent" xml:space="preserve">
+    <value>TabPage2</value>
+  </data>
+  <data name="&gt;&gt;Button7.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Button6.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="Button6.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="Button6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="Button6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 306</value>
+  </data>
+  <data name="Button6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 35</value>
+  </data>
+  <data name="Button6.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="Button6.Text" xml:space="preserve">
+    <value>DENSIDAD</value>
+  </data>
+  <data name="Button6.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Button6.Name" xml:space="preserve">
+    <value>Button6</value>
+  </data>
+  <data name="&gt;&gt;Button6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Button6.Parent" xml:space="preserve">
+    <value>TabPage2</value>
+  </data>
+  <data name="&gt;&gt;Button6.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="P_6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1704,7 +1998,7 @@
     <value>NoControl</value>
   </data>
   <data name="P_6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>713, 537</value>
+    <value>864, 537</value>
   </data>
   <data name="P_6.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 30</value>
@@ -1728,7 +2022,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;P_6.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>5</value>
   </data>
   <data name="L_FF.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1740,7 +2034,7 @@
     <value>NoControl</value>
   </data>
   <data name="L_FF.Location" type="System.Drawing.Point, System.Drawing">
-    <value>752, 544</value>
+    <value>903, 544</value>
   </data>
   <data name="L_FF.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 16</value>
@@ -1764,7 +2058,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;L_FF.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>6</value>
   </data>
   <data name="P_5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1805,7 +2099,7 @@
     <value>NoControl</value>
   </data>
   <data name="P_5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>713, 500</value>
+    <value>864, 500</value>
   </data>
   <data name="P_5.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 30</value>
@@ -1829,7 +2123,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;P_5.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>7</value>
   </data>
   <data name="L_C.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1841,7 +2135,7 @@
     <value>NoControl</value>
   </data>
   <data name="L_C.Location" type="System.Drawing.Point, System.Drawing">
-    <value>752, 507</value>
+    <value>903, 507</value>
   </data>
   <data name="L_C.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 16</value>
@@ -1865,7 +2159,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;L_C.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>8</value>
   </data>
   <data name="P_4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1906,7 +2200,7 @@
     <value>NoControl</value>
   </data>
   <data name="P_4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>713, 462</value>
+    <value>864, 462</value>
   </data>
   <data name="P_4.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 30</value>
@@ -1930,7 +2224,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;P_4.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>9</value>
   </data>
   <data name="P_7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1971,7 +2265,7 @@
     <value>NoControl</value>
   </data>
   <data name="P_7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>713, 574</value>
+    <value>864, 574</value>
   </data>
   <data name="P_7.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 30</value>
@@ -1995,7 +2289,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;P_7.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>10</value>
   </data>
   <data name="L_Es.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2007,7 +2301,7 @@
     <value>NoControl</value>
   </data>
   <data name="L_Es.Location" type="System.Drawing.Point, System.Drawing">
-    <value>752, 581</value>
+    <value>903, 581</value>
   </data>
   <data name="L_Es.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 16</value>
@@ -2031,7 +2325,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;L_Es.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>11</value>
   </data>
   <data name="L_Na.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2043,7 +2337,7 @@
     <value>NoControl</value>
   </data>
   <data name="L_Na.Location" type="System.Drawing.Point, System.Drawing">
-    <value>752, 469</value>
+    <value>903, 469</value>
   </data>
   <data name="L_Na.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 16</value>
@@ -2067,7 +2361,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;L_Na.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>12</value>
   </data>
   <data name="L_ALR.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2079,7 +2373,7 @@
     <value>NoControl</value>
   </data>
   <data name="L_ALR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>750, 431</value>
+    <value>901, 431</value>
   </data>
   <data name="L_ALR.Size" type="System.Drawing.Size, System.Drawing">
     <value>193, 16</value>
@@ -2103,7 +2397,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;L_ALR.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>13</value>
   </data>
   <data name="P_3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2144,7 +2438,7 @@
     <value>NoControl</value>
   </data>
   <data name="P_3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>713, 424</value>
+    <value>864, 424</value>
   </data>
   <data name="P_3.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 30</value>
@@ -2168,7 +2462,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;P_3.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>14</value>
   </data>
   <data name="L_Ar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2180,7 +2474,7 @@
     <value>NoControl</value>
   </data>
   <data name="L_Ar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>750, 393</value>
+    <value>901, 393</value>
   </data>
   <data name="L_Ar.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 16</value>
@@ -2204,7 +2498,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;L_Ar.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>15</value>
   </data>
   <data name="P_2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2245,7 +2539,7 @@
     <value>NoControl</value>
   </data>
   <data name="P_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>713, 386</value>
+    <value>864, 386</value>
   </data>
   <data name="P_2.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 30</value>
@@ -2269,7 +2563,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;P_2.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>16</value>
   </data>
   <data name="L_D.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2281,7 +2575,7 @@
     <value>NoControl</value>
   </data>
   <data name="L_D.Location" type="System.Drawing.Point, System.Drawing">
-    <value>750, 355</value>
+    <value>901, 355</value>
   </data>
   <data name="L_D.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 16</value>
@@ -2305,7 +2599,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;L_D.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>17</value>
   </data>
   <data name="P_1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2346,7 +2640,7 @@
     <value>NoControl</value>
   </data>
   <data name="P_1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>713, 348</value>
+    <value>864, 348</value>
   </data>
   <data name="P_1.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 30</value>
@@ -2370,7 +2664,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;P_1.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>18</value>
   </data>
   <data name="P_0.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2413,7 +2707,7 @@
 </value>
   </data>
   <data name="P_0.Location" type="System.Drawing.Point, System.Drawing">
-    <value>578, 411</value>
+    <value>737, 411</value>
   </data>
   <data name="P_0.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 100</value>
@@ -2437,7 +2731,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;P_0.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>19</value>
   </data>
   <data name="L_Grado.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2473,7 +2767,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;L_Grado.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>20</value>
   </data>
   <data name="B_Verde.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -2482,7 +2776,7 @@
     <value>NoControl</value>
   </data>
   <data name="B_Verde.Location" type="System.Drawing.Point, System.Drawing">
-    <value>446, 515</value>
+    <value>597, 515</value>
   </data>
   <data name="B_Verde.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 59</value>
@@ -2500,7 +2794,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;B_Verde.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>21</value>
   </data>
   <data name="B_Amarillo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -2509,7 +2803,7 @@
     <value>NoControl</value>
   </data>
   <data name="B_Amarillo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>446, 445</value>
+    <value>597, 445</value>
   </data>
   <data name="B_Amarillo.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 59</value>
@@ -2527,13 +2821,13 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;B_Amarillo.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>22</value>
   </data>
   <data name="B_Rojo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="B_Rojo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>446, 373</value>
+    <value>597, 373</value>
   </data>
   <data name="B_Rojo.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 59</value>
@@ -2551,7 +2845,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;B_Rojo.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>23</value>
   </data>
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -6488,7 +6782,7 @@
 </value>
   </data>
   <data name="PictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 326</value>
+    <value>527, 326</value>
   </data>
   <data name="PictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 283</value>
@@ -6509,7 +6803,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;PictureBox1.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>24</value>
   </data>
   <data name="Label22.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6542,7 +6836,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;Label22.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>25</value>
   </data>
   <data name="Tabla_Resultados.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -6632,7 +6926,7 @@
     <value>6, 38</value>
   </data>
   <data name="Tabla_Resultados.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1191, 213</value>
+    <value>1158, 213</value>
   </data>
   <data name="Tabla_Resultados.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -6647,7 +6941,7 @@
     <value>TabPage2</value>
   </data>
   <data name="&gt;&gt;Tabla_Resultados.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>26</value>
   </data>
   <data name="TabPage2.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
@@ -6656,7 +6950,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1172, 636</value>
+    <value>1170, 636</value>
   </data>
   <data name="TabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -6683,7 +6977,7 @@
     <value>1, 25</value>
   </data>
   <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1180, 664</value>
+    <value>1178, 664</value>
   </data>
   <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -6704,25 +6998,31 @@
     <value>17, 17</value>
   </metadata>
   <data name="NuevoProyectoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
+    <value>142, 22</value>
   </data>
   <data name="NuevoProyectoToolStripMenuItem.Text" xml:space="preserve">
     <value>Nuevo</value>
   </data>
   <data name="AbrirProyectoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
+    <value>142, 22</value>
   </data>
   <data name="AbrirProyectoToolStripMenuItem.Text" xml:space="preserve">
     <value>Abrir</value>
   </data>
   <data name="GuardarProyectoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
+    <value>142, 22</value>
   </data>
   <data name="GuardarProyectoToolStripMenuItem.Text" xml:space="preserve">
     <value>Guardar</value>
   </data>
+  <data name="ExportarPDFToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 22</value>
+  </data>
+  <data name="ExportarPDFToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exportar PDF</value>
+  </data>
   <data name="SalirToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
+    <value>142, 22</value>
   </data>
   <data name="SalirToolStripMenuItem.Text" xml:space="preserve">
     <value>Salir</value>
@@ -6767,7 +7067,7 @@
     <value>0, 0</value>
   </data>
   <data name="MenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 24</value>
+    <value>1182, 24</value>
   </data>
   <data name="MenuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -6794,7 +7094,7 @@
     <value>0, 0</value>
   </data>
   <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 696</value>
+    <value>1182, 696</value>
   </data>
   <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6821,7 +7121,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 696</value>
+    <value>1182, 696</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -6971,6 +7271,12 @@
     <value>GuardarProyectoToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;GuardarProyectoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExportarPDFToolStripMenuItem.Name" xml:space="preserve">
+    <value>ExportarPDFToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ExportarPDFToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SalirToolStripMenuItem.Name" xml:space="preserve">

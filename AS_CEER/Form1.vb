@@ -1,4 +1,5 @@
-﻿Imports excel = Microsoft.Office.Interop.Excel
+﻿Imports System.Windows.Forms.DataVisualization.Charting
+Imports excel = Microsoft.Office.Interop.Excel
 
 Public Class Form1
     Public Shared Proyecto As New Proyecto
@@ -199,16 +200,12 @@ Public Class Form1
                 Nombre = Nombre & "_" & k
             End If
 
-            Dim err As Integer = 0
-            If Proyecto.Edificio.ListaMuros.Exists(Function(x) x.Name = T_Name.Text) = True Then
+            If Proyecto.Edificio.ListaMuros.Exists(Function(x) x.Name = Nombre) = True Then
                 Dim style = MsgBoxStyle.Critical
                 MsgBox("Muro existente", style, "Elemento Duplicado")
-                err = 1
-            End If
-            If err = 0 Then
+            Else
                 Tabla_Datos.Refresh()
                 Tabla_Datos.Rows.Add()
-
                 Dim Muro_ As New Muro
 
                 '---------- Asignación de Propiedades ------------
@@ -228,24 +225,24 @@ Public Class Form1
                 End If
                 If Muro_.T_Muro = "Muro en C" Then
                     If Muro_.Direccion = "X" Then
-                        Muro_.Porcentaje_Vb = 2 * Muro_.Lw ^ 2 * Muro_.tw
+                        Muro_.Porcentaje_Vb_X = 2 * Muro_.Lw ^ 2 * Muro_.tw
                         Muro_.Porcentaje_Vb_Y = Muro_.Lw2 ^ 2 * Muro_.tw2
                         Muro_.AreaX = 2 * Muro_.Lw * Muro_.tw
                         Muro_.AreaY = Muro_.Lw2 * Muro_.tw2
                     Else
-                        Muro_.Porcentaje_Vb = Muro_.Lw2 ^ 2 * Muro_.tw2
+                        Muro_.Porcentaje_Vb_X = Muro_.Lw2 ^ 2 * Muro_.tw2
                         Muro_.Porcentaje_Vb_Y = 2 * Muro_.Lw ^ 2 * Muro_.tw
                         Muro_.AreaY = 2 * Muro_.Lw * Muro_.tw
                         Muro_.AreaX = Muro_.Lw2 * Muro_.tw2
                     End If
                 Else
                     If Muro_.Direccion = "X" Then
-                        Muro_.Porcentaje_Vb = Muro_.Lw ^ 2 * Muro_.tw
+                        Muro_.Porcentaje_Vb_X = Muro_.Lw ^ 2 * Muro_.tw
                         Muro_.Porcentaje_Vb_Y = Muro_.Lw2 ^ 2 * Muro_.tw2
                         Muro_.AreaX = Muro_.Lw * Muro_.tw
                         Muro_.AreaY = Muro_.Lw2 * Muro_.tw2
                     Else
-                        Muro_.Porcentaje_Vb = Muro_.Lw2 ^ 2 * Muro_.tw2
+                        Muro_.Porcentaje_Vb_X = Muro_.Lw2 ^ 2 * Muro_.tw2
                         Muro_.Porcentaje_Vb_Y = Muro_.Lw ^ 2 * Muro_.tw
                         Muro_.AreaY = Muro_.Lw * Muro_.tw
                         Muro_.AreaX = Muro_.Lw2 * Muro_.tw2
@@ -280,7 +277,7 @@ Public Class Form1
                 End If
 
                 For j = 0 To Proyecto.Edificio.ListaMuros.Count - 1
-                    ContX += Proyecto.Edificio.ListaMuros(j).Porcentaje_Vb
+                    ContX += Proyecto.Edificio.ListaMuros(j).Porcentaje_Vb_X
                     ContY += Proyecto.Edificio.ListaMuros(j).Porcentaje_Vb_Y
                 Next
                 Proyecto.Edificio.Vb_X = ContX
@@ -290,7 +287,7 @@ Public Class Form1
                     If Proyecto.Edificio.Vb_X = 0 Then
                         Proyecto.Edificio.ListaMuros(i).SismoX = 0
                     Else
-                        Proyecto.Edificio.ListaMuros(i).SismoX = Proyecto.Edificio.ListaMuros(i).Porcentaje_Vb / Proyecto.Edificio.Vb_X
+                        Proyecto.Edificio.ListaMuros(i).SismoX = Proyecto.Edificio.ListaMuros(i).Porcentaje_Vb_X / Proyecto.Edificio.Vb_X
                     End If
 
                     If Proyecto.Edificio.Vb_Y = 0 Then
@@ -319,35 +316,6 @@ Public Class Form1
                 Next
             End If
         Next
-        '--------------------------- Asignar Calificaciones Bases --------------------------
-        Proyecto.Edificio.Indicador.Densidad_Max = 15
-        Proyecto.Edificio.Indicador.Num_Pisos_Max = 5
-        Proyecto.Edificio.Indicador.Factor_Forma_Max = 5
-        Proyecto.Edificio.Indicador.Ar_Max = 20
-        Proyecto.Edificio.Indicador.ALR_Max = 20
-        Proyecto.Edificio.Indicador.Amenaza_Max = 10
-        Proyecto.Edificio.Indicador.Esbeltez_Max = 15
-        Proyecto.Edificio.Indicador.Confinamiento_Max = 10
-
-        Proyecto.Edificio.Indicador.Densidad_Int = 10
-        Proyecto.Edificio.Indicador.Num_Pisos_Int = 2
-        Proyecto.Edificio.Indicador.Factor_Forma_Int = 2
-        Proyecto.Edificio.Indicador.Ar_Int = 10
-        Proyecto.Edificio.Indicador.ALR_Int = 10
-        Proyecto.Edificio.Indicador.Amenaza_Int = 5
-        Proyecto.Edificio.Indicador.Esbeltez_Int = 10
-        Proyecto.Edificio.Indicador.Confinamiento_Int = 5
-
-        Proyecto.Edificio.Indicador.Densidad_Min = 5
-        Proyecto.Edificio.Indicador.Num_Pisos_Min = 0
-        Proyecto.Edificio.Indicador.Factor_Forma_Min = 0
-        Proyecto.Edificio.Indicador.Ar_Min = 0
-        Proyecto.Edificio.Indicador.ALR_Min = 5
-        Proyecto.Edificio.Indicador.Amenaza_Min = 0
-        Proyecto.Edificio.Indicador.Esbeltez_Min = 0
-        Proyecto.Edificio.Indicador.Confinamiento_Min = 0
-
-        Proyecto.Edificio.Porcentaje_FSMuros = Convert.ToSingle(Form5.T_PFS.Text)
     End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         'Try
@@ -367,7 +335,7 @@ Public Class Form1
 
         If Err = 0 Then
             Dim ALR_ = 0.2
-            If Proyecto.Edificio.Op_Cargas <> "Ya" Then
+            If Proyecto.Edificio.Op_Cargas = False Then
                 Dim Ale As New Random()
                 Dim Va As Single = Ale.Next(0.0000001, 99.99999999) / 100
                 ALR_ = ALR(Va, Convert.ToInt32(T_NP.Text), Convert.ToSingle(T_Area.Text))
@@ -379,7 +347,7 @@ Public Class Form1
             For i = 0 To Proyecto.Edificio.ListaMuros.Count - 1
                 Form2.Tabla_Cargas.Rows(i).Cells(0).Value = Proyecto.Edificio.ListaMuros(i).Name
 
-                If Proyecto.Edificio.Op_Cargas = "Ya" Then
+                If Proyecto.Edificio.Op_Cargas = True Then
                     Form2.Tabla_Cargas.Rows(i).Cells(1).Value = Proyecto.Edificio.ListaMuros(i).CM
                     Form2.Tabla_Cargas.Rows(i).Cells(2).Value = Proyecto.Edificio.ListaMuros(i).CD
                 Else
@@ -419,7 +387,7 @@ Public Class Form1
         End If
         Proyecto.Edificio.fc = Convert.ToSingle(T_fc.Text)
         Dim ALR_ = 0.2
-        If Proyecto.Edificio.Op_Cargas <> "Ya" Then
+        If Proyecto.Edificio.Op_Cargas <> True Then
             Dim Ale As New Random()
             Dim Va As Single = Ale.Next(0.0000001, 99.99999999) / 100
             ALR_ = ALR(Va, Proyecto.Edificio.Num_P, Proyecto.Edificio.Area)
@@ -427,11 +395,12 @@ Public Class Form1
         Dim Max_ALR As Single = 0
         Dim Esbeltez_Total As Single = 0
 
-        Dim Suma As Single = 0
+        Dim Suma_X As Single = 0
+        Dim Suma_Y As Single = 0
 
         For i = 0 To Proyecto.Edificio.ListaMuros.Count - 1
-            If Suma <= Proyecto.Edificio.Porcentaje_FSMuros / 100 Then
-                Dim Muro_P As New Muro
+            Dim Muro_P As New Muro
+            If Suma_X <= Proyecto.Edificio.Porcentaje_FSMuros / 100 And Proyecto.Edificio.ListaMuros(i).Direccion = "X" Then
                 Muro_P.Name = Tabla_Datos.Rows(i).Cells(0).Value
                 Muro_P.Lw = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).Lw
                 Muro_P.tw = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).tw
@@ -439,7 +408,7 @@ Public Class Form1
                 Muro_P.tw2 = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).tw2
                 Muro_P.Direccion = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).Direccion
                 Muro_P.T_Muro = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).T_Muro
-                Muro_P.Porcentaje_Vb = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).Porcentaje_Vb
+                Muro_P.Porcentaje_Vb_X = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).Porcentaje_Vb_X
                 Muro_P.Porcentaje_Vb_Y = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).Porcentaje_Vb_Y
                 Muro_P.AreaX = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).AreaX
                 Muro_P.AreaY = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).AreaY
@@ -472,7 +441,7 @@ Public Class Form1
                     Muro_P.Tipo_Muro = "Corto"
                 End If
 
-                If Proyecto.Edificio.Op_Cargas = "Ya" Then
+                If Proyecto.Edificio.Op_Cargas = True Then
                     Muro_P.CM = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).CM
                     Muro_P.CD = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).CD
 
@@ -497,10 +466,78 @@ Public Class Form1
                 Muro_P.Confinamiento = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).Confinamiento
 
                 Proyecto.Edificio.ListaMuros_Protagonicos.Add(Muro_P)
-            Else
-                Exit For
+                Suma_X += Proyecto.Edificio.ListaMuros_Protagonicos(Proyecto.Edificio.ListaMuros_Protagonicos.Count - 1).SismoX
+                Suma_Y += Proyecto.Edificio.ListaMuros_Protagonicos(Proyecto.Edificio.ListaMuros_Protagonicos.Count - 1).SismoY
+
+            ElseIf Suma_Y <= Proyecto.Edificio.Porcentaje_FSMuros / 100 And Proyecto.Edificio.ListaMuros(i).Direccion = "Y" Then
+                Muro_P.Name = Tabla_Datos.Rows(i).Cells(0).Value
+                Muro_P.Lw = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).Lw
+                Muro_P.tw = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).tw
+                Muro_P.Lw2 = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).Lw2
+                Muro_P.tw2 = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).tw2
+                Muro_P.Direccion = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).Direccion
+                Muro_P.T_Muro = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).T_Muro
+                Muro_P.Porcentaje_Vb_X = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).Porcentaje_Vb_X
+                Muro_P.Porcentaje_Vb_Y = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).Porcentaje_Vb_Y
+                Muro_P.AreaX = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).AreaX
+                Muro_P.AreaY = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).AreaY
+                Muro_P.SismoX = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).SismoX
+                Muro_P.SismoY = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).SismoY
+                Muro_P.Esbeltez = Proyecto.Edificio.Hn / Math.Max(Muro_P.tw, Muro_P.tw2)
+                Esbeltez_Total += Muro_P.Esbeltez
+
+                If Muro_P.Direccion = "X" Then
+                    Muro_P.AR_X = Proyecto.Edificio.Ht / Muro_P.Lw
+                    If Muro_P.T_Muro = "Muro Rectangular" Then
+                        Muro_P.AR_Y = 0
+                    Else
+                        Muro_P.AR_Y = Proyecto.Edificio.Ht / Muro_P.Lw2
+                    End If
+                Else
+                    Muro_P.AR_Y = Proyecto.Edificio.Ht / Muro_P.Lw
+                    If Muro_P.T_Muro = "Muro Rectangular" Then
+                        Muro_P.AR_X = 0
+                    Else
+                        Muro_P.AR_X = Proyecto.Edificio.Ht / Muro_P.Lw2
+                    End If
+                End If
+
+                If Math.Max(Muro_P.AR_X, Muro_P.AR_Y) <= 3 Then
+                    Muro_P.Tipo_Muro = "Largo"
+                ElseIf 3 < Math.Max(Muro_P.AR_X, Muro_P.AR_Y) And Math.Max(Muro_P.AR_X, Muro_P.AR_Y) <= 9 Then
+                    Muro_P.Tipo_Muro = "Intermedio"
+                ElseIf Math.Max(Muro_P.AR_X, Muro_P.AR_Y) > 9 Then
+                    Muro_P.Tipo_Muro = "Corto"
+                End If
+
+                If Proyecto.Edificio.Op_Cargas = True Then
+                    Muro_P.CM = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).CM
+                    Muro_P.CD = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).CD
+
+                    Muro_P.ALR_CM = Proyecto.Edificio.ListaMuros(i).CM / (Proyecto.Edificio.fc * 1000 * (Muro_P.Lw * Muro_P.tw + Muro_P.Lw2 * Muro_P.tw2))
+                    Muro_P.ALR_CU = Proyecto.Edificio.ListaMuros(i).CD / (Proyecto.Edificio.fc * 1000 * (Muro_P.Lw * Muro_P.tw + Muro_P.Lw2 * Muro_P.tw2))
+                Else
+                    Muro_P.ALR_CM = ALR_ * 0.9
+                    Muro_P.ALR_CU = ALR_
+                End If
+
+                If Muro_P.ALR_CU <= 10 Then
+                    Muro_P.Nivel_Carga = "Bajo"
+                ElseIf 10 < Muro_P.ALR_CU And Muro_P.ALR_CU <= 20 Then
+                    Muro_P.Nivel_Carga = "Medio"
+                ElseIf Muro_P.ALR_CU > 20 Then
+                    Muro_P.Nivel_Carga = "Alto"
+                End If
+
+                If Muro_P.ALR_CU / 100 > Max_ALR Then
+                    Max_ALR = Muro_P.ALR_CU / 100
+                End If
+                Muro_P.Confinamiento = Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Muro_P.Name).Confinamiento
+
+                Proyecto.Edificio.ListaMuros_Protagonicos.Add(Muro_P)
+                Suma_X += Proyecto.Edificio.ListaMuros_Protagonicos(Proyecto.Edificio.ListaMuros_Protagonicos.Count - 1).SismoX
+                Suma_Y += Proyecto.Edificio.ListaMuros_Protagonicos(Proyecto.Edificio.ListaMuros_Protagonicos.Count - 1).SismoY
             End If
-            Suma += Proyecto.Edificio.ListaMuros_Protagonicos(Proyecto.Edificio.ListaMuros_Protagonicos.Count - 1).SismoX
         Next
 
         For i = 0 To Proyecto.Edificio.ListaMuros_Protagonicos.Count - 1
@@ -547,6 +584,10 @@ Public Class Form1
                 Num_Confinados += 1
             End If
         Next
+        Proyecto.Edificio.Muros_Largos = Num_Largos
+        Proyecto.Edificio.Muros_Intermedios = Num_Intermedios
+        Proyecto.Edificio.Muros_Cortos = Num_Cortos
+        Proyecto.Edificio.Muros_Confinados = Num_Confinados
 
         L_Grado.Visible = True
         TabControl1.SelectedIndex = 1
@@ -561,18 +602,21 @@ Public Class Form1
         P_4.Visible = True
         P_5.Visible = True
         P_6.Visible = True
+        P_0.Visible = True
+
+        Button6.Visible = True
+        Button7.Visible = True
+        Button8.Visible = True
+        Button9.Visible = True
 
         '------------------------- CÁLCULO DE PESO PARA LA DENSIDAD ------------------------
         If Math.Max(Proyecto.Edificio.Densidad_X, Proyecto.Edificio.Densidad_Y) < 2 Then
-            Proyecto.Edificio.Densidad = "Baja"
             Cal_Densidad = "Baja"
             Proyecto.Edificio.Calificaciones.Peso_Densidad = Proyecto.Edificio.Indicador.Densidad_Max
         ElseIf 2 <= Math.Max(Proyecto.Edificio.Densidad_X, Proyecto.Edificio.Densidad_Y) And Math.Max(Proyecto.Edificio.Densidad_X, Proyecto.Edificio.Densidad_Y) <= 3 Then
-            Proyecto.Edificio.Densidad = "Media"
             Cal_Densidad = "Media"
             Proyecto.Edificio.Calificaciones.Peso_Densidad = Proyecto.Edificio.Indicador.Densidad_Int
         ElseIf Math.Max(Proyecto.Edificio.Densidad_X, Proyecto.Edificio.Densidad_Y) > 3 Then
-            Proyecto.Edificio.Densidad = "Alta"
             Cal_Densidad = "Alta"
             Proyecto.Edificio.Calificaciones.Peso_Densidad = Proyecto.Edificio.Indicador.Densidad_Min
         End If
@@ -631,15 +675,12 @@ Public Class Form1
 
         '---------------------------- CÁLCULO DE PESO PARA EL ALR -----------------------------
         If Max_ALR <= 0.1 Then
-            Proyecto.Edificio.ALR = "Baja"
             Cal_ALR = "Menor al 10%"
             Proyecto.Edificio.Calificaciones.Peso_ALR = Proyecto.Edificio.Indicador.ALR_Min
         ElseIf 0.1 < Max_ALR And Max_ALR <= 0.2 Then
-            Proyecto.Edificio.ALR = "Media"
             Cal_ALR = "Entre 10 % y 20%"
             Proyecto.Edificio.Calificaciones.Peso_ALR = Proyecto.Edificio.Indicador.ALR_Int
         ElseIf Max_ALR > 0.2 Then
-            Proyecto.Edificio.ALR = "Alta"
             Cal_ALR = "Mayor al 20%"
             Proyecto.Edificio.Calificaciones.Peso_ALR = Proyecto.Edificio.Indicador.ALR_Max
         End If
@@ -718,6 +759,126 @@ Public Class Form1
             L_Grado.ForeColor = Color.Red
         End If
 
+
+        '----------------------- Grafico de la Densidad ---------------------
+        Grafico_Densidad.Series.Clear()
+        Dim Serie_DX As New Series
+        Grafico_Densidad.Series.Add(Serie_DX)
+        Serie_DX.ChartType = SeriesChartType.StackedColumn
+
+        Dim Serie_DY As New Series
+        Grafico_Densidad.Series.Add(Serie_DY)
+        Serie_DY.ChartType = SeriesChartType.StackedColumn
+
+        Serie_DX.LegendText = "X"
+        Serie_DY.LegendText = "Y"
+
+        If Proyecto.Edificio.Densidad_X < 2 Then
+            Serie_DX.Color = Color.Red
+        ElseIf 2 <= Proyecto.Edificio.Densidad_X < 3 Then
+            Serie_DX.Color = Color.Yellow
+        Else
+            Serie_DX.Color = Color.Green
+        End If
+        If Proyecto.Edificio.Densidad_Y < 2 Then
+            Serie_DY.Color = Color.Red
+        ElseIf 2 <= Proyecto.Edificio.Densidad_Y < 3 Then
+            Serie_DY.Color = Color.Yellow
+        Else
+            Serie_DY.Color = Color.Green
+        End If
+
+        Serie_DX.Points.AddXY("X", Proyecto.Edificio.Densidad_X)
+        Serie_DX.Points.AddXY("Y", 0)
+
+        Serie_DY.Points.AddXY("X", 0)
+        Serie_DY.Points.AddXY("Y", Proyecto.Edificio.Densidad_Y)
+
+        '----------------- Grafico de Cargas Axiales (ALR) ----------------
+        Dim List_B As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Nivel_Carga = "Bajo")
+        Dim List_M As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Nivel_Carga = "Medio")
+        Dim List_A As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Nivel_Carga = "Alto")
+
+        Grafico_CargaAxial.Series.Clear()
+        Dim Serie_CargaBaja As New Series
+        Grafico_CargaAxial.Series.Add(Serie_CargaBaja)
+        Serie_CargaBaja.ChartType = SeriesChartType.StackedColumn
+        Serie_CargaBaja.Color = Color.Green
+
+        Dim Serie_CargaMedia As New Series
+        Grafico_CargaAxial.Series.Add(Serie_CargaMedia)
+        Serie_CargaMedia.ChartType = SeriesChartType.StackedColumn
+        Serie_CargaMedia.Color = Color.Yellow
+
+        Dim Serie_CargaAlta As New Series
+        Grafico_CargaAxial.Series.Add(Serie_CargaAlta)
+        Serie_CargaAlta.ChartType = SeriesChartType.StackedColumn
+        Serie_CargaAlta.Color = Color.Red
+
+        Serie_CargaBaja.Points.AddXY("<10%", List_B.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
+        Serie_CargaBaja.Points.AddXY("10%-20%", 0)
+        Serie_CargaBaja.Points.AddXY(">20%", 0)
+
+        Serie_CargaMedia.Points.AddXY("<10%", 0)
+        Serie_CargaMedia.Points.AddXY("10%-20%", List_M.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
+        Serie_CargaMedia.Points.AddXY(">20%", 0)
+
+        Serie_CargaAlta.Points.AddXY("<10%", 0)
+        Serie_CargaAlta.Points.AddXY("10%-20%", 0)
+        Serie_CargaAlta.Points.AddXY(">20%", List_A.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
+
+        '------------------ Grafico del confinamiento ---------------------------------
+        Grafico_Confinamiento.Series.Clear()
+        Dim Lista_MurosConfinados As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Confinamiento = "Si")
+        Dim Serie_MConfinados As New Series
+        Grafico_Confinamiento.Series.Add(Serie_MConfinados)
+        Serie_MConfinados.ChartType = SeriesChartType.StackedColumn
+        Serie_MConfinados.Color = Color.Green
+
+        Dim Serie_MNoConfinados As New Series
+        Grafico_Confinamiento.Series.Add(Serie_MNoConfinados)
+        Serie_MNoConfinados.ChartType = SeriesChartType.StackedColumn
+        Serie_MNoConfinados.Color = Color.Red
+
+        Serie_MConfinados.Points.AddXY("Confinados", Lista_MurosConfinados.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
+        Serie_MConfinados.Points.AddXY("Sin Confinamiento", 0)
+
+        Serie_MNoConfinados.Points.AddXY("Confinados", 0)
+        Serie_MNoConfinados.Points.AddXY("Sin Confinamiento", (1 - Lista_MurosConfinados.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count) * 100)
+
+        '------------------------ Tipo de Muro ------------------------------
+        Grafico_Esbeltez.Series.Clear()
+        Dim Lista_MurosLargos As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Largo")
+        Dim Lista_MurosIntemedios As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Intermedio")
+        Dim Lista_MurosCortos As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Corto")
+
+        Dim Serie_MLargos As New Series
+        Grafico_Esbeltez.Series.Add(Serie_MLargos)
+        Serie_MLargos.ChartType = SeriesChartType.StackedColumn
+        Serie_MLargos.Color = Color.Green
+
+        Dim Serie_MIntermedios As New Series
+        Grafico_Esbeltez.Series.Add(Serie_MIntermedios)
+        Serie_MIntermedios.ChartType = SeriesChartType.StackedColumn
+        Serie_MIntermedios.Color = Color.Yellow
+
+        Dim Serie_MCortos As New Series
+        Grafico_Esbeltez.Series.Add(Serie_MCortos)
+        Serie_MCortos.ChartType = SeriesChartType.StackedColumn
+        Serie_MCortos.Color = Color.Red
+
+        Serie_MLargos.Points.AddXY("Largos (Ar <= 4)", Lista_MurosLargos.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
+        Serie_MLargos.Points.AddXY("Intermedios (4 < Ar <= 10)", 0)
+        Serie_MLargos.Points.AddXY("Cortos (10 < Ar)", 0)
+
+        Serie_MIntermedios.Points.AddXY("Largos (Ar <= 4)", 0)
+        Serie_MIntermedios.Points.AddXY("Intermedios (4 < Ar <= 10)", Lista_MurosIntemedios.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
+        Serie_MIntermedios.Points.AddXY("Cortos (10 < Ar)", 0)
+
+        Serie_MCortos.Points.AddXY("Largos (Ar <= 4)", 0)
+        Serie_MCortos.Points.AddXY("Intermedios (4 < Ar <= 10)", 0)
+        Serie_MCortos.Points.AddXY("Cortos (10 < Ar)", Lista_MurosCortos.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -759,7 +920,7 @@ Public Class Form1
             Form5.Tabla_PesoICE.Rows(6).Cells(0).Value = "Esbeltez"
             Form5.Tabla_PesoICE.Rows(7).Cells(0).Value = "Confinamiento"
 
-            If Proyecto.Edificio.Indicador.T_Mod <> "Si" Then
+            If Proyecto.Edificio.Indicador.T_Mod = False Then
                 Proyecto.Edificio.Indicador.Densidad_Max = 15
                 Proyecto.Edificio.Indicador.Num_Pisos_Max = 5
                 Proyecto.Edificio.Indicador.Factor_Forma_Max = 5
@@ -1054,10 +1215,89 @@ Public Class Form1
         Globo.InitialDelay = 100
         Globo.IsBalloon = False
     End Sub
-    Private Sub Direccion_MouseEnter(sender As Object, e As EventArgs) Handles Direccion.MouseEnter
-        AyudaGlobo(Tool_Info, Direccion, "(1) Corresponde a la dirección principal del Muro" + Environment.NewLine + "Debe coincidir con la dirección que tiene el muro en planta")
-        'Form3.Show()
 
+    Public Sub Direccion_MouseEnter(sender As Object, e As EventArgs) Handles Direccion.MouseEnter
+
+        AyudaGlobo(Tool_Info, Direccion, "(1) Corresponde a la dirección principal del Muro" + Environment.NewLine + "Esta debe coincidir con la dirección que tiene el muro en planta")
+
+        'Tool_Info.OwnerDraw = True
+        'Tool_Info.IsBalloon = False
+
+
+        'AddHandler Tool_Info.Draw, AddressOf Me.AyudaGlobo_Draw
+        'AddHandler Tool_Info.Popup, AddressOf Me.Ayuda_Globo_Popup
 
     End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Grafico_Densidad.Visible = True
+        Grafico_CargaAxial.Visible = False
+        Grafico_Confinamiento.Visible = False
+        Grafico_Esbeltez.Visible = False
+
+        Grafico_Densidad.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Grafico_Densidad.Visible = False
+        Grafico_CargaAxial.Visible = True
+        Grafico_Confinamiento.Visible = False
+        Grafico_Esbeltez.Visible = False
+
+        Grafico_CargaAxial.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        Grafico_Densidad.Visible = False
+        Grafico_CargaAxial.Visible = False
+        Grafico_Confinamiento.Visible = False
+        Grafico_Esbeltez.Visible = True
+
+        Grafico_Esbeltez.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        Grafico_Densidad.Visible = False
+        Grafico_CargaAxial.Visible = False
+        Grafico_Confinamiento.Visible = True
+        Grafico_Esbeltez.Visible = False
+
+        Grafico_Confinamiento.Dock = DockStyle.Fill
+    End Sub
+
+    Private Sub ExportarPDFToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportarPDFToolStripMenuItem.Click
+        Form9.Show()
+    End Sub
+
+    'Public Sub Ayuda_Globo_Popup(ByVal sender As Object, ByVal e As PopupEventArgs) Handles Tool_Info.Popup
+
+    '    Dim f As New Font("Tahoma", 9)
+    '    Try
+    '        e.ToolTipSize = TextRenderer.MeasureText(Tool_Info.GetToolTip(e.AssociatedControl), f)
+    '    Finally
+    '        f.Dispose()
+    '    End Try
+
+
+
+    'End Sub
+
+
+    'Public Sub AyudaGlobo_Draw(ByVal sender As Object, ByVal e As DrawToolTipEventArgs) Handles Tool_Info.Draw
+
+    '    MsgBox("OK")
+    '    e.DrawBackground()
+
+    '    e.Graphics.DrawLines(SystemPens.ControlLightLight, New Point() {New Point(0, e.Bounds.Height - 1), New Point(0, 0), New Point(e.Bounds.Width - 1, 0)})
+    '    e.Graphics.DrawLines(SystemPens.ControlDarkDark, New Point() {New Point(0, e.Bounds.Height - 1), New Point(e.Bounds.Width - 1, e.Bounds.Height - 1), New Point(e.Bounds.Width - 1, 0)})
+
+    '    Dim Parent As Control = e.AssociatedControl
+    '    Dim tooltipImage As Image = Parent.Tag
+
+
+    'End Sub
+
+
+
 End Class
+

@@ -80,7 +80,7 @@ Partial Class Form7
         Me.Op_1984.Location = New System.Drawing.Point(37, 354)
         Me.Op_1984.Name = "Op_1984"
         Me.Op_1984.Size = New System.Drawing.Size(70, 20)
-        Me.Op_1984.TabIndex = 7
+        Me.Op_1984.TabIndex = 6
         Me.Op_1984.TabStop = True
         Me.Op_1984.Text = "  < 1984"
         Me.Op_1984.UseVisualStyleBackColor = True
@@ -92,7 +92,7 @@ Partial Class Form7
         Me.Op_1998.Location = New System.Drawing.Point(127, 354)
         Me.Op_1998.Name = "Op_1998"
         Me.Op_1998.Size = New System.Drawing.Size(95, 20)
-        Me.Op_1998.TabIndex = 8
+        Me.Op_1998.TabIndex = 7
         Me.Op_1998.TabStop = True
         Me.Op_1998.Text = " 1984 - 1998"
         Me.Op_1998.UseVisualStyleBackColor = True
@@ -104,7 +104,7 @@ Partial Class Form7
         Me.Op_2010.Location = New System.Drawing.Point(244, 354)
         Me.Op_2010.Name = "Op_2010"
         Me.Op_2010.Size = New System.Drawing.Size(95, 20)
-        Me.Op_2010.TabIndex = 9
+        Me.Op_2010.TabIndex = 8
         Me.Op_2010.TabStop = True
         Me.Op_2010.Text = " 1998 - 2010"
         Me.Op_2010.UseVisualStyleBackColor = True
@@ -116,7 +116,7 @@ Partial Class Form7
         Me.Op_2020.Location = New System.Drawing.Point(356, 354)
         Me.Op_2020.Name = "Op_2020"
         Me.Op_2020.Size = New System.Drawing.Size(67, 20)
-        Me.Op_2020.TabIndex = 10
+        Me.Op_2020.TabIndex = 9
         Me.Op_2020.TabStop = True
         Me.Op_2020.Text = " > 2010"
         Me.Op_2020.UseVisualStyleBackColor = True
@@ -128,7 +128,7 @@ Partial Class Form7
         Me.T_NameProjet.Multiline = True
         Me.T_NameProjet.Name = "T_NameProjet"
         Me.T_NameProjet.Size = New System.Drawing.Size(386, 25)
-        Me.T_NameProjet.TabIndex = 11
+        Me.T_NameProjet.TabIndex = 1
         '
         'Button1
         '
@@ -136,7 +136,7 @@ Partial Class Form7
         Me.Button1.Location = New System.Drawing.Point(176, 449)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(120, 30)
-        Me.Button1.TabIndex = 18
+        Me.Button1.TabIndex = 10
         Me.Button1.Text = "Ok"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -146,7 +146,7 @@ Partial Class Form7
         Me.Button2.Location = New System.Drawing.Point(37, 285)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(171, 28)
-        Me.Button2.TabIndex = 19
+        Me.Button2.TabIndex = 5
         Me.Button2.Text = "Insertar"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -167,7 +167,7 @@ Partial Class Form7
         Me.T_Direction.Multiline = True
         Me.T_Direction.Name = "T_Direction"
         Me.T_Direction.Size = New System.Drawing.Size(386, 25)
-        Me.T_Direction.TabIndex = 22
+        Me.T_Direction.TabIndex = 2
         '
         'Label9
         '
@@ -186,7 +186,7 @@ Partial Class Form7
         Me.T_City.Multiline = True
         Me.T_City.Name = "T_City"
         Me.T_City.Size = New System.Drawing.Size(386, 25)
-        Me.T_City.TabIndex = 24
+        Me.T_City.TabIndex = 3
         '
         'Label3
         '
@@ -205,7 +205,7 @@ Partial Class Form7
         Me.T_Department.Multiline = True
         Me.T_Department.Name = "T_Department"
         Me.T_Department.Size = New System.Drawing.Size(386, 25)
-        Me.T_Department.TabIndex = 26
+        Me.T_Department.TabIndex = 4
         '
         'Label4
         '

@@ -4,6 +4,7 @@
         Dialog.Filter = "Imagenes |*.jpg"
         Dialog.Title = "Insertar Imagen"
         Dialog.ShowDialog()
+        Form1.Proyecto.Ruta_Imagen = Dialog.FileName
 
         If Dialog.FileName <> String.Empty Then
             Form6.P_Imagen.ImageLocation = Dialog.FileName

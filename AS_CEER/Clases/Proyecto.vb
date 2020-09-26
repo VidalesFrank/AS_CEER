@@ -9,7 +9,7 @@ Public Class Proyecto
     Public Imagen As PictureBox
 
     Public Edificio As New Edificio
-    Public Ruta As String
+    Public Ruta_Imagen As String
 
 
 

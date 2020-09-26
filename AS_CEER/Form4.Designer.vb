@@ -22,29 +22,63 @@ Partial Class Form4
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form4))
+        Me.Imagen_Semaforo_Rojo = New System.Windows.Forms.PictureBox()
+        Me.Imagen_Semaforo_Amarillo = New System.Windows.Forms.PictureBox()
+        Me.Imagen_Semaforo_Verde = New System.Windows.Forms.PictureBox()
+        CType(Me.Imagen_Semaforo_Rojo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Imagen_Semaforo_Amarillo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Imagen_Semaforo_Verde, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Button1
+        'Imagen_Semaforo_Rojo
         '
-        Me.Button1.Location = New System.Drawing.Point(462, 224)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Imagen_Semaforo_Rojo.Image = CType(resources.GetObject("Imagen_Semaforo_Rojo.Image"), System.Drawing.Image)
+        Me.Imagen_Semaforo_Rojo.Location = New System.Drawing.Point(12, 36)
+        Me.Imagen_Semaforo_Rojo.Name = "Imagen_Semaforo_Rojo"
+        Me.Imagen_Semaforo_Rojo.Size = New System.Drawing.Size(278, 348)
+        Me.Imagen_Semaforo_Rojo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Imagen_Semaforo_Rojo.TabIndex = 0
+        Me.Imagen_Semaforo_Rojo.TabStop = False
+        '
+        'Imagen_Semaforo_Amarillo
+        '
+        Me.Imagen_Semaforo_Amarillo.Image = CType(resources.GetObject("Imagen_Semaforo_Amarillo.Image"), System.Drawing.Image)
+        Me.Imagen_Semaforo_Amarillo.Location = New System.Drawing.Point(324, 36)
+        Me.Imagen_Semaforo_Amarillo.Name = "Imagen_Semaforo_Amarillo"
+        Me.Imagen_Semaforo_Amarillo.Size = New System.Drawing.Size(282, 348)
+        Me.Imagen_Semaforo_Amarillo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Imagen_Semaforo_Amarillo.TabIndex = 1
+        Me.Imagen_Semaforo_Amarillo.TabStop = False
+        '
+        'Imagen_Semaforo_Verde
+        '
+        Me.Imagen_Semaforo_Verde.Image = CType(resources.GetObject("Imagen_Semaforo_Verde.Image"), System.Drawing.Image)
+        Me.Imagen_Semaforo_Verde.Location = New System.Drawing.Point(638, 23)
+        Me.Imagen_Semaforo_Verde.Name = "Imagen_Semaforo_Verde"
+        Me.Imagen_Semaforo_Verde.Size = New System.Drawing.Size(277, 377)
+        Me.Imagen_Semaforo_Verde.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Imagen_Semaforo_Verde.TabIndex = 2
+        Me.Imagen_Semaforo_Verde.TabStop = False
         '
         'Form4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(1082, 412)
+        Me.Controls.Add(Me.Imagen_Semaforo_Verde)
+        Me.Controls.Add(Me.Imagen_Semaforo_Amarillo)
+        Me.Controls.Add(Me.Imagen_Semaforo_Rojo)
         Me.Name = "Form4"
         Me.Text = "Form4"
+        CType(Me.Imagen_Semaforo_Rojo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Imagen_Semaforo_Amarillo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Imagen_Semaforo_Verde, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Imagen_Semaforo_Rojo As PictureBox
+    Friend WithEvents Imagen_Semaforo_Amarillo As PictureBox
+    Friend WithEvents Imagen_Semaforo_Verde As PictureBox
 End Class

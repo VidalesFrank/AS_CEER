@@ -29,6 +29,20 @@ Partial Class Form1
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -94,6 +108,15 @@ Partial Class Form1
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Grafico_Esbeltez = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Grafico_Confinamiento = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Grafico_CargaAxial = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Grafico_Densidad = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.P_6 = New System.Windows.Forms.PictureBox()
         Me.L_FF = New System.Windows.Forms.Label()
         Me.P_5 = New System.Windows.Forms.PictureBox()
@@ -134,6 +157,7 @@ Partial Class Form1
         Me.NuevoProyectoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AbrirProyectoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GuardarProyectoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExportarPDFToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ÍndiceDeCalificaciónEstructuralICEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -152,6 +176,11 @@ Partial Class Form1
         Me.GroupBox2.SuspendLayout()
         CType(Me.Tabla_Datos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        CType(Me.Grafico_Esbeltez, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Grafico_Confinamiento, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Grafico_CargaAxial, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Grafico_Densidad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.P_6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.P_5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.P_4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -598,6 +627,11 @@ Partial Class Form1
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage2.Controls.Add(Me.Panel3)
+        Me.TabPage2.Controls.Add(Me.Button9)
+        Me.TabPage2.Controls.Add(Me.Button8)
+        Me.TabPage2.Controls.Add(Me.Button7)
+        Me.TabPage2.Controls.Add(Me.Button6)
         Me.TabPage2.Controls.Add(Me.P_6)
         Me.TabPage2.Controls.Add(Me.L_FF)
         Me.TabPage2.Controls.Add(Me.P_5)
@@ -622,6 +656,164 @@ Partial Class Form1
         Me.TabPage2.Controls.Add(Me.Tabla_Resultados)
         resources.ApplyResources(Me.TabPage2, "TabPage2")
         Me.TabPage2.Name = "TabPage2"
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.Grafico_Esbeltez)
+        Me.Panel3.Controls.Add(Me.Grafico_Confinamiento)
+        Me.Panel3.Controls.Add(Me.Grafico_CargaAxial)
+        Me.Panel3.Controls.Add(Me.Grafico_Densidad)
+        resources.ApplyResources(Me.Panel3, "Panel3")
+        Me.Panel3.Name = "Panel3"
+        '
+        'Grafico_Esbeltez
+        '
+        ChartArea1.AxisX.MajorGrid.Enabled = False
+        ChartArea1.AxisX.Title = "Tipo de Muro"
+        ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray
+        ChartArea1.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot
+        ChartArea1.AxisY.Maximum = 100.0R
+        ChartArea1.AxisY.Minimum = 0R
+        ChartArea1.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270
+        ChartArea1.AxisY.Title = "Porcentaje de Muros (%)"
+        ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.Name = "ChartArea1"
+        Me.Grafico_Esbeltez.ChartAreas.Add(ChartArea1)
+        resources.ApplyResources(Me.Grafico_Esbeltez, "Grafico_Esbeltez")
+        Legend1.Enabled = False
+        Legend1.Name = "Legend1"
+        Me.Grafico_Esbeltez.Legends.Add(Legend1)
+        Me.Grafico_Esbeltez.Name = "Grafico_Esbeltez"
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Grafico_Esbeltez.Series.Add(Series1)
+        '
+        'Grafico_Confinamiento
+        '
+        ChartArea2.AxisX.MajorGrid.Enabled = False
+        ChartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray
+        ChartArea2.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot
+        ChartArea2.AxisY.Maximum = 100.0R
+        ChartArea2.AxisY.Minimum = 0R
+        ChartArea2.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270
+        ChartArea2.AxisY.Title = "Porcentaje de Muros (%)"
+        ChartArea2.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea2.Name = "ChartArea1"
+        Me.Grafico_Confinamiento.ChartAreas.Add(ChartArea2)
+        resources.ApplyResources(Me.Grafico_Confinamiento, "Grafico_Confinamiento")
+        Legend2.Enabled = False
+        Legend2.Name = "Legend1"
+        Me.Grafico_Confinamiento.Legends.Add(Legend2)
+        Me.Grafico_Confinamiento.Name = "Grafico_Confinamiento"
+        Series2.ChartArea = "ChartArea1"
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Me.Grafico_Confinamiento.Series.Add(Series2)
+        '
+        'Grafico_CargaAxial
+        '
+        ChartArea3.AxisX.MajorGrid.Enabled = False
+        ChartArea3.AxisX.Title = "Relación de carga axial (ALR=Pu/f'c*Ag)"
+        ChartArea3.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray
+        ChartArea3.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot
+        ChartArea3.AxisY.Maximum = 100.0R
+        ChartArea3.AxisY.Minimum = 0R
+        ChartArea3.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270
+        ChartArea3.AxisY.Title = "Porcentaje de Muros (%)"
+        ChartArea3.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea3.Name = "ChartArea1"
+        Me.Grafico_CargaAxial.ChartAreas.Add(ChartArea3)
+        resources.ApplyResources(Me.Grafico_CargaAxial, "Grafico_CargaAxial")
+        Legend3.Enabled = False
+        Legend3.Name = "Legend1"
+        Me.Grafico_CargaAxial.Legends.Add(Legend3)
+        Me.Grafico_CargaAxial.Name = "Grafico_CargaAxial"
+        Series3.ChartArea = "ChartArea1"
+        Series3.Legend = "Legend1"
+        Series3.Name = "Series1"
+        Me.Grafico_CargaAxial.Series.Add(Series3)
+        '
+        'Grafico_Densidad
+        '
+        ChartArea4.AxisX.MajorGrid.Enabled = False
+        ChartArea4.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot
+        ChartArea4.AxisX.Title = "Dirección"
+        ChartArea4.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea4.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[False]
+        ChartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray
+        ChartArea4.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot
+        ChartArea4.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270
+        ChartArea4.AxisY.Title = "Densidad (%)"
+        ChartArea4.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea4.Name = "ChartArea1"
+        Me.Grafico_Densidad.ChartAreas.Add(ChartArea4)
+        resources.ApplyResources(Me.Grafico_Densidad, "Grafico_Densidad")
+        Legend4.Enabled = False
+        Legend4.Name = "Legend1"
+        Me.Grafico_Densidad.Legends.Add(Legend4)
+        Me.Grafico_Densidad.Name = "Grafico_Densidad"
+        Series4.ChartArea = "ChartArea1"
+        Series4.Color = System.Drawing.Color.Red
+        Series4.CustomProperties = "DrawingStyle=LightToDark"
+        Series4.Legend = "Legend1"
+        Series4.LegendText = "2"
+        Series4.Name = "<2%"
+        Series5.ChartArea = "ChartArea1"
+        Series5.Color = System.Drawing.Color.Yellow
+        Series5.CustomProperties = "DrawingStyle=LightToDark"
+        Series5.Legend = "Legend1"
+        Series5.Name = "2%-3%"
+        Series6.ChartArea = "ChartArea1"
+        Series6.Color = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Series6.CustomProperties = "DrawingStyle=LightToDark"
+        Series6.Legend = "Legend1"
+        Series6.Name = ">3%"
+        Me.Grafico_Densidad.Series.Add(Series4)
+        Me.Grafico_Densidad.Series.Add(Series5)
+        Me.Grafico_Densidad.Series.Add(Series6)
+        '
+        'Button9
+        '
+        resources.ApplyResources(Me.Button9, "Button9")
+        Me.Button9.BackColor = System.Drawing.SystemColors.Control
+        Me.Button9.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control
+        Me.Button9.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Button9.Name = "Button9"
+        Me.Button9.UseVisualStyleBackColor = False
+        '
+        'Button8
+        '
+        resources.ApplyResources(Me.Button8, "Button8")
+        Me.Button8.BackColor = System.Drawing.SystemColors.Control
+        Me.Button8.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control
+        Me.Button8.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Button8.Name = "Button8"
+        Me.Button8.UseVisualStyleBackColor = False
+        '
+        'Button7
+        '
+        resources.ApplyResources(Me.Button7, "Button7")
+        Me.Button7.BackColor = System.Drawing.SystemColors.Control
+        Me.Button7.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control
+        Me.Button7.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Button7.Name = "Button7"
+        Me.Button7.UseVisualStyleBackColor = False
+        '
+        'Button6
+        '
+        resources.ApplyResources(Me.Button6, "Button6")
+        Me.Button6.BackColor = System.Drawing.SystemColors.Control
+        Me.Button6.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control
+        Me.Button6.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Button6.Name = "Button6"
+        Me.Button6.UseVisualStyleBackColor = False
         '
         'P_6
         '
@@ -874,7 +1066,7 @@ Partial Class Form1
         '
         'ArchivoToolStripMenuItem
         '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoProyectoToolStripMenuItem, Me.AbrirProyectoToolStripMenuItem, Me.GuardarProyectoToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoProyectoToolStripMenuItem, Me.AbrirProyectoToolStripMenuItem, Me.GuardarProyectoToolStripMenuItem, Me.ExportarPDFToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
         resources.ApplyResources(Me.ArchivoToolStripMenuItem, "ArchivoToolStripMenuItem")
         '
@@ -892,6 +1084,11 @@ Partial Class Form1
         '
         Me.GuardarProyectoToolStripMenuItem.Name = "GuardarProyectoToolStripMenuItem"
         resources.ApplyResources(Me.GuardarProyectoToolStripMenuItem, "GuardarProyectoToolStripMenuItem")
+        '
+        'ExportarPDFToolStripMenuItem
+        '
+        Me.ExportarPDFToolStripMenuItem.Name = "ExportarPDFToolStripMenuItem"
+        resources.ApplyResources(Me.ExportarPDFToolStripMenuItem, "ExportarPDFToolStripMenuItem")
         '
         'SalirToolStripMenuItem
         '
@@ -948,6 +1145,11 @@ Partial Class Form1
         CType(Me.Tabla_Datos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        CType(Me.Grafico_Esbeltez, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Grafico_Confinamiento, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Grafico_CargaAxial, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Grafico_Densidad, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.P_6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.P_5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.P_4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -963,8 +1165,6 @@ Partial Class Form1
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label3 As Label
     Friend WithEvents T_tw As TextBox
@@ -984,7 +1184,6 @@ Partial Class Form1
     Friend WithEvents T_Lw2 As TextBox
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents Label15 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Label13 As Label
@@ -1072,4 +1271,16 @@ Partial Class Form1
     Friend WithEvents AcercaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Op_fc_Medido As RadioButton
     Friend WithEvents Op_fc_Nominal As RadioButton
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Grafico_CargaAxial As DataVisualization.Charting.Chart
+    Friend WithEvents Grafico_Confinamiento As DataVisualization.Charting.Chart
+    Friend WithEvents Grafico_Esbeltez As DataVisualization.Charting.Chart
+    Friend WithEvents Grafico_Densidad As DataVisualization.Charting.Chart
+    Friend WithEvents Button9 As Button
+    Friend WithEvents Button8 As Button
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents ExportarPDFToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -49,7 +49,7 @@
 
             Catch ex As Exception
             Finally
-                Form1.Proyecto.Edificio.Indicador.T_Mod = "Si"
+                Form1.Proyecto.Edificio.Indicador.T_Mod = True
                 Form1.Proyecto.Edificio.Porcentaje_FSMuros = Convert.ToSingle(T_PFS.Text)
                 Me.WindowState = FormWindowState.Minimized
             End Try
