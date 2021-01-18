@@ -20,10 +20,13 @@ Public Class Edificio
     Public Muros_Intermedios As Integer
     Public Muros_Cortos As Integer
 
+    Public Solo_MRectangulares As Boolean
+
     Public Muros_Confinados As Integer
 
     Public Op_Cargas As Boolean = False
-    Public Porcentaje_FSMuros As Single = Convert.ToSingle(Form5.T_PFS.Text)
+    Public Porcentaje_FSMuros As Single
+    Public Op_Porcentaje_Fuerzas As Boolean
 
     Public Calificaciones As New Calificacion
     Public Indicador As New Indicadores
@@ -58,30 +61,30 @@ Public Class Edificio
 
         Public T_Mod As Boolean = False
 
-        Public Densidad_Max As Integer = 5
-        Public Densidad_Int As Integer = 10
-        Public Densidad_Min As Integer = 5
-        Public Num_Pisos_Max As Integer = 5
-        Public Num_Pisos_Int As Integer = 2
-        Public Num_Pisos_Min As Integer = 0
-        Public Ar_Max As Integer = 20
-        Public Ar_Int As Integer = 10
-        Public Ar_Min As Integer = 0
-        Public ALR_Max As Integer = 20
-        Public ALR_Int As Integer = 10
-        Public ALR_Min As Integer = 5
-        Public Esbeltez_Max As Integer = 15
-        Public Esbeltez_Int As Integer = 10
-        Public Esbeltez_Min As Integer = 0
-        Public Factor_Forma_Max As Integer = 5
-        Public Factor_Forma_Int As Integer = 2
-        Public Factor_Forma_Min As Integer = 0
-        Public Amenaza_Max As Integer = 10
-        Public Amenaza_Int As Integer = 5
-        Public Amenaza_Min As Integer = 0
-        Public Confinamiento_Max As Integer = 10
-        Public Confinamiento_Int As Integer = 5
-        Public Confinamiento_Min As Integer = 0
+        Public Densidad_Max As Integer
+        Public Densidad_Int As Integer
+        Public Densidad_Min As Integer
+        Public Num_Pisos_Max As Integer
+        Public Num_Pisos_Int As Integer
+        Public Num_Pisos_Min As Integer
+        Public Ar_Max As Integer
+        Public Ar_Int As Integer
+        Public Ar_Min As Integer
+        Public ALR_Max As Integer
+        Public ALR_Int As Integer
+        Public ALR_Min As Integer
+        Public Esbeltez_Max As Integer
+        Public Esbeltez_Int As Integer
+        Public Esbeltez_Min As Integer
+        Public Factor_Forma_Max As Integer
+        Public Factor_Forma_Int As Integer
+        Public Factor_Forma_Min As Integer
+        Public Amenaza_Max As Integer
+        Public Amenaza_Int As Integer
+        Public Amenaza_Min As Integer
+        Public Confinamiento_Max As Integer
+        Public Confinamiento_Int As Integer
+        Public Confinamiento_Min As Integer
     End Class
 End Class
 

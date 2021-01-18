@@ -6,11 +6,10 @@ Public Class Proyecto
     Public Ciudad As String
     Public Departamento As String
     Public Año_Construccion As String
-    Public Imagen As PictureBox
+    Public Imagen As Object
 
     Public Edificio As New Edificio
     Public Ruta_Imagen As String
-
-
+    Public Ruta As String
 
 End Class

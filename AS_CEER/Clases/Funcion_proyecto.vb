@@ -1,6 +1,5 @@
 ﻿Imports System.IO
 Imports System.Runtime.Serialization.Formatters.Binary
-
 Public Class Funciones_Programa
 
     Public Shared Sub Serializar(ByVal Ruta As String, ByVal Objeto As Object)
@@ -26,10 +25,5 @@ Public Class Funciones_Programa
         Return CType(Objeto1, T)
 
     End Function
-
-
-
-
-
 
 End Class
