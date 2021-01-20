@@ -1,24 +1,5 @@
 ﻿Imports System.Data.OleDb
-Public Class Form1
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        'Tabla_Cargas.Columns.Clear()
-        Dim Open As New OpenFileDialog
-        'Open.Filter = "Archivos Excel(*.xls;*.xlsx)|*.xls;*xlsx|Todos los archivos(*.*)|*.*"
-        'Open.Title = "Abrir Archivo"
-        'Open.ShowDialog()
-
-        With Open
-            .Title = "Seleccionar archivos"
-            .Filter = "Archivos Excel(*.xls;*.xlsx)|*.xls;*xlsx|Todos los archivos(*.*)|*.*"
-            .Multiselect = False
-            .InitialDirectory = My.Computer.FileSystem.SpecialDirectories.Desktop
-            If .ShowDialog = Windows.Forms.DialogResult.OK Then
-                Traer(.FileName, Tabla_Cargas)
-            End If
-        End With
-
-
-    End Sub
+Public Class Form_08_DimMuros
 
     Sub Traer(ByRef path As String, ByVal Datagrid As DataGridView)
         Try
@@ -43,8 +24,26 @@ Public Class Form1
             Me.Cursor = Cursors.Arrow
         End Try
     End Sub
+    Private Sub TraerDeExcelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TraerDeExcelToolStripMenuItem.Click
+        'Tabla_Cargas.Columns.Clear()
+        Dim Open As New OpenFileDialog
+        'Open.Filter = "Archivos Excel(*.xls;*.xlsx)|*.xls;*xlsx|Todos los archivos(*.*)|*.*"
+        'Open.Title = "Abrir Archivo"
+        'Open.ShowDialog()
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        With Open
+            .Title = "Seleccionar archivos"
+            .Filter = "Archivos Excel(*.xls;*.xlsx)|*.xls;*xlsx|Todos los archivos(*.*)|*.*"
+            .Multiselect = False
+            .InitialDirectory = My.Computer.FileSystem.SpecialDirectories.Desktop
+            If .ShowDialog = Windows.Forms.DialogResult.OK Then
+                Traer(.FileName, Tabla_Cargas)
+            End If
+        End With
+
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         For i = 0 To Tabla_Cargas.Rows.Count - 2
             Form_00_Principal.T_Name.Text = Tabla_Cargas.Rows(i).Cells(0).Value
             Form_00_Principal.Direccion.Text = Tabla_Cargas.Rows(i).Cells(4).Value
@@ -53,8 +52,6 @@ Public Class Form1
             Form_00_Principal.T_Cantidad.Text = Tabla_Cargas.Rows(i).Cells(3).Value
             Form_00_Principal.Button1.PerformClick()
         Next
-
-
 
     End Sub
 End Class

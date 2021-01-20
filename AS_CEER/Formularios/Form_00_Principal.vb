@@ -1848,8 +1848,8 @@ Public Class Form_00_Principal
         Panel_Resultados.Dock = DockStyle.Fill
     End Sub
 
-    Private Sub MurosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MurosToolStripMenuItem.Click
-        Form1.Show()
+    Private Sub InsertarMurosDesdeExcelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InsertarMurosDesdeExcelToolStripMenuItem.Click
+        Form_08_DimMuros.Show()
     End Sub
 End Class
 

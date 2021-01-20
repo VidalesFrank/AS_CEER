@@ -128,10 +128,10 @@
     <Compile Include="Clases\Proyecto.vb" />
     <Compile Include="Clases\Edificio.vb" />
     <Compile Include="Clases\Muro.vb" />
-    <Compile Include="Formularios\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Formularios\Form_08_DimMuros.Designer.vb">
+      <DependentUpon>Form_08_DimMuros.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form1.vb">
+    <Compile Include="Formularios\Form_08_DimMuros.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Form_00_Principal.vb">
@@ -207,8 +207,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Formularios\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\Form_08_DimMuros.resx">
+      <DependentUpon>Form_08_DimMuros.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form_00_Principal.es-CO.resx">
       <DependentUpon>Form_00_Principal.vb</DependentUpon>

@@ -134,7 +134,7 @@ Partial Class Form_02_PlantaEstructura
         '
         'Button1
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("SansSerif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(349, 14)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 30)
@@ -142,7 +142,7 @@ Partial Class Form_02_PlantaEstructura
         Me.Button1.Text = "OK"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Form3
+        'Form_02_PlantaEstructura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -150,7 +150,7 @@ Partial Class Form_02_PlantaEstructura
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.MaximizeBox = False
-        Me.Name = "Form3"
+        Me.Name = "Form_02_PlantaEstructura"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Dimensiones de la Estructura"
         Me.Panel1.ResumeLayout(False)

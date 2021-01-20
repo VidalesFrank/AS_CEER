@@ -78,12 +78,6 @@ Public Class Form_01_Cargas
     Public Function Importar_Datos_de_Excel(ByRef path As String, ByVal Datagrid As DataGridView)
         Try
             Datagrid.Rows.Clear()
-            Dim excel = Process.GetProcessesByName("Cargas en Muros")
-            If excel.Length > 0 Then
-                For i = excel.Length - 1 To 0 Step -1
-                    excel(i).Close()
-                Next
-            End If
 
             Me.Cursor = Cursors.WaitCursor
             Dim Ds As New DataSet
@@ -91,20 +85,53 @@ Public Class Form_01_Cargas
             Dim Dt As New DataTable
             Dim stConexion As String = ("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & (path & ";Extended Properties='Excel 12.0 Xml;HDR=YES;IMEX=1;';"))
             Dim cnConex As New OleDbConnection(stConexion)
+
+            Dim Cmd As New OleDbCommand("Select * From [Cargas en Muros$]", cnConex)
             cnConex.Open()
-            Dim Cmd As New OleDbCommand("Select * From [Cargas en Muros$]")
+
             Cmd.Connection = cnConex
             Da.SelectCommand = Cmd
-            Da.Fill(Ds)
-            Dt = Ds.Tables(0)
+            Da.Fill(Ds, "MyData")
+
+            Dt = LimpiarFilas(Ds.Tables("MyData"))
+
             Datagrid.Columns.Clear()
             Datagrid.DataSource = Dt
             cnConex.Close()
+
+            Dim excel As New Excel.Application
+            Dim Wbook As Excel.Workbook = excel.Workbooks.Open(path)
+            Wbook.Saved = False
+            Wbook.Close()
+            'excel.Quit()
+            excel.Workbooks.Close()
+
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error")
         Finally
             Me.Cursor = Cursors.Arrow
         End Try
         Return True
+    End Function
+
+    Public Function LimpiarFilas(ByVal tb As DataTable) As DataTable
+
+        Dim columnas As Integer = tb.Columns.Count
+
+        For Each fila As DataRow In tb.Rows
+            Dim vacios As Integer = 0
+            For i As Integer = 0 To columnas - 1
+                If String.IsNullOrEmpty(Convert.ToString(fila(i))) Then
+                    vacios += 1
+                End If
+            Next
+
+            If vacios = columnas Then
+                fila.Delete()
+            End If
+        Next
+
+        Return tb
+
     End Function
 End Class

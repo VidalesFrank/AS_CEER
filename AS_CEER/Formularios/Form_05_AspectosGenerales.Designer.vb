@@ -46,30 +46,30 @@ Partial Class Form_05_AspectosGenerales
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Georgia", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(31, 17)
+        Me.Label1.Font = New System.Drawing.Font("SansSerif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(42, 17)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(418, 23)
+        Me.Label1.Size = New System.Drawing.Size(398, 22)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "ASPECTOS GENERALES DEL PROYECTO"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Georgia", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Romantic", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(34, 24)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(71, 18)
+        Me.Label2.Size = New System.Drawing.Size(64, 18)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Nombre"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Georgia", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Romantic", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(34, 333)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(165, 18)
+        Me.Label7.Size = New System.Drawing.Size(156, 18)
         Me.Label7.TabIndex = 6
         Me.Label7.Text = "Año de Construcción"
         '
@@ -132,7 +132,7 @@ Partial Class Form_05_AspectosGenerales
         '
         'Button1
         '
-        Me.Button1.Font = New System.Drawing.Font("Georgia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("SansSerif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(176, 449)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(120, 30)
@@ -142,7 +142,7 @@ Partial Class Form_05_AspectosGenerales
         '
         'Button2
         '
-        Me.Button2.Font = New System.Drawing.Font("Georgia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Font = New System.Drawing.Font("SansSerif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Location = New System.Drawing.Point(34, 285)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(171, 28)
@@ -153,10 +153,10 @@ Partial Class Form_05_AspectosGenerales
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Georgia", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Romantic", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(34, 266)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(165, 18)
+        Me.Label6.Size = New System.Drawing.Size(152, 18)
         Me.Label6.TabIndex = 20
         Me.Label6.Text = "Imagen del Proyecto"
         '
@@ -172,10 +172,10 @@ Partial Class Form_05_AspectosGenerales
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Georgia", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Romantic", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(34, 85)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(81, 18)
+        Me.Label9.Size = New System.Drawing.Size(76, 18)
         Me.Label9.TabIndex = 21
         Me.Label9.Text = "Dirección"
         '
@@ -191,10 +191,10 @@ Partial Class Form_05_AspectosGenerales
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Georgia", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Romantic", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(34, 144)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(147, 18)
+        Me.Label3.Size = New System.Drawing.Size(131, 18)
         Me.Label3.TabIndex = 23
         Me.Label3.Text = "Ciudad/Municipio"
         '
@@ -210,10 +210,10 @@ Partial Class Form_05_AspectosGenerales
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Georgia", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Romantic", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(34, 205)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(118, 18)
+        Me.Label4.Size = New System.Drawing.Size(108, 18)
         Me.Label4.TabIndex = 25
         Me.Label4.Text = "Departamento"
         '
@@ -240,7 +240,7 @@ Partial Class Form_05_AspectosGenerales
         Me.GroupBox1.TabIndex = 27
         Me.GroupBox1.TabStop = False
         '
-        'Form7
+        'Form_05_AspectosGenerales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -248,7 +248,7 @@ Partial Class Form_05_AspectosGenerales
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "Form7"
+        Me.Name = "Form_05_AspectosGenerales"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Aspectos Generales"
         Me.GroupBox1.ResumeLayout(False)

@@ -37,7 +37,7 @@ Partial Class Form_04_ImagenProyecto
         '
         'Button1
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("SansSerif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(282, 332)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(120, 30)
@@ -45,14 +45,14 @@ Partial Class Form_04_ImagenProyecto
         Me.Button1.Text = "Ok"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Form_04_ImagenEstructura
+        'Form_04_ImagenProyecto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(685, 380)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.P_Imagen)
-        Me.Name = "Form_04_ImagenEstructura"
+        Me.Name = "Form_04_ImagenProyecto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Proyecto"
         CType(Me.P_Imagen, System.ComponentModel.ISupportInitialize).EndInit()

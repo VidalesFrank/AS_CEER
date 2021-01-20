@@ -6,7 +6,7 @@ Public Class Proyecto
     Public Ciudad As String
     Public Departamento As String
     Public Año_Construccion As String
-    Public Imagen As Object
+    Public Imagen As Bitmap
 
     Public Edificio As New Edificio
     Public Ruta_Imagen As String
