@@ -25,6 +25,7 @@ Partial Class Form_01_Cargas
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_01_Cargas))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Tabla_Cargas = New System.Windows.Forms.DataGridView()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -136,7 +137,7 @@ Partial Class Form_01_Cargas
         Me.EnviarAExcelToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(87, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.EnviarAExcelToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.EnviarAExcelToolStripMenuItem.Name = "EnviarAExcelToolStripMenuItem"
-        Me.EnviarAExcelToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.EnviarAExcelToolStripMenuItem.Size = New System.Drawing.Size(160, 24)
         Me.EnviarAExcelToolStripMenuItem.Text = "Enviar a Excel"
         '
         'TraerDeExcelToolStripMenuItem
@@ -144,7 +145,7 @@ Partial Class Form_01_Cargas
         Me.TraerDeExcelToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(87, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.TraerDeExcelToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.TraerDeExcelToolStripMenuItem.Name = "TraerDeExcelToolStripMenuItem"
-        Me.TraerDeExcelToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.TraerDeExcelToolStripMenuItem.Size = New System.Drawing.Size(160, 24)
         Me.TraerDeExcelToolStripMenuItem.Text = "Traer de Excel"
         '
         'Panel2
@@ -176,6 +177,7 @@ Partial Class Form_01_Cargas
         Me.ClientSize = New System.Drawing.Size(532, 656)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form_01_Cargas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

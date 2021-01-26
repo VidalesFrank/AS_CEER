@@ -5,7 +5,7 @@ Public Class Proyecto
     Public Direccion As String
     Public Ciudad As String
     Public Departamento As String
-    Public Año_Construccion As String
+    Public Año_Construccion As Integer
     Public Imagen As Bitmap
 
     Public Edificio As New Edificio

@@ -22,6 +22,7 @@ Partial Class Form_04_ImagenProyecto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_04_ImagenProyecto))
         Me.P_Imagen = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.P_Imagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,6 +53,7 @@ Partial Class Form_04_ImagenProyecto
         Me.ClientSize = New System.Drawing.Size(685, 380)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.P_Imagen)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form_04_ImagenProyecto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Proyecto"

@@ -30,13 +30,13 @@ Public Class Form_05_AspectosGenerales
             Form_00_Principal.Proyecto.Departamento = T_Department.Text
 
             If Op_1984.Checked Then
-                Form_00_Principal.Proyecto.Año_Construccion = Op_1984.Text
+                Form_00_Principal.Proyecto.Año_Construccion = 1
             ElseIf Op_1998.Checked Then
-                Form_00_Principal.Proyecto.Año_Construccion = Op_1998.Text
+                Form_00_Principal.Proyecto.Año_Construccion = 2
             ElseIf Op_2010.Checked Then
-                Form_00_Principal.Proyecto.Año_Construccion = Op_2010.Text
+                Form_00_Principal.Proyecto.Año_Construccion = 3
             ElseIf Op_2020.Checked Then
-                Form_00_Principal.Proyecto.Año_Construccion = Op_2020.Text
+                Form_00_Principal.Proyecto.Año_Construccion = 4
             End If
         Catch ex As Exception
         Finally

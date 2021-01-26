@@ -149,6 +149,7 @@ Partial Class Form_02_PlantaEstructura
         Me.ClientSize = New System.Drawing.Size(807, 372)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Form_02_PlantaEstructura"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

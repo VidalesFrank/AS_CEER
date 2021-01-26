@@ -781,144 +781,6 @@ Public Class Form_00_Principal
         Tabla_Resultados.Rows.Clear()
         Rellenar()
 
-        'L_Grado.Text = "ICE= " + Convert.ToString(Proyecto.Edificio.Calificaciones.ICE)
-        'If Proyecto.Edificio.Calificaciones.ICE <= 50 Then
-        '    B_Rojo.Visible = True
-        '    B_Amarillo.Visible = True
-        '    B_Verde.Visible = False
-        '    L_Grado.ForeColor = Color.Green
-        'ElseIf Proyecto.Edificio.Calificaciones.ICE > 50 And Proyecto.Edificio.Calificaciones.ICE <= 70 Then
-        '    B_Rojo.Visible = True
-        '    B_Amarillo.Visible = False
-        '    B_Verde.Visible = True
-        '    L_Grado.ForeColor = Color.FromArgb(208, 203, 0)
-        'ElseIf Proyecto.Edificio.Calificaciones.ICE > 70 Then
-        '    B_Rojo.Visible = False
-        '    B_Amarillo.Visible = True
-        '    B_Verde.Visible = True
-        '    L_Grado.ForeColor = Color.Red
-        'End If
-
-
-        ''----------------------- Grafico de la Densidad ---------------------
-        'Grafico_Densidad.Series.Clear()
-        'Dim Serie_DX As New Series
-        'Grafico_Densidad.Series.Add(Serie_DX)
-        'Serie_DX.ChartType = SeriesChartType.StackedColumn
-
-        'Dim Serie_DY As New Series
-        'Grafico_Densidad.Series.Add(Serie_DY)
-        'Serie_DY.ChartType = SeriesChartType.StackedColumn
-
-        'Serie_DX.LegendText = "X"
-        'Serie_DY.LegendText = "Y"
-
-        'If Proyecto.Edificio.Densidad_X < 2 Then
-        '    Serie_DX.Color = Color.Red
-        'ElseIf 2 <= Proyecto.Edificio.Densidad_X < 3 Then
-        '    Serie_DX.Color = Color.Yellow
-        'Else
-        '    Serie_DX.Color = Color.Green
-        'End If
-        'If Proyecto.Edificio.Densidad_Y < 2 Then
-        '    Serie_DY.Color = Color.Red
-        'ElseIf 2 <= Proyecto.Edificio.Densidad_Y < 3 Then
-        '    Serie_DY.Color = Color.Yellow
-        'Else
-        '    Serie_DY.Color = Color.Green
-        'End If
-
-        'Serie_DX.Points.AddXY("X", Proyecto.Edificio.Densidad_X)
-        'Serie_DX.Points.AddXY("Y", 0)
-
-        'Serie_DY.Points.AddXY("X", 0)
-        'Serie_DY.Points.AddXY("Y", Proyecto.Edificio.Densidad_Y)
-
-        ''----------------- Grafico de Cargas Axiales (ALR) ----------------
-        'Dim List_B As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Nivel_Carga = "Bajo")
-        'Dim List_M As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Nivel_Carga = "Medio")
-        'Dim List_A As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Nivel_Carga = "Alto")
-
-        'Grafico_CargaAxial.Series.Clear()
-        'Dim Serie_CargaBaja As New Series
-        'Grafico_CargaAxial.Series.Add(Serie_CargaBaja)
-        'Serie_CargaBaja.ChartType = SeriesChartType.StackedColumn
-        'Serie_CargaBaja.Color = Color.Green
-
-        'Dim Serie_CargaMedia As New Series
-        'Grafico_CargaAxial.Series.Add(Serie_CargaMedia)
-        'Serie_CargaMedia.ChartType = SeriesChartType.StackedColumn
-        'Serie_CargaMedia.Color = Color.Yellow
-
-        'Dim Serie_CargaAlta As New Series
-        'Grafico_CargaAxial.Series.Add(Serie_CargaAlta)
-        'Serie_CargaAlta.ChartType = SeriesChartType.StackedColumn
-        'Serie_CargaAlta.Color = Color.Red
-
-        'Serie_CargaBaja.Points.AddXY("<10%", List_B.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
-        'Serie_CargaBaja.Points.AddXY("10%-20%", 0)
-        'Serie_CargaBaja.Points.AddXY(">20%", 0)
-
-        'Serie_CargaMedia.Points.AddXY("<10%", 0)
-        'Serie_CargaMedia.Points.AddXY("10%-20%", List_M.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
-        'Serie_CargaMedia.Points.AddXY(">20%", 0)
-
-        'Serie_CargaAlta.Points.AddXY("<10%", 0)
-        'Serie_CargaAlta.Points.AddXY("10%-20%", 0)
-        'Serie_CargaAlta.Points.AddXY(">20%", List_A.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
-
-        ''------------------ Grafico del confinamiento ---------------------------------
-        'Grafico_Confinamiento.Series.Clear()
-        'Dim Lista_MurosConfinados As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Confinamiento = "Si")
-        'Dim Serie_MConfinados As New Series
-        'Grafico_Confinamiento.Series.Add(Serie_MConfinados)
-        'Serie_MConfinados.ChartType = SeriesChartType.StackedColumn
-        'Serie_MConfinados.Color = Color.Green
-
-        'Dim Serie_MNoConfinados As New Series
-        'Grafico_Confinamiento.Series.Add(Serie_MNoConfinados)
-        'Serie_MNoConfinados.ChartType = SeriesChartType.StackedColumn
-        'Serie_MNoConfinados.Color = Color.Red
-
-        'Serie_MConfinados.Points.AddXY("Confinados", Lista_MurosConfinados.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
-        'Serie_MConfinados.Points.AddXY("Sin Confinamiento", 0)
-
-        'Serie_MNoConfinados.Points.AddXY("Confinados", 0)
-        'Serie_MNoConfinados.Points.AddXY("Sin Confinamiento", (1 - Lista_MurosConfinados.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count) * 100)
-
-        ''------------------------ Tipo de Muro ------------------------------
-        'Grafico_Esbeltez.Series.Clear()
-        'Dim Lista_MurosLargos As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Largo")
-        'Dim Lista_MurosIntemedios As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Intermedio")
-        'Dim Lista_MurosCortos As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Corto")
-
-        'Dim Serie_MLargos As New Series
-        'Grafico_Esbeltez.Series.Add(Serie_MLargos)
-        'Serie_MLargos.ChartType = SeriesChartType.StackedColumn
-        'Serie_MLargos.Color = Color.Green
-
-        'Dim Serie_MIntermedios As New Series
-        'Grafico_Esbeltez.Series.Add(Serie_MIntermedios)
-        'Serie_MIntermedios.ChartType = SeriesChartType.StackedColumn
-        'Serie_MIntermedios.Color = Color.Yellow
-
-        'Dim Serie_MCortos As New Series
-        'Grafico_Esbeltez.Series.Add(Serie_MCortos)
-        'Serie_MCortos.ChartType = SeriesChartType.StackedColumn
-        'Serie_MCortos.Color = Color.Red
-
-        'Serie_MLargos.Points.AddXY("Largos          (Ar <= 4)", Lista_MurosLargos.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
-        'Serie_MLargos.Points.AddXY("Intermedios     (4 < Ar <= 10)", 0)
-        'Serie_MLargos.Points.AddXY("Cortos          (10 < Ar)", 0)
-
-        'Serie_MIntermedios.Points.AddXY("Largos          (Ar <= 4)", 0)
-        'Serie_MIntermedios.Points.AddXY("Intermedios    (4 < Ar <= 10)", Lista_MurosIntemedios.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
-        'Serie_MIntermedios.Points.AddXY("Cortos          (10 < Ar)", 0)
-
-        'Serie_MCortos.Points.AddXY("Largos          (Ar <= 4)", 0)
-        'Serie_MCortos.Points.AddXY("Intermedios     (4 < Ar <= 10)", 0)
-        'Serie_MCortos.Points.AddXY("Cortos          (10 < Ar)", Lista_MurosCortos.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
-
         Panel_Geometria.Visible = False
         Panel_Informacion.Visible = True
         Panel_Resultados.Visible = False
@@ -1068,6 +930,16 @@ Public Class Form_00_Principal
         Form_05_AspectosGenerales.T_City.Text = Proyecto.Ciudad
         Form_05_AspectosGenerales.T_Department.Text = Proyecto.Departamento
 
+        If Proyecto.Año_Construccion = 1 Then
+            Form_05_AspectosGenerales.Op_1984.Checked = True
+        ElseIf Proyecto.Año_Construccion = 2 Then
+            Form_05_AspectosGenerales.Op_1998.Checked = True
+        ElseIf Proyecto.Año_Construccion = 3 Then
+            Form_05_AspectosGenerales.Op_2010.Checked = True
+        ElseIf Proyecto.Año_Construccion = 4 Then
+            Form_05_AspectosGenerales.Op_2020.Checked = True
+        End If
+
         Form_05_AspectosGenerales.Show()
     End Sub
 
@@ -1114,10 +986,7 @@ Public Class Form_00_Principal
         Proyecto.Edificio.fc = 21
         Proyecto.Edificio.Ht = 0
         Proyecto.Edificio.Num_P = 0
-
-
     End Sub
-
 
     Public Sub Rellenar()
         T_Hn.Text = Proyecto.Edificio.Hn

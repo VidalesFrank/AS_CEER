@@ -8,8 +8,6 @@ Public Class Form_01_Cargas
                 Dim f As Integer = i
                 Form_00_Principal.Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Tabla_Cargas.Rows(f).Cells(0).Value.ToString).CM = Tabla_Cargas.Rows(i).Cells(1).Value
                 Form_00_Principal.Proyecto.Edificio.ListaMuros.Find(Function(p) p.Name = Tabla_Cargas.Rows(f).Cells(0).Value.ToString).CD = Tabla_Cargas.Rows(i).Cells(2).Value
-                'Form_00_Principal.Proyecto.Edificio.ListaMuros(i).CM = Convert.ToSingle(Tabla_Cargas.Rows(i).Cells(1).Value)
-                'Form_00_Principal.Proyecto.Edificio.ListaMuros(i).CD = Convert.ToSingle(Tabla_Cargas.Rows(i).Cells(2).Value)
             Next
         Catch ex As Exception
         Finally
@@ -55,12 +53,9 @@ Public Class Form_01_Cargas
             saveFileDialog1.Title = "Guardar documento Excel"
             saveFileDialog1.Filter = "Excel File|*.xlsx"
             saveFileDialog1.FileName = Convert.ToString(Archivo)
-            'saveFileDialog1.ShowDialog()
-            'wbXL.SaveAs(saveFileDialog1.FileName)
             wbXL.SaveAs(Application.StartupPath & "\" & Archivo & ".xlsx")
             appXL.Workbooks.Close()
             appXL.Quit()
-            'System.Diagnostics.Process.Start(saveFileDialog1.FileName)
             System.Diagnostics.Process.Start(Application.StartupPath & "\" & Archivo & ".xlsx")
             Lista_Archivo.Add(Application.StartupPath & "\" & Archivo & ".xlsx")
         Catch ex As Exception
@@ -101,9 +96,6 @@ Public Class Form_01_Cargas
 
             Dim excel As New Excel.Application
             Dim Wbook As Excel.Workbook = excel.Workbooks.Open(path)
-            Wbook.Saved = False
-            Wbook.Close()
-            'excel.Quit()
             excel.Workbooks.Close()
 
         Catch ex As Exception

@@ -26,6 +26,7 @@ Partial Class Form_07_EspectroNSR
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_07_EspectroNSR))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Espectro = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.C_Ciudades = New System.Windows.Forms.ComboBox()
@@ -39,13 +40,13 @@ Partial Class Form_07_EspectroNSR
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         CType(Me.Espectro, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tabla_Resumen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
@@ -235,15 +236,6 @@ Partial Class Form_07_EspectroNSR
         Me.Panel1.Size = New System.Drawing.Size(297, 624)
         Me.Panel1.TabIndex = 10
         '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.Espectro)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(297, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(754, 624)
-        Me.Panel2.TabIndex = 11
-        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -261,6 +253,15 @@ Partial Class Form_07_EspectroNSR
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos de Entrada"
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Espectro)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(297, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(754, 624)
+        Me.Panel2.TabIndex = 11
+        '
         'Form_07_EspectroNSR
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -268,6 +269,7 @@ Partial Class Form_07_EspectroNSR
         Me.ClientSize = New System.Drawing.Size(1051, 624)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form_07_EspectroNSR"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Espectro de Respuesta"
@@ -275,9 +277,9 @@ Partial Class Form_07_EspectroNSR
         CType(Me.Tabla_Resumen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
