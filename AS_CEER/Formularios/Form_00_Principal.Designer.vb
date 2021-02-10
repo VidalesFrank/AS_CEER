@@ -24,35 +24,35 @@ Partial Class Form_00_Principal
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_00_Principal))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series7 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim DataPoint1 As System.Windows.Forms.DataVisualization.Charting.DataPoint = New System.Windows.Forms.DataVisualization.Charting.DataPoint(0R, 3.0R)
-        Dim DataPoint2 As System.Windows.Forms.DataVisualization.Charting.DataPoint = New System.Windows.Forms.DataVisualization.Charting.DataPoint(0R, 2.0R)
-        Dim DataPoint3 As System.Windows.Forms.DataVisualization.Charting.DataPoint = New System.Windows.Forms.DataVisualization.Charting.DataPoint(0R, 10.0R)
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim ChartArea6 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend6 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series8 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea7 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend7 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series9 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea8 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend8 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series10 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Series11 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Series12 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea9 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend9 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series13 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea10 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend10 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series14 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim DataPoint4 As System.Windows.Forms.DataVisualization.Charting.DataPoint = New System.Windows.Forms.DataVisualization.Charting.DataPoint(0R, 3.0R)
+        Dim DataPoint5 As System.Windows.Forms.DataVisualization.Charting.DataPoint = New System.Windows.Forms.DataVisualization.Charting.DataPoint(0R, 2.0R)
+        Dim DataPoint6 As System.Windows.Forms.DataVisualization.Charting.DataPoint = New System.Windows.Forms.DataVisualization.Charting.DataPoint(0R, 10.0R)
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -130,8 +130,8 @@ Partial Class Form_00_Principal
         Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Grafico_Confinamiento = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Grafico_CargaAxial = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Grafico_Confinamiento = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Grafico_Densidad = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Grafico_Esbeltez = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Grafico_Tipo_Muro = New System.Windows.Forms.DataVisualization.Charting.Chart()
@@ -191,8 +191,8 @@ Partial Class Form_00_Principal
         CType(Me.P_Info, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tabla_Resultados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
-        CType(Me.Grafico_Confinamiento, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Grafico_CargaAxial, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Grafico_Confinamiento, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Grafico_Densidad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Grafico_Esbeltez, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Grafico_Tipo_Muro, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -272,49 +272,49 @@ Partial Class Form_00_Principal
         Me.Tabla_Datos.BackgroundColor = System.Drawing.SystemColors.Control
         Me.Tabla_Datos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Tabla_Datos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Tabla_Datos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Tabla_Datos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         resources.ApplyResources(Me.Tabla_Datos, "Tabla_Datos")
         Me.Tabla_Datos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Tabla_Datos.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Tabla_Datos.DefaultCellStyle = DataGridViewCellStyle12
         Me.Tabla_Datos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.Tabla_Datos.GridColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(210, Byte), Integer))
         Me.Tabla_Datos.Name = "Tabla_Datos"
         Me.Tabla_Datos.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Tabla_Datos.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Tabla_Datos.RowHeadersDefaultCellStyle = DataGridViewCellStyle13
         Me.Tabla_Datos.RowHeadersVisible = False
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tabla_Datos.RowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tabla_Datos.RowsDefaultCellStyle = DataGridViewCellStyle14
         Me.Tabla_Datos.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         Me.Tabla_Datos.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tabla_Datos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         '
         'Column1
         '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Georgia", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Georgia", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle11
         resources.ApplyResources(Me.Column1, "Column1")
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
@@ -675,39 +675,39 @@ Partial Class Form_00_Principal
         '
         Me.Tabla_Resultados.BackgroundColor = System.Drawing.SystemColors.Control
         Me.Tabla_Resultados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Tabla_Resultados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Tabla_Resultados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle15
         resources.ApplyResources(Me.Tabla_Resultados, "Tabla_Resultados")
         Me.Tabla_Resultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.Column10, Me.DataGridViewTextBoxColumn4, Me.Column9, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.Column11, Me.DataGridViewTextBoxColumn7, Me.Column12, Me.Column13, Me.Column8})
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Tabla_Resultados.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Tabla_Resultados.DefaultCellStyle = DataGridViewCellStyle16
         Me.Tabla_Resultados.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.Tabla_Resultados.Name = "Tabla_Resultados"
         Me.Tabla_Resultados.ReadOnly = True
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Tabla_Resultados.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Tabla_Resultados.RowHeadersDefaultCellStyle = DataGridViewCellStyle17
         Me.Tabla_Resultados.RowHeadersVisible = False
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tabla_Resultados.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tabla_Resultados.RowsDefaultCellStyle = DataGridViewCellStyle18
         '
         'DataGridViewTextBoxColumn1
         '
@@ -789,225 +789,225 @@ Partial Class Form_00_Principal
         '
         'Panel3
         '
-        Me.Panel3.Controls.Add(Me.Grafico_Confinamiento)
         Me.Panel3.Controls.Add(Me.Grafico_CargaAxial)
+        Me.Panel3.Controls.Add(Me.Grafico_Confinamiento)
         Me.Panel3.Controls.Add(Me.Grafico_Densidad)
         Me.Panel3.Controls.Add(Me.Grafico_Esbeltez)
         Me.Panel3.Controls.Add(Me.Grafico_Tipo_Muro)
         resources.ApplyResources(Me.Panel3, "Panel3")
         Me.Panel3.Name = "Panel3"
         '
-        'Grafico_Confinamiento
-        '
-        Me.Grafico_Confinamiento.BackColor = System.Drawing.Color.Transparent
-        ChartArea1.AxisX.MajorGrid.Enabled = False
-        ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea1.AxisY.MajorGrid.Enabled = False
-        ChartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray
-        ChartArea1.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot
-        ChartArea1.AxisY.Maximum = 100.0R
-        ChartArea1.AxisY.Minimum = 0R
-        ChartArea1.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270
-        ChartArea1.AxisY.Title = "Porcentaje de Muros (%)"
-        ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
-        ChartArea1.Name = "ChartArea1"
-        Me.Grafico_Confinamiento.ChartAreas.Add(ChartArea1)
-        Legend1.Alignment = System.Drawing.StringAlignment.Center
-        Legend1.BackColor = System.Drawing.Color.Transparent
-        Legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom
-        Legend1.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Legend1.IsTextAutoFit = False
-        Legend1.Name = "Legend1"
-        Me.Grafico_Confinamiento.Legends.Add(Legend1)
-        resources.ApplyResources(Me.Grafico_Confinamiento, "Grafico_Confinamiento")
-        Me.Grafico_Confinamiento.Name = "Grafico_Confinamiento"
-        Series1.ChartArea = "ChartArea1"
-        Series1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.Grafico_Confinamiento.Series.Add(Series1)
-        '
         'Grafico_CargaAxial
         '
         Me.Grafico_CargaAxial.BackColor = System.Drawing.SystemColors.Control
         Me.Grafico_CargaAxial.BorderlineColor = System.Drawing.Color.Transparent
-        ChartArea2.AxisX.MajorGrid.Enabled = False
-        ChartArea2.AxisX.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal
-        ChartArea2.AxisX.Title = "Relación de carga axial (ALR=Pu/f'c*Ag)"
-        ChartArea2.AxisX.TitleFont = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea2.AxisY.MajorGrid.Enabled = False
-        ChartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray
-        ChartArea2.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot
-        ChartArea2.AxisY.Maximum = 100.0R
-        ChartArea2.AxisY.Minimum = 0R
-        ChartArea2.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270
-        ChartArea2.AxisY.Title = "Porcentaje de Muros (%)"
-        ChartArea2.AxisY.TitleFont = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea2.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
-        ChartArea2.Name = "ChartArea1"
-        Me.Grafico_CargaAxial.ChartAreas.Add(ChartArea2)
-        Legend2.Alignment = System.Drawing.StringAlignment.Center
-        Legend2.BackColor = System.Drawing.Color.Transparent
-        Legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom
-        Legend2.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Legend2.IsTextAutoFit = False
-        Legend2.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row
-        Legend2.Name = "Legend1"
-        Me.Grafico_CargaAxial.Legends.Add(Legend2)
+        ChartArea6.AxisX.MajorGrid.Enabled = False
+        ChartArea6.AxisX.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal
+        ChartArea6.AxisX.Title = " Tipos de Muros"
+        ChartArea6.AxisX.TitleFont = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea6.AxisY.MajorGrid.Enabled = False
+        ChartArea6.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray
+        ChartArea6.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot
+        ChartArea6.AxisY.Maximum = 100.0R
+        ChartArea6.AxisY.Minimum = 0R
+        ChartArea6.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270
+        ChartArea6.AxisY.Title = "Cantidad de Muros"
+        ChartArea6.AxisY.TitleFont = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea6.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
+        ChartArea6.Name = "ChartArea1"
+        Me.Grafico_CargaAxial.ChartAreas.Add(ChartArea6)
+        Legend6.Alignment = System.Drawing.StringAlignment.Center
+        Legend6.BackColor = System.Drawing.Color.Transparent
+        Legend6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom
+        Legend6.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Legend6.IsTextAutoFit = False
+        Legend6.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row
+        Legend6.Name = "Legend1"
+        Me.Grafico_CargaAxial.Legends.Add(Legend6)
         resources.ApplyResources(Me.Grafico_CargaAxial, "Grafico_CargaAxial")
         Me.Grafico_CargaAxial.Name = "Grafico_CargaAxial"
-        Series2.ChartArea = "ChartArea1"
-        Series2.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.Grafico_CargaAxial.Series.Add(Series2)
+        Series8.ChartArea = "ChartArea1"
+        Series8.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series8.Legend = "Legend1"
+        Series8.Name = "Series1"
+        Me.Grafico_CargaAxial.Series.Add(Series8)
+        '
+        'Grafico_Confinamiento
+        '
+        Me.Grafico_Confinamiento.BackColor = System.Drawing.Color.Transparent
+        ChartArea7.AxisX.MajorGrid.Enabled = False
+        ChartArea7.AxisX.Title = "Tipos de Muros"
+        ChartArea7.AxisX.TitleFont = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea7.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray
+        ChartArea7.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDot
+        ChartArea7.AxisY.Maximum = 100.0R
+        ChartArea7.AxisY.Minimum = 0R
+        ChartArea7.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270
+        ChartArea7.AxisY.Title = "Cantidad de Muros"
+        ChartArea7.AxisY.TitleFont = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea7.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
+        ChartArea7.Name = "ChartArea1"
+        Me.Grafico_Confinamiento.ChartAreas.Add(ChartArea7)
+        Legend7.Alignment = System.Drawing.StringAlignment.Center
+        Legend7.BackColor = System.Drawing.Color.Transparent
+        Legend7.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom
+        Legend7.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Legend7.IsTextAutoFit = False
+        Legend7.Name = "Legend1"
+        Me.Grafico_Confinamiento.Legends.Add(Legend7)
+        resources.ApplyResources(Me.Grafico_Confinamiento, "Grafico_Confinamiento")
+        Me.Grafico_Confinamiento.Name = "Grafico_Confinamiento"
+        Series9.ChartArea = "ChartArea1"
+        Series9.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series9.Legend = "Legend1"
+        Series9.Name = "Series1"
+        Me.Grafico_Confinamiento.Series.Add(Series9)
         '
         'Grafico_Densidad
         '
         Me.Grafico_Densidad.BackColor = System.Drawing.SystemColors.Control
-        ChartArea3.AxisX.MajorGrid.Enabled = False
-        ChartArea3.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot
-        ChartArea3.AxisX.Title = "Dirección"
-        ChartArea3.AxisX.TitleFont = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea3.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[False]
-        ChartArea3.AxisY.MajorGrid.Enabled = False
-        ChartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray
-        ChartArea3.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot
-        ChartArea3.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270
-        ChartArea3.AxisY.Title = "Densidad (%)"
-        ChartArea3.AxisY.TitleFont = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea3.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
-        ChartArea3.Name = "ChartArea1"
-        Me.Grafico_Densidad.ChartAreas.Add(ChartArea3)
-        Legend3.Enabled = False
-        Legend3.Name = "Legend1"
-        Me.Grafico_Densidad.Legends.Add(Legend3)
+        ChartArea8.AxisX.MajorGrid.Enabled = False
+        ChartArea8.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot
+        ChartArea8.AxisX.Title = "Dirección"
+        ChartArea8.AxisX.TitleFont = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea8.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[False]
+        ChartArea8.AxisY.MajorGrid.Enabled = False
+        ChartArea8.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray
+        ChartArea8.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot
+        ChartArea8.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270
+        ChartArea8.AxisY.Title = "Densidad (%)"
+        ChartArea8.AxisY.TitleFont = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea8.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
+        ChartArea8.Name = "ChartArea1"
+        Me.Grafico_Densidad.ChartAreas.Add(ChartArea8)
+        Legend8.Enabled = False
+        Legend8.Name = "Legend1"
+        Me.Grafico_Densidad.Legends.Add(Legend8)
         resources.ApplyResources(Me.Grafico_Densidad, "Grafico_Densidad")
         Me.Grafico_Densidad.Name = "Grafico_Densidad"
-        Series3.ChartArea = "ChartArea1"
-        Series3.Color = System.Drawing.Color.Red
-        Series3.CustomProperties = "DrawingStyle=LightToDark"
-        Series3.Legend = "Legend1"
-        Series3.LegendText = "2"
-        Series3.Name = "<2%"
-        Series4.ChartArea = "ChartArea1"
-        Series4.Color = System.Drawing.Color.Yellow
-        Series4.CustomProperties = "DrawingStyle=LightToDark"
-        Series4.Legend = "Legend1"
-        Series4.Name = "2%-3%"
-        Series5.ChartArea = "ChartArea1"
-        Series5.Color = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Series5.CustomProperties = "DrawingStyle=LightToDark"
-        Series5.Legend = "Legend1"
-        Series5.Name = ">3%"
-        Me.Grafico_Densidad.Series.Add(Series3)
-        Me.Grafico_Densidad.Series.Add(Series4)
-        Me.Grafico_Densidad.Series.Add(Series5)
+        Series10.ChartArea = "ChartArea1"
+        Series10.Color = System.Drawing.Color.Red
+        Series10.CustomProperties = "DrawingStyle=LightToDark"
+        Series10.Legend = "Legend1"
+        Series10.LegendText = "2"
+        Series10.Name = "<2%"
+        Series11.ChartArea = "ChartArea1"
+        Series11.Color = System.Drawing.Color.Yellow
+        Series11.CustomProperties = "DrawingStyle=LightToDark"
+        Series11.Legend = "Legend1"
+        Series11.Name = "2%-3%"
+        Series12.ChartArea = "ChartArea1"
+        Series12.Color = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Series12.CustomProperties = "DrawingStyle=LightToDark"
+        Series12.Legend = "Legend1"
+        Series12.Name = ">3%"
+        Me.Grafico_Densidad.Series.Add(Series10)
+        Me.Grafico_Densidad.Series.Add(Series11)
+        Me.Grafico_Densidad.Series.Add(Series12)
         '
         'Grafico_Esbeltez
         '
         Me.Grafico_Esbeltez.BackColor = System.Drawing.Color.Transparent
         Me.Grafico_Esbeltez.BorderlineColor = System.Drawing.Color.Transparent
-        ChartArea4.AxisX.IsLabelAutoFit = False
-        ChartArea4.AxisX.LabelAutoFitMaxFontSize = 12
-        ChartArea4.AxisX.LabelAutoFitMinFontSize = 8
-        ChartArea4.AxisX.LabelStyle.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea4.AxisX.MajorGrid.Enabled = False
-        ChartArea4.AxisX.Maximum = 4.0R
-        ChartArea4.AxisX.MaximumAutoSize = 50.0!
-        ChartArea4.AxisX.Minimum = 0R
-        ChartArea4.AxisX.ScaleBreakStyle.Spacing = 5.0R
-        ChartArea4.AxisX.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal
-        ChartArea4.AxisX.Title = "Tipo de Muro"
-        ChartArea4.AxisX.TitleFont = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea4.AxisY.MajorGrid.Enabled = False
-        ChartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray
-        ChartArea4.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot
-        ChartArea4.AxisY.Maximum = 100.0R
-        ChartArea4.AxisY.Minimum = 0R
-        ChartArea4.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270
-        ChartArea4.AxisY.Title = "Porcentaje de Muros (%)"
-        ChartArea4.AxisY.TitleFont = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea4.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
-        ChartArea4.CursorX.Interval = 2.0R
-        ChartArea4.Name = "ChartArea1"
-        Me.Grafico_Esbeltez.ChartAreas.Add(ChartArea4)
-        Legend4.Enabled = False
-        Legend4.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Legend4.IsTextAutoFit = False
-        Legend4.Name = "Legend1"
-        Me.Grafico_Esbeltez.Legends.Add(Legend4)
+        ChartArea9.AxisX.IsLabelAutoFit = False
+        ChartArea9.AxisX.LabelAutoFitMaxFontSize = 12
+        ChartArea9.AxisX.LabelAutoFitMinFontSize = 8
+        ChartArea9.AxisX.LabelStyle.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea9.AxisX.MajorGrid.Enabled = False
+        ChartArea9.AxisX.Maximum = 4.0R
+        ChartArea9.AxisX.MaximumAutoSize = 50.0!
+        ChartArea9.AxisX.Minimum = 0R
+        ChartArea9.AxisX.ScaleBreakStyle.Spacing = 5.0R
+        ChartArea9.AxisX.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal
+        ChartArea9.AxisX.Title = "Tipo de Muro"
+        ChartArea9.AxisX.TitleFont = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea9.AxisY.MajorGrid.Enabled = False
+        ChartArea9.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray
+        ChartArea9.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot
+        ChartArea9.AxisY.Maximum = 100.0R
+        ChartArea9.AxisY.Minimum = 0R
+        ChartArea9.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270
+        ChartArea9.AxisY.Title = "Porcentaje de Muros (%)"
+        ChartArea9.AxisY.TitleFont = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea9.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
+        ChartArea9.CursorX.Interval = 2.0R
+        ChartArea9.Name = "ChartArea1"
+        Me.Grafico_Esbeltez.ChartAreas.Add(ChartArea9)
+        Legend9.Enabled = False
+        Legend9.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Legend9.IsTextAutoFit = False
+        Legend9.Name = "Legend1"
+        Me.Grafico_Esbeltez.Legends.Add(Legend9)
         resources.ApplyResources(Me.Grafico_Esbeltez, "Grafico_Esbeltez")
         Me.Grafico_Esbeltez.Name = "Grafico_Esbeltez"
-        Series6.ChartArea = "ChartArea1"
-        Series6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Series6.Legend = "Legend1"
-        Series6.MarkerBorderWidth = 3
-        Series6.Name = "Series1"
-        Me.Grafico_Esbeltez.Series.Add(Series6)
+        Series13.ChartArea = "ChartArea1"
+        Series13.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series13.Legend = "Legend1"
+        Series13.MarkerBorderWidth = 3
+        Series13.Name = "Series1"
+        Me.Grafico_Esbeltez.Series.Add(Series13)
         '
         'Grafico_Tipo_Muro
         '
         Me.Grafico_Tipo_Muro.BackColor = System.Drawing.SystemColors.Control
         Me.Grafico_Tipo_Muro.BorderlineColor = System.Drawing.SystemColors.Control
-        ChartArea5.AxisX.IsLabelAutoFit = False
-        ChartArea5.AxisX.LabelAutoFitMaxFontSize = 12
-        ChartArea5.AxisX.LabelAutoFitMinFontSize = 8
-        ChartArea5.AxisX.LabelStyle.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea5.AxisX.MajorGrid.Enabled = False
-        ChartArea5.AxisX.Maximum = 4.0R
-        ChartArea5.AxisX.MaximumAutoSize = 50.0!
-        ChartArea5.AxisX.Minimum = 0R
-        ChartArea5.AxisX.ScaleBreakStyle.Spacing = 5.0R
-        ChartArea5.AxisX.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal
-        ChartArea5.AxisX.Title = "Tipo de Muro"
-        ChartArea5.AxisX.TitleFont = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea5.AxisY.MajorGrid.Enabled = False
-        ChartArea5.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray
-        ChartArea5.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot
-        ChartArea5.AxisY.Maximum = 100.0R
-        ChartArea5.AxisY.Minimum = 0R
-        ChartArea5.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270
-        ChartArea5.AxisY.Title = "Porcentaje de Muros (%)"
-        ChartArea5.AxisY.TitleFont = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea5.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
-        ChartArea5.CursorX.Interval = 2.0R
-        ChartArea5.Name = "ChartArea1"
-        Me.Grafico_Tipo_Muro.ChartAreas.Add(ChartArea5)
-        Legend5.Alignment = System.Drawing.StringAlignment.Center
-        Legend5.BackColor = System.Drawing.Color.Transparent
-        Legend5.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom
-        Legend5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Legend5.IsTextAutoFit = False
-        Legend5.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row
-        Legend5.Name = "Legend1"
-        Me.Grafico_Tipo_Muro.Legends.Add(Legend5)
+        ChartArea10.AxisX.IsLabelAutoFit = False
+        ChartArea10.AxisX.LabelAutoFitMaxFontSize = 12
+        ChartArea10.AxisX.LabelAutoFitMinFontSize = 8
+        ChartArea10.AxisX.LabelStyle.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea10.AxisX.MajorGrid.Enabled = False
+        ChartArea10.AxisX.Maximum = 4.0R
+        ChartArea10.AxisX.MaximumAutoSize = 50.0!
+        ChartArea10.AxisX.Minimum = 0R
+        ChartArea10.AxisX.ScaleBreakStyle.Spacing = 5.0R
+        ChartArea10.AxisX.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal
+        ChartArea10.AxisX.Title = "Tipo de Muro"
+        ChartArea10.AxisX.TitleFont = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea10.AxisY.MajorGrid.Enabled = False
+        ChartArea10.AxisY.MajorGrid.LineColor = System.Drawing.Color.DimGray
+        ChartArea10.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot
+        ChartArea10.AxisY.Maximum = 100.0R
+        ChartArea10.AxisY.Minimum = 0R
+        ChartArea10.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270
+        ChartArea10.AxisY.Title = "Porcentaje de Muros (%)"
+        ChartArea10.AxisY.TitleFont = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea10.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid
+        ChartArea10.CursorX.Interval = 2.0R
+        ChartArea10.Name = "ChartArea1"
+        Me.Grafico_Tipo_Muro.ChartAreas.Add(ChartArea10)
+        Legend10.Alignment = System.Drawing.StringAlignment.Center
+        Legend10.BackColor = System.Drawing.Color.Transparent
+        Legend10.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom
+        Legend10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Legend10.IsTextAutoFit = False
+        Legend10.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row
+        Legend10.Name = "Legend1"
+        Me.Grafico_Tipo_Muro.Legends.Add(Legend10)
         resources.ApplyResources(Me.Grafico_Tipo_Muro, "Grafico_Tipo_Muro")
         Me.Grafico_Tipo_Muro.Name = "Grafico_Tipo_Muro"
-        Series7.ChartArea = "ChartArea1"
-        Series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
-        Series7.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Series7.IsValueShownAsLabel = True
-        Series7.Label = "#VAL{P1}"
-        Series7.Legend = "Legend1"
-        Series7.MarkerBorderWidth = 3
-        Series7.Name = "Series1"
-        DataPoint1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataPoint1.Label = "#PERCENT{P0}"
-        DataPoint1.LegendText = "Largos (Ar<=4)"
-        DataPoint1.MarkerSize = 6
-        DataPoint1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square
-        DataPoint2.Label = "#PERCENT{P0}"
-        DataPoint2.LegendText = "Intermedios (4<Ar<=10)"
-        DataPoint3.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataPoint3.IsValueShownAsLabel = True
-        DataPoint3.Label = "#PERCENT{P0}"
-        DataPoint3.LegendText = "Cortos (10<Ar)"
-        Series7.Points.Add(DataPoint1)
-        Series7.Points.Add(DataPoint2)
-        Series7.Points.Add(DataPoint3)
-        Me.Grafico_Tipo_Muro.Series.Add(Series7)
+        Series14.ChartArea = "ChartArea1"
+        Series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series14.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series14.IsValueShownAsLabel = True
+        Series14.Label = "#VAL{P1}"
+        Series14.Legend = "Legend1"
+        Series14.MarkerBorderWidth = 3
+        Series14.Name = "Series1"
+        DataPoint4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataPoint4.Label = "#PERCENT{P0}"
+        DataPoint4.LegendText = "Largos (Ar<=4)"
+        DataPoint4.MarkerSize = 6
+        DataPoint4.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square
+        DataPoint5.Label = "#PERCENT{P0}"
+        DataPoint5.LegendText = "Intermedios (4<Ar<=10)"
+        DataPoint6.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataPoint6.IsValueShownAsLabel = True
+        DataPoint6.Label = "#PERCENT{P0}"
+        DataPoint6.LegendText = "Cortos (10<Ar)"
+        Series14.Points.Add(DataPoint4)
+        Series14.Points.Add(DataPoint5)
+        Series14.Points.Add(DataPoint6)
+        Me.Grafico_Tipo_Muro.Series.Add(Series14)
         '
         'Button9
         '
@@ -1349,9 +1349,9 @@ Partial Class Form_00_Principal
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.Panel_Informacion)
-        Me.Controls.Add(Me.Panel_Geometria)
         Me.Controls.Add(Me.Panel_Resultados)
+        Me.Controls.Add(Me.Panel_Geometria)
+        Me.Controls.Add(Me.Panel_Informacion)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel6)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -1369,8 +1369,8 @@ Partial Class Form_00_Principal
         CType(Me.P_Info, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Tabla_Resultados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
-        CType(Me.Grafico_Confinamiento, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Grafico_CargaAxial, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Grafico_Confinamiento, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Grafico_Densidad, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Grafico_Esbeltez, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Grafico_Tipo_Muro, System.ComponentModel.ISupportInitialize).EndInit()

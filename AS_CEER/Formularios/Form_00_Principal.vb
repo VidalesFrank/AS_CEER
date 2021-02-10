@@ -1161,11 +1161,61 @@ Public Class Form_00_Principal
         Serie_DY.Points.AddXY("Y", Proyecto.Edificio.Densidad_Y)
 
         '----------------- Grafico de Cargas Axiales (ALR) ----------------
+        'Serie_CargaBaja.Points.AddXY("<10%", List_B.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
+        'Serie_CargaBaja.Points.AddXY("10%-20%", 0)
+        'Serie_CargaBaja.Points.AddXY(">20%", 0)
+
+        'Serie_CargaMedia.Points.AddXY("<10%", 0)
+        'Serie_CargaMedia.Points.AddXY("10%-20%", List_M.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
+        'Serie_CargaMedia.Points.AddXY(">20%", 0)
+
+        'Serie_CargaAlta.Points.AddXY("<10%", 0)
+        'Serie_CargaAlta.Points.AddXY("10%-20%", 0)
+        'Serie_CargaAlta.Points.AddXY(">20%", List_A.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
+
+        'Grafico_CargaAxial.Series.Clear()
+        'Dim Serie_ALR As New Series
+        'Serie_ALR.ChartType = SeriesChartType.Pie
+        'Serie_ALR.Font = New Drawing.Font("Arial", 10)
+        'Grafico_CargaAxial.Series.Add(Serie_ALR)
+
+        'Dim Punto_ALR_Bajo As New DataPoint
+        'If List_B.Count > 0 Then
+        '    Punto_ALR_Bajo.YValues(0) = List_B.Count
+        '    Punto_ALR_Bajo.Label = "#PERCENT{P0}"
+        'Else
+        '    Punto_ALR_Bajo.IsEmpty = True
+        'End If
+        'Punto_ALR_Bajo.LegendText = "ALR<=10%"
+
+        'Dim Punto_ALR_Medio As New DataPoint
+        'If List_M.Count > 0 Then
+        '    Punto_ALR_Medio.YValues(0) = List_M.Count
+        '    Punto_ALR_Medio.Label = "#PERCENT{P0}"
+        'Else
+        '    Punto_ALR_Medio.IsEmpty = True
+        'End If
+        'Punto_ALR_Medio.LegendText = "10%<ALR<=20%"
+
+        'Dim Punto_ALR_Alto As New DataPoint
+        'If List_A.Count > 0 Then
+        '    Punto_ALR_Alto.YValues(0) = List_A.Count
+        '    Punto_ALR_Alto.Label = "#PERCENT{P0}"
+        'Else
+        '    Punto_ALR_Alto.IsEmpty = True
+        'End If
+        'Punto_ALR_Alto.LegendText = "20%<ALR"
+
+        'Serie_ALR.Points.Add(Punto_ALR_Bajo)
+        'Serie_ALR.Points.Add(Punto_ALR_Medio)
+        'Serie_ALR.Points.Add(Punto_ALR_Alto)
+
         Dim List_B As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Nivel_Carga = "Bajo")
         Dim List_M As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Nivel_Carga = "Medio")
         Dim List_A As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Nivel_Carga = "Alto")
 
         Grafico_CargaAxial.Series.Clear()
+
         Dim Serie_CargaBaja As New Series
         Grafico_CargaAxial.Series.Add(Serie_CargaBaja)
         Serie_CargaBaja.ChartType = SeriesChartType.StackedColumn
@@ -1181,55 +1231,195 @@ Public Class Form_00_Principal
         Serie_CargaAlta.ChartType = SeriesChartType.StackedColumn
         Serie_CargaAlta.Color = Color.Red
 
-        Serie_CargaBaja.Points.AddXY("<10%", List_B.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
-        Serie_CargaBaja.Points.AddXY("10%-20%", 0)
-        Serie_CargaBaja.Points.AddXY(">20%", 0)
+        Dim Lista_MurosLargos As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Largo")
+        Dim Lista_MurosIntemedios As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Intermedio")
+        Dim Lista_MurosCortos As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Corto")
 
-        Serie_CargaMedia.Points.AddXY("<10%", 0)
-        Serie_CargaMedia.Points.AddXY("10%-20%", List_M.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
-        Serie_CargaMedia.Points.AddXY(">20%", 0)
+        Dim Cont_Bajo_L As Integer = 0
+        Dim Cont_Medio_L As Integer = 0
+        Dim Cont_Alto_L As Integer = 0
 
-        Serie_CargaAlta.Points.AddXY("<10%", 0)
-        Serie_CargaAlta.Points.AddXY("10%-20%", 0)
-        Serie_CargaAlta.Points.AddXY(">20%", List_A.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
+        For i = 0 To Lista_MurosLargos.Count - 1
+            If Lista_MurosLargos(i).ALR_CU <= 0.1 Then
+                Cont_Bajo_L += 1
+            ElseIf Lista_MurosLargos(i).ALR_CU > 0.2 Then
+                Cont_Alto_L += 1
+            Else
+                Cont_Medio_L += 1
+            End If
+        Next
 
+        Dim Cont_Bajo_I = 0
+        Dim Cont_Medio_I = 0
+        Dim Cont_Alto_I = 0
 
-        Grafico_CargaAxial.Series.Clear()
-        Dim Serie_ALR As New Series
-        Serie_ALR.ChartType = SeriesChartType.Pie
-        Serie_ALR.Font = New Drawing.Font("Arial", 10)
-        Grafico_CargaAxial.Series.Add(Serie_ALR)
+        For i = 0 To Lista_MurosIntemedios.Count - 1
+            If Lista_MurosIntemedios(i).ALR_CU <= 0.1 Then
+                Cont_Bajo_I += 1
+            ElseIf Lista_MurosIntemedios(i).ALR_CU > 0.2 Then
+                Cont_Alto_I += 1
+            Else
+                Cont_Medio_I += 1
+            End If
+        Next
 
-        Dim Punto_ALR_Bajo As New DataPoint
-        If List_B.Count > 0 Then
-            Punto_ALR_Bajo.YValues(0) = List_B.Count
-            Punto_ALR_Bajo.Label = "#PERCENT{P0}"
+        Dim Cont_Bajo_C = 0
+        Dim Cont_Medio_C = 0
+        Dim Cont_Alto_C = 0
+
+        For i = 0 To Lista_MurosCortos.Count - 1
+            If Lista_MurosCortos(i).ALR_CU <= 0.1 Then
+                Cont_Bajo_C += 1
+            ElseIf Lista_MurosCortos(i).ALR_CU > 0.2 Then
+                Cont_Alto_C += 1
+            Else
+                Cont_Medio_C += 1
+            End If
+        Next
+
+        Serie_CargaBaja.IsValueShownAsLabel = True
+        Serie_CargaMedia.IsValueShownAsLabel = True
+        Serie_CargaAlta.IsValueShownAsLabel = True
+
+        Serie_CargaBaja.LegendText = "ALR<=10%"
+        Serie_CargaMedia.LegendText = "10%<ALR<=20%"
+        Serie_CargaAlta.LegendText = "20%<ALR"
+
+        Grafico_CargaAxial.ChartAreas("ChartArea1").AxisY.Maximum = Math.Max(Math.Max(Lista_MurosCortos.Count, Lista_MurosIntemedios.Count), Lista_MurosLargos.Count)
+        Grafico_CargaAxial.ChartAreas("ChartArea1").AxisY.Interval = 2
+        Grafico_CargaAxial.ChartAreas("ChartArea1").AxisY.MajorGrid.Enabled = True
+        Grafico_CargaAxial.ChartAreas("ChartArea1").AxisY.MajorGrid.LineDashStyle = ChartDashStyle.DashDot
+
+        Dim Punto_1 As New DataPoint
+        Punto_1.SetValueXY("Largos", Cont_Bajo_L)
+        If Cont_Bajo_L = 0 Then
+            Punto_1.IsValueShownAsLabel = False
         Else
-            Punto_ALR_Bajo.IsEmpty = True
+            Punto_1.Label = Cont_Bajo_L / Lista_MurosLargos.Count * 100
         End If
-        Punto_ALR_Bajo.LegendText = "ALR<=10%"
+        Serie_CargaBaja.Points.Add(Punto_1)
 
-        Dim Punto_ALR_Medio As New DataPoint
-        If List_M.Count > 0 Then
-            Punto_ALR_Medio.YValues(0) = List_M.Count
-            Punto_ALR_Medio.Label = "#PERCENT{P0}"
+        Dim Punto_2 As New DataPoint
+        Punto_2.SetValueXY("Largos", Cont_Medio_L)
+        If Cont_Medio_L = 0 Then
+            Punto_2.IsValueShownAsLabel = False
         Else
-            Punto_ALR_Medio.IsEmpty = True
+            Punto_2.Label = Cont_Medio_L / Lista_MurosLargos.Count * 100
         End If
-        Punto_ALR_Medio.LegendText = "10%<ALR<=20%"
+        Serie_CargaMedia.Points.Add(Punto_2)
 
-        Dim Punto_ALR_Alto As New DataPoint
-        If List_A.Count > 0 Then
-            Punto_ALR_Alto.YValues(0) = List_A.Count
-            Punto_ALR_Alto.Label = "#PERCENT{P0}"
+        Dim Punto_3 As New DataPoint
+        Punto_3.SetValueXY("Largos", Cont_Alto_L)
+        If Cont_Alto_L = 0 Then
+            Punto_3.IsValueShownAsLabel = False
         Else
-            Punto_ALR_Alto.IsEmpty = True
+            Punto_3.Label = Cont_Alto_L / Lista_MurosLargos.Count * 100
         End If
-        Punto_ALR_Alto.LegendText = "20%<ALR"
+        Serie_CargaAlta.Points.Add(Punto_3)
 
-        Serie_ALR.Points.Add(Punto_ALR_Bajo)
-        Serie_ALR.Points.Add(Punto_ALR_Medio)
-        Serie_ALR.Points.Add(Punto_ALR_Alto)
+        Dim Punto_4 As New DataPoint
+        Punto_4.SetValueXY("Intermedios", Cont_Bajo_I)
+        If Cont_Bajo_I = 0 Then
+            Punto_4.IsValueShownAsLabel = False
+        Else
+            Punto_4.Label = Cont_Bajo_I / Lista_MurosIntemedios.Count * 100
+        End If
+        Serie_CargaBaja.Points.Add(Punto_4)
+
+        Dim Punto_5 As New DataPoint
+        Punto_5.SetValueXY("Intermedios", Cont_Medio_I)
+        If Cont_Medio_I = 0 Then
+            Punto_5.IsValueShownAsLabel = False
+        Else
+            Punto_5.Label = Cont_Medio_I / Lista_MurosIntemedios.Count * 100
+        End If
+        Serie_CargaMedia.Points.Add(Punto_5)
+
+        Dim Punto_6 As New DataPoint
+        Punto_6.SetValueXY("Intermedios", Cont_Alto_I)
+        If Cont_Alto_I = 0 Then
+            Punto_6.IsValueShownAsLabel = False
+        Else
+            Punto_6.Label = Cont_Alto_I / Lista_MurosIntemedios.Count * 100
+        End If
+        Serie_CargaAlta.Points.Add(Punto_6)
+
+        Dim Punto_7 As New DataPoint
+        Punto_7.SetValueXY("Cortos", Cont_Bajo_C)
+        If Cont_Bajo_C = 0 Then
+            Punto_7.IsValueShownAsLabel = False
+        Else
+            Punto_7.Label = Cont_Bajo_C / Lista_MurosCortos.Count * 100
+        End If
+        Serie_CargaBaja.Points.Add(Punto_7)
+
+        Dim Punto_8 As New DataPoint
+        Punto_8.SetValueXY("Cortos", Cont_Medio_C)
+        If Cont_Medio_C = 0 Then
+            Punto_8.IsValueShownAsLabel = False
+        Else
+            Punto_8.Label = Cont_Medio_C / Lista_MurosCortos.Count * 100
+        End If
+        Serie_CargaMedia.Points.Add(Punto_8)
+
+        Dim Punto_9 As New DataPoint
+        Punto_9.SetValueXY("Cortos", Cont_Alto_C)
+        If Cont_Alto_C = 0 Then
+            Punto_9.IsValueShownAsLabel = False
+        Else
+            Punto_9.Label = Cont_Alto_C / Lista_MurosCortos.Count * 100
+        End If
+        Serie_CargaAlta.Points.Add(Punto_9)
+
+        'Serie_CargaBaja.Points.AddXY("Largos", Cont_Bajo_L)
+        'Serie_CargaMedia.Points.AddXY("Largos", Cont_Medio_L)
+        'Serie_CargaAlta.Points.AddXY("Largos", Cont_Alto_L)
+
+        'Serie_CargaBaja.Points.AddXY("Intermedios", Cont_Bajo_I)
+        'Serie_CargaMedia.Points.AddXY("Intermedios", Cont_Medio_I)
+        'Serie_CargaAlta.Points.AddXY("Intermedios", Cont_Alto_I)
+
+        'Serie_CargaBaja.Points.AddXY("Cortos", Cont_Bajo_C)
+        'Serie_CargaMedia.Points.AddXY("Cortos", Cont_Medio_C)
+        'Serie_CargaAlta.Points.AddXY("Cortos", Cont_Alto_C)
+
+
+        'Grafico_CargaAxial.Series.Clear()
+        'Dim Serie_ALR As New Series
+        'Serie_ALR.ChartType = SeriesChartType.Pie
+        'Serie_ALR.Font = New Drawing.Font("Arial", 10)
+        'Grafico_CargaAxial.Series.Add(Serie_ALR)
+
+        'Dim Punto_ALR_Bajo As New DataPoint
+        'If List_B.Count > 0 Then
+        '    Punto_ALR_Bajo.YValues(0) = List_B.Count
+        '    Punto_ALR_Bajo.Label = "#PERCENT{P0}"
+        'Else
+        '    Punto_ALR_Bajo.IsEmpty = True
+        'End If
+        'Punto_ALR_Bajo.LegendText = "ALR<=10%"
+
+        'Dim Punto_ALR_Medio As New DataPoint
+        'If List_M.Count > 0 Then
+        '    Punto_ALR_Medio.YValues(0) = List_M.Count
+        '    Punto_ALR_Medio.Label = "#PERCENT{P0}"
+        'Else
+        '    Punto_ALR_Medio.IsEmpty = True
+        'End If
+        'Punto_ALR_Medio.LegendText = "10%<ALR<=20%"
+
+        'Dim Punto_ALR_Alto As New DataPoint
+        'If List_A.Count > 0 Then
+        '    Punto_ALR_Alto.YValues(0) = List_A.Count
+        '    Punto_ALR_Alto.Label = "#PERCENT{P0}"
+        'Else
+        '    Punto_ALR_Alto.IsEmpty = True
+        'End If
+        'Punto_ALR_Alto.LegendText = "20%<ALR"
+
+        'Serie_ALR.Points.Add(Punto_ALR_Bajo)
+        'Serie_ALR.Points.Add(Punto_ALR_Medio)
+        'Serie_ALR.Points.Add(Punto_ALR_Alto)
 
 
         '------------------ Grafico del confinamiento ---------------------------------
@@ -1281,9 +1471,9 @@ Public Class Form_00_Principal
 
         '------------------------ Tipo de Muro ------------------------------
         Grafico_Esbeltez.Series.Clear()
-        Dim Lista_MurosLargos As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Largo")
-        Dim Lista_MurosIntemedios As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Intermedio")
-        Dim Lista_MurosCortos As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Corto")
+        'Dim Lista_MurosLargos As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Largo")
+        'Dim Lista_MurosIntemedios As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Intermedio")
+        'Dim Lista_MurosCortos As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Corto")
 
         'Grafico_Esbeltez.Series.Clear()
         'Dim Leyenda_Graf As New Legend
