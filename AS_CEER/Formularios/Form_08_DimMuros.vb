@@ -44,14 +44,41 @@ Public Class Form_08_DimMuros
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        For i = 0 To Tabla_Cargas.Rows.Count - 2
-            Form_00_Principal.T_Name.Text = Tabla_Cargas.Rows(i).Cells(0).Value
-            Form_00_Principal.Direccion.Text = Tabla_Cargas.Rows(i).Cells(4).Value
-            Form_00_Principal.T_Lw.Text = Tabla_Cargas.Rows(i).Cells(1).Value
-            Form_00_Principal.T_tw.Text = Tabla_Cargas.Rows(i).Cells(2).Value
-            Form_00_Principal.T_Cantidad.Text = Tabla_Cargas.Rows(i).Cells(3).Value
-            Form_00_Principal.Button1.PerformClick()
-        Next
+        Try
+            For i = 0 To Tabla_Cargas.Rows.Count - 2
+                Form_00_Principal.T_Name.Text = Tabla_Cargas.Rows(i).Cells(0).Value
+                Form_00_Principal.Direccion.Text = Tabla_Cargas.Rows(i).Cells(4).Value
+                Form_00_Principal.T_Lw.Text = Tabla_Cargas.Rows(i).Cells(1).Value
+                Form_00_Principal.T_tw.Text = Tabla_Cargas.Rows(i).Cells(2).Value
+                Form_00_Principal.T_Cantidad.Text = Tabla_Cargas.Rows(i).Cells(3).Value
+                Form_00_Principal.Button1.PerformClick()
+            Next
+        Catch ex As Exception
+        Finally
+            Me.Close()
+        End Try
+    End Sub
+
+    Public Sub New()
+        InitializeComponent()
+        MenuStrip1.Renderer = New MiRenderizador()
 
     End Sub
+
+    Private Class MiRenderizador
+        Inherits ToolStripProfessionalRenderer
+
+        Protected Overrides Sub OnRenderMenuItemBackground(ByVal e As ToolStripItemRenderEventArgs)
+            If Not e.Item.Selected Then
+                MyBase.OnRenderMenuItemBackground(e)
+            Else
+                Dim rc As System.Drawing.Rectangle
+                rc = New System.Drawing.Rectangle(Point.Empty, e.Item.Size)
+                e.Graphics.FillRectangle(Brushes.Gray, rc)
+                e.Graphics.DrawRectangle(Pens.Gray, 1, 0, rc.Width - 2, rc.Height - 1)
+            End If
+        End Sub
+    End Class
+
+
 End Class

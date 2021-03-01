@@ -27,17 +27,17 @@ Partial Class Form_08_DimMuros
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_08_DimMuros))
         Me.Tabla_Cargas = New System.Windows.Forms.DataGridView()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.DatosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TraerDeExcelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.Tabla_Cargas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -86,32 +86,6 @@ Partial Class Form_08_DimMuros
         Me.Tabla_Cargas.Size = New System.Drawing.Size(438, 568)
         Me.Tabla_Cargas.TabIndex = 1
         '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Muros"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Lw"
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "tw"
-        Me.Column3.Name = "Column3"
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Cantidad"
-        Me.Column1.Name = "Column1"
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Dirección"
-        Me.Column5.Name = "Column5"
-        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.MenuStrip1)
@@ -146,13 +120,13 @@ Partial Class Form_08_DimMuros
         Me.TraerDeExcelToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(87, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.TraerDeExcelToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.TraerDeExcelToolStripMenuItem.Name = "TraerDeExcelToolStripMenuItem"
-        Me.TraerDeExcelToolStripMenuItem.Size = New System.Drawing.Size(160, 24)
-        Me.TraerDeExcelToolStripMenuItem.Text = "Traer de Excel"
+        Me.TraerDeExcelToolStripMenuItem.Size = New System.Drawing.Size(200, 24)
+        Me.TraerDeExcelToolStripMenuItem.Text = "Traer Datos de Excel"
         '
         'Button1
         '
         Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("SansSerif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(172, 601)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 30)
@@ -169,6 +143,32 @@ Partial Class Form_08_DimMuros
         Me.GroupBox1.Size = New System.Drawing.Size(450, 644)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Muros"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Lw (m)"
+        Me.Column2.Name = "Column2"
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "tw (m)"
+        Me.Column3.Name = "Column3"
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Cantidad"
+        Me.Column1.Name = "Column1"
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Dirección"
+        Me.Column5.Name = "Column5"
         '
         'Form_08_DimMuros
         '
@@ -191,15 +191,15 @@ Partial Class Form_08_DimMuros
     End Sub
 
     Friend WithEvents Tabla_Cargas As DataGridView
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Panel1 As Panel
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents DatosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TraerDeExcelToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Button1 As Button
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
 End Class

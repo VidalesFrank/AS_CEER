@@ -1,8 +1,10 @@
 ﻿Imports System.Windows.Forms.DataVisualization.Charting
 Imports excel = Microsoft.Office.Interop.Excel
+'Imports System.Drawing
 Imports iTextSharp.text.pdf
 Imports iTextSharp.text
 Imports System.IO
+
 Public Class Form_00_Principal
     Public Shared Proyecto As New Proyecto
     Function ALR(ByVal Va As Double, ByVal Num_Pisos As Integer, ByVal Area_P As Double)
@@ -632,13 +634,11 @@ Public Class Form_00_Principal
 
         Button6.Visible = True
         Button7.Visible = True
-        Button8.Visible = True
         Button9.Visible = True
 
         Grafico_Densidad.Dock = DockStyle.Fill
         Grafico_CargaAxial.Dock = DockStyle.Fill
         Grafico_Confinamiento.Dock = DockStyle.Fill
-        Grafico_Esbeltez.Dock = DockStyle.Fill
         Grafico_Densidad.Visible = True
 
         '------------------------- CÁLCULO DE PESO PARA LA DENSIDAD ------------------------
@@ -662,8 +662,8 @@ Public Class Form_00_Principal
             Cal_Densidad = "Alta"
             Proyecto.Edificio.Calificaciones.Peso_Densidad += Proyecto.Edificio.Indicador.Densidad_Min
         End If
-        Proyecto.Edificio.Calificaciones.Calificacion_Densidad = "Densidad " + Cal_Densidad
-        L_D.Text = Proyecto.Edificio.Calificaciones.Calificacion_Densidad
+        Proyecto.Edificio.Calificaciones.Calificacion_Densidad = Cal_Densidad
+        L_D.Text = Convert.ToString("Densidad " & Proyecto.Edificio.Calificaciones.Calificacion_Densidad)
         L_D.Visible = True
         ICE += Proyecto.Edificio.Calificaciones.Peso_Densidad / 2
 
@@ -681,13 +681,13 @@ Public Class Form_00_Principal
         Dim Factor_Forma As Single = Proyecto.Edificio.Dimension_Longitud / Proyecto.Edificio.Dimension_Transversal
         If Factor_Forma < 1.5 Then
             Proyecto.Edificio.Calificaciones.Peso_FactorForma = Proyecto.Edificio.Indicador.Factor_Forma_Min
-            Proyecto.Edificio.Calificaciones.Calificacion_FactorForma = "Planta de Forma Cuadrada"
+            Proyecto.Edificio.Calificaciones.Calificacion_FactorForma = "Planta cuadrada"
         ElseIf 1.5 <= Factor_Forma And Factor_Forma < 4 Then
             Proyecto.Edificio.Calificaciones.Peso_FactorForma = Proyecto.Edificio.Indicador.Factor_Forma_Int
-            Proyecto.Edificio.Calificaciones.Calificacion_FactorForma = "Planta de Forma Rectangular"
+            Proyecto.Edificio.Calificaciones.Calificacion_FactorForma = "Planta rectangular"
         ElseIf Factor_Forma >= 4 Then
             Proyecto.Edificio.Calificaciones.Peso_FactorForma = Proyecto.Edificio.Indicador.Factor_Forma_Max
-            Proyecto.Edificio.Calificaciones.Calificacion_FactorForma = "Planta de Forma Alargada"
+            Proyecto.Edificio.Calificaciones.Calificacion_FactorForma = "Planta muy alargada"
         End If
         L_FF.Text = Proyecto.Edificio.Calificaciones.Calificacion_FactorForma
         L_FF.Visible = True
@@ -698,16 +698,16 @@ Public Class Form_00_Principal
         Dim Porcentaje_Intermedios As Single = Num_Intermedios / Proyecto.Edificio.ListaMuros_Protagonicos.Count()
         Dim Porcentaje_Cortos As Single = Num_Cortos / Proyecto.Edificio.ListaMuros_Protagonicos.Count()
         If Porcentaje_Cortos >= 0.8 Then
-            Proyecto.Edificio.Calificaciones.Calificacion_Ar = "Se Tienen Muros Cortos"
+            Proyecto.Edificio.Calificaciones.Calificacion_Ar = "Predominan muros cortos"
             Proyecto.Edificio.Calificaciones.Peso_Ar = Proyecto.Edificio.Indicador.Ar_Max
         ElseIf Porcentaje_Cortos >= 0.6 And Porcentaje_Intermedios <= 0.25 Then
-            Proyecto.Edificio.Calificaciones.Calificacion_Ar = "Se Tienen Muros Cortos e Intermedios"
+            Proyecto.Edificio.Calificaciones.Calificacion_Ar = "Se tienen muros cortos e intermedios"
             Proyecto.Edificio.Calificaciones.Peso_Ar = Proyecto.Edificio.Indicador.Ar_Int
         ElseIf Porcentaje_Intermedios < 0.2 And Porcentaje_Largos < 0.2 And Porcentaje_Cortos >= 0.5 Then
-            Proyecto.Edificio.Calificaciones.Calificacion_Ar = "Se Tienen Muros Cortos, Intermedios y Largos"
+            Proyecto.Edificio.Calificaciones.Calificacion_Ar = "Se tienen muros cortos, intermedios y largos"
             Proyecto.Edificio.Calificaciones.Peso_Ar = Proyecto.Edificio.Indicador.Ar_Min
         Else
-            Proyecto.Edificio.Calificaciones.Calificacion_Ar = "Se Tienen Muros Largos e Intermedios"
+            Proyecto.Edificio.Calificaciones.Calificacion_Ar = "Se tiene muros largos e intermedios"
             Proyecto.Edificio.Calificaciones.Peso_Ar = Proyecto.Edificio.Indicador.Ar_Min
         End If
         L_Ar.Text = Proyecto.Edificio.Calificaciones.Calificacion_Ar
@@ -716,16 +716,16 @@ Public Class Form_00_Principal
 
         '---------------------------- CÁLCULO DE PESO PARA EL ALR -----------------------------
         If Max_ALR <= 0.1 Then
-            Cal_ALR = "Menor al 10%"
+            Cal_ALR = "Los muros tienen ALR<=10%"
             Proyecto.Edificio.Calificaciones.Peso_ALR = Proyecto.Edificio.Indicador.ALR_Min
         ElseIf 0.1 < Max_ALR And Max_ALR <= 0.2 Then
-            Cal_ALR = "Entre 10 % y 20%"
+            Cal_ALR = "Los muros tiene ALR entre 10 % y 20%"
             Proyecto.Edificio.Calificaciones.Peso_ALR = Proyecto.Edificio.Indicador.ALR_Int
         ElseIf Max_ALR > 0.2 Then
-            Cal_ALR = "Mayor al 20%"
+            Cal_ALR = "Los muros tienen ALR mayor al 20%"
             Proyecto.Edificio.Calificaciones.Peso_ALR = Proyecto.Edificio.Indicador.ALR_Max
         End If
-        Proyecto.Edificio.Calificaciones.Calificacion_ALR = "Relación de Carga Axial " + Cal_ALR
+        Proyecto.Edificio.Calificaciones.Calificacion_ALR = Cal_ALR
         L_ALR.Text = Proyecto.Edificio.Calificaciones.Calificacion_ALR
         L_ALR.Visible = True
         ICE += Proyecto.Edificio.Calificaciones.Peso_ALR
@@ -734,26 +734,28 @@ Public Class Form_00_Principal
         Proyecto.Edificio.Amenaza = C_Nivel_Amenaza.Text
         If C_Nivel_Amenaza.Text = "Alta" Then
             Proyecto.Edificio.Calificaciones.Peso_Amenaza = Proyecto.Edificio.Indicador.Amenaza_Max
-        ElseIf C_Nivel_Amenaza.Text = "Media" Then
+        ElseIf C_Nivel_Amenaza.Text = "Intermedia" Then
             Proyecto.Edificio.Calificaciones.Peso_Amenaza = Proyecto.Edificio.Indicador.Amenaza_Int
         ElseIf C_Nivel_Amenaza.Text = "Baja" Then
             Proyecto.Edificio.Calificaciones.Peso_Amenaza = Proyecto.Edificio.Indicador.Amenaza_Min
         End If
-        Proyecto.Edificio.Calificaciones.Calificacion_Amenaza = "Nivel de Amenaza Sísmica " + C_Nivel_Amenaza.Text
-        L_Na.Text = Proyecto.Edificio.Calificaciones.Calificacion_Amenaza
+        Proyecto.Edificio.Calificaciones.Calificacion_Amenaza = C_Nivel_Amenaza.Text
+        L_Na.Text = Convert.ToString("Nivel de amenaza " & Proyecto.Edificio.Calificaciones.Calificacion_Amenaza)
         L_Na.Visible = True
         ICE += Proyecto.Edificio.Calificaciones.Peso_Amenaza
 
         '---------------------------- CÁLCULO DE PESO PARA LA ESBELTEZ -----------------------------
         Dim Esbeltez_Promedio As Single = Esbeltez_Total / Proyecto.Edificio.ListaMuros_Protagonicos.Count()
         If Esbeltez_Promedio > 24 Then
-            Proyecto.Edificio.Calificaciones.Calificacion_Esbeltez = "Se Tienen Muros Esbeltos"
+            Proyecto.Edificio.Calificaciones.Calificacion_Esbeltez = "Se tienen muros esbeltos"
             P_7.Visible = True
             L_Es.Visible = True
             Proyecto.Edificio.Calificaciones.Peso_Esbeltez = Proyecto.Edificio.Indicador.Esbeltez_Max
         ElseIf 24 >= Esbeltez_Promedio And Esbeltez_Promedio > 16 Then
+            Proyecto.Edificio.Calificaciones.Calificacion_Esbeltez = "Se tienen muros con esbeltez media"
             Proyecto.Edificio.Calificaciones.Peso_Esbeltez = Proyecto.Edificio.Indicador.Esbeltez_Int
         ElseIf Esbeltez_Promedio <= 16 Then
+            Proyecto.Edificio.Calificaciones.Calificacion_Esbeltez = "No se tienen muros esbeltos"
             Proyecto.Edificio.Calificaciones.Peso_Esbeltez = Proyecto.Edificio.Indicador.Esbeltez_Min
         End If
         L_Es.Text = Proyecto.Edificio.Calificaciones.Calificacion_Esbeltez
@@ -762,10 +764,10 @@ Public Class Form_00_Principal
         '---------------------------- CÁLCULO DE PESO PARA EL CONFINAMIENTO -----------------------------
         Dim Porcentaje_Confinamiento As Single = Num_Confinados / Proyecto.Edificio.ListaMuros_Protagonicos.Count()
         If Porcentaje_Confinamiento <= 0.1 Then
-            Proyecto.Edificio.Calificaciones.Calificacion_Confinamiento = "Muros Sin Confinamiento"
+            Proyecto.Edificio.Calificaciones.Calificacion_Confinamiento = "Muros sin confinamiento"
             Proyecto.Edificio.Calificaciones.Peso_Confinamiento = Proyecto.Edificio.Indicador.Confinamiento_Max
         ElseIf 0.1 < Porcentaje_Confinamiento And Porcentaje_Confinamiento <= 0.2 Then
-            Proyecto.Edificio.Calificaciones.Calificacion_Confinamiento = "Menos del 20% de los Muros son Confinados"
+            Proyecto.Edificio.Calificaciones.Calificacion_Confinamiento = "Menos del 20% de los muros son confinados"
             Proyecto.Edificio.Calificaciones.Peso_Confinamiento = Proyecto.Edificio.Indicador.Confinamiento_Int
         ElseIf Porcentaje_Confinamiento > 0.2 Then
             Proyecto.Edificio.Calificaciones.Calificacion_Confinamiento = "Muros Confinados"
@@ -1063,7 +1065,7 @@ Public Class Form_00_Principal
 
         '------------------------- CÁLCULO DE PESO PARA LA DENSIDAD ------------------------
 
-        L_D.Text = Proyecto.Edificio.Calificaciones.Calificacion_Densidad
+        L_D.Text = Convert.ToString("Densidad " & Proyecto.Edificio.Calificaciones.Calificacion_Densidad)
         L_D.Visible = True
 
         '---------------------- CÁLCULO DE PESO PARA EL NUMERO DE PISOS -------------------
@@ -1117,13 +1119,11 @@ Public Class Form_00_Principal
 
         Button6.Visible = True
         Button7.Visible = True
-        Button8.Visible = True
         Button9.Visible = True
 
         Grafico_Densidad.Dock = DockStyle.Fill
         Grafico_CargaAxial.Dock = DockStyle.Fill
         Grafico_Confinamiento.Dock = DockStyle.Fill
-        Grafico_Esbeltez.Dock = DockStyle.Fill
         Grafico_Densidad.Visible = True
 
         '----------------------- Grafico de la Densidad ---------------------
@@ -1161,55 +1161,6 @@ Public Class Form_00_Principal
         Serie_DY.Points.AddXY("Y", Proyecto.Edificio.Densidad_Y)
 
         '----------------- Grafico de Cargas Axiales (ALR) ----------------
-        'Serie_CargaBaja.Points.AddXY("<10%", List_B.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
-        'Serie_CargaBaja.Points.AddXY("10%-20%", 0)
-        'Serie_CargaBaja.Points.AddXY(">20%", 0)
-
-        'Serie_CargaMedia.Points.AddXY("<10%", 0)
-        'Serie_CargaMedia.Points.AddXY("10%-20%", List_M.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
-        'Serie_CargaMedia.Points.AddXY(">20%", 0)
-
-        'Serie_CargaAlta.Points.AddXY("<10%", 0)
-        'Serie_CargaAlta.Points.AddXY("10%-20%", 0)
-        'Serie_CargaAlta.Points.AddXY(">20%", List_A.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
-
-        'Grafico_CargaAxial.Series.Clear()
-        'Dim Serie_ALR As New Series
-        'Serie_ALR.ChartType = SeriesChartType.Pie
-        'Serie_ALR.Font = New Drawing.Font("Arial", 10)
-        'Grafico_CargaAxial.Series.Add(Serie_ALR)
-
-        'Dim Punto_ALR_Bajo As New DataPoint
-        'If List_B.Count > 0 Then
-        '    Punto_ALR_Bajo.YValues(0) = List_B.Count
-        '    Punto_ALR_Bajo.Label = "#PERCENT{P0}"
-        'Else
-        '    Punto_ALR_Bajo.IsEmpty = True
-        'End If
-        'Punto_ALR_Bajo.LegendText = "ALR<=10%"
-
-        'Dim Punto_ALR_Medio As New DataPoint
-        'If List_M.Count > 0 Then
-        '    Punto_ALR_Medio.YValues(0) = List_M.Count
-        '    Punto_ALR_Medio.Label = "#PERCENT{P0}"
-        'Else
-        '    Punto_ALR_Medio.IsEmpty = True
-        'End If
-        'Punto_ALR_Medio.LegendText = "10%<ALR<=20%"
-
-        'Dim Punto_ALR_Alto As New DataPoint
-        'If List_A.Count > 0 Then
-        '    Punto_ALR_Alto.YValues(0) = List_A.Count
-        '    Punto_ALR_Alto.Label = "#PERCENT{P0}"
-        'Else
-        '    Punto_ALR_Alto.IsEmpty = True
-        'End If
-        'Punto_ALR_Alto.LegendText = "20%<ALR"
-
-        'Serie_ALR.Points.Add(Punto_ALR_Bajo)
-        'Serie_ALR.Points.Add(Punto_ALR_Medio)
-        'Serie_ALR.Points.Add(Punto_ALR_Alto)
-
         Dim List_B As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Nivel_Carga = "Bajo")
         Dim List_M As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Nivel_Carga = "Medio")
         Dim List_A As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Nivel_Carga = "Alto")
@@ -1295,7 +1246,8 @@ Public Class Form_00_Principal
         If Cont_Bajo_L = 0 Then
             Punto_1.IsValueShownAsLabel = False
         Else
-            Punto_1.Label = Cont_Bajo_L / Lista_MurosLargos.Count * 100
+            Punto_1.Label = Cont_Bajo_L
+            'Punto_1.Label = Cont_Bajo_L / Lista_MurosLargos.Count * 100
         End If
         Serie_CargaBaja.Points.Add(Punto_1)
 
@@ -1304,7 +1256,8 @@ Public Class Form_00_Principal
         If Cont_Medio_L = 0 Then
             Punto_2.IsValueShownAsLabel = False
         Else
-            Punto_2.Label = Cont_Medio_L / Lista_MurosLargos.Count * 100
+            Punto_2.Label = Cont_Medio_L
+            'Punto_2.Label = Cont_Medio_L / Lista_MurosLargos.Count * 100
         End If
         Serie_CargaMedia.Points.Add(Punto_2)
 
@@ -1313,7 +1266,8 @@ Public Class Form_00_Principal
         If Cont_Alto_L = 0 Then
             Punto_3.IsValueShownAsLabel = False
         Else
-            Punto_3.Label = Cont_Alto_L / Lista_MurosLargos.Count * 100
+            Punto_3.Label = Cont_Alto_L
+            'Punto_3.Label = Cont_Alto_L / Lista_MurosLargos.Count * 100
         End If
         Serie_CargaAlta.Points.Add(Punto_3)
 
@@ -1322,7 +1276,8 @@ Public Class Form_00_Principal
         If Cont_Bajo_I = 0 Then
             Punto_4.IsValueShownAsLabel = False
         Else
-            Punto_4.Label = Cont_Bajo_I / Lista_MurosIntemedios.Count * 100
+            Punto_4.Label = Cont_Bajo_I
+            'Punto_4.Label = Cont_Bajo_I / Lista_MurosIntemedios.Count * 100
         End If
         Serie_CargaBaja.Points.Add(Punto_4)
 
@@ -1331,7 +1286,8 @@ Public Class Form_00_Principal
         If Cont_Medio_I = 0 Then
             Punto_5.IsValueShownAsLabel = False
         Else
-            Punto_5.Label = Cont_Medio_I / Lista_MurosIntemedios.Count * 100
+            Punto_5.Label = Cont_Medio_I
+            'Punto_5.Label = Cont_Medio_I / Lista_MurosIntemedios.Count * 100
         End If
         Serie_CargaMedia.Points.Add(Punto_5)
 
@@ -1340,7 +1296,8 @@ Public Class Form_00_Principal
         If Cont_Alto_I = 0 Then
             Punto_6.IsValueShownAsLabel = False
         Else
-            Punto_6.Label = Cont_Alto_I / Lista_MurosIntemedios.Count * 100
+            Punto_6.Label = Cont_Alto_I
+            'Punto_6.Label = Cont_Alto_I / Lista_MurosIntemedios.Count * 100
         End If
         Serie_CargaAlta.Points.Add(Punto_6)
 
@@ -1349,7 +1306,8 @@ Public Class Form_00_Principal
         If Cont_Bajo_C = 0 Then
             Punto_7.IsValueShownAsLabel = False
         Else
-            Punto_7.Label = Cont_Bajo_C / Lista_MurosCortos.Count * 100
+            Punto_7.Label = Cont_Bajo_C
+            'Punto_7.Label = Cont_Bajo_C / Lista_MurosCortos.Count * 100
         End If
         Serie_CargaBaja.Points.Add(Punto_7)
 
@@ -1358,7 +1316,8 @@ Public Class Form_00_Principal
         If Cont_Medio_C = 0 Then
             Punto_8.IsValueShownAsLabel = False
         Else
-            Punto_8.Label = Cont_Medio_C / Lista_MurosCortos.Count * 100
+            Punto_8.Label = Cont_Medio_C
+            'Punto_8.Label = Cont_Medio_C / Lista_MurosCortos.Count * 100
         End If
         Serie_CargaMedia.Points.Add(Punto_8)
 
@@ -1367,64 +1326,15 @@ Public Class Form_00_Principal
         If Cont_Alto_C = 0 Then
             Punto_9.IsValueShownAsLabel = False
         Else
-            Punto_9.Label = Cont_Alto_C / Lista_MurosCortos.Count * 100
+            Punto_9.Label = Cont_Alto_C
+            'Punto_9.Label = Cont_Alto_C / Lista_MurosCortos.Count * 100
         End If
         Serie_CargaAlta.Points.Add(Punto_9)
-
-        'Serie_CargaBaja.Points.AddXY("Largos", Cont_Bajo_L)
-        'Serie_CargaMedia.Points.AddXY("Largos", Cont_Medio_L)
-        'Serie_CargaAlta.Points.AddXY("Largos", Cont_Alto_L)
-
-        'Serie_CargaBaja.Points.AddXY("Intermedios", Cont_Bajo_I)
-        'Serie_CargaMedia.Points.AddXY("Intermedios", Cont_Medio_I)
-        'Serie_CargaAlta.Points.AddXY("Intermedios", Cont_Alto_I)
-
-        'Serie_CargaBaja.Points.AddXY("Cortos", Cont_Bajo_C)
-        'Serie_CargaMedia.Points.AddXY("Cortos", Cont_Medio_C)
-        'Serie_CargaAlta.Points.AddXY("Cortos", Cont_Alto_C)
-
-
-        'Grafico_CargaAxial.Series.Clear()
-        'Dim Serie_ALR As New Series
-        'Serie_ALR.ChartType = SeriesChartType.Pie
-        'Serie_ALR.Font = New Drawing.Font("Arial", 10)
-        'Grafico_CargaAxial.Series.Add(Serie_ALR)
-
-        'Dim Punto_ALR_Bajo As New DataPoint
-        'If List_B.Count > 0 Then
-        '    Punto_ALR_Bajo.YValues(0) = List_B.Count
-        '    Punto_ALR_Bajo.Label = "#PERCENT{P0}"
-        'Else
-        '    Punto_ALR_Bajo.IsEmpty = True
-        'End If
-        'Punto_ALR_Bajo.LegendText = "ALR<=10%"
-
-        'Dim Punto_ALR_Medio As New DataPoint
-        'If List_M.Count > 0 Then
-        '    Punto_ALR_Medio.YValues(0) = List_M.Count
-        '    Punto_ALR_Medio.Label = "#PERCENT{P0}"
-        'Else
-        '    Punto_ALR_Medio.IsEmpty = True
-        'End If
-        'Punto_ALR_Medio.LegendText = "10%<ALR<=20%"
-
-        'Dim Punto_ALR_Alto As New DataPoint
-        'If List_A.Count > 0 Then
-        '    Punto_ALR_Alto.YValues(0) = List_A.Count
-        '    Punto_ALR_Alto.Label = "#PERCENT{P0}"
-        'Else
-        '    Punto_ALR_Alto.IsEmpty = True
-        'End If
-        'Punto_ALR_Alto.LegendText = "20%<ALR"
-
-        'Serie_ALR.Points.Add(Punto_ALR_Bajo)
-        'Serie_ALR.Points.Add(Punto_ALR_Medio)
-        'Serie_ALR.Points.Add(Punto_ALR_Alto)
 
 
         '------------------ Grafico del confinamiento ---------------------------------
         Grafico_Confinamiento.Series.Clear()
-        Dim Lista_MurosConfinados As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Confinamiento = "Si")
+
         Dim Serie_MConfinados As New Series
         Grafico_Confinamiento.Series.Add(Serie_MConfinados)
         Serie_MConfinados.ChartType = SeriesChartType.StackedColumn
@@ -1435,89 +1345,110 @@ Public Class Form_00_Principal
         Serie_MNoConfinados.ChartType = SeriesChartType.StackedColumn
         Serie_MNoConfinados.Color = Color.Red
 
-        Serie_MConfinados.Points.AddXY("Confinados", Lista_MurosConfinados.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count * 100)
-        Serie_MConfinados.Points.AddXY("Sin Confinamiento", 0)
+        Dim Cont_Conf_L As Integer = 0
+        Dim Cont_NoConf_L As Integer = 0
 
-        Serie_MNoConfinados.Points.AddXY("Confinados", 0)
-        Serie_MNoConfinados.Points.AddXY("Sin Confinamiento", (1 - Lista_MurosConfinados.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count) * 100)
+        For i = 0 To Lista_MurosLargos.Count - 1
+            If Lista_MurosLargos(i).Confinamiento = "Si" Then
+                Cont_Conf_L += 1
+            Else
+                Cont_NoConf_L += 1
+            End If
+        Next
 
-        Grafico_Confinamiento.Series.Clear()
-        Dim Serie_Confinamiento As New Series
-        Serie_Confinamiento.ChartType = SeriesChartType.Pie
-        Serie_Confinamiento.Font = New Drawing.Font("Arial", 10)
-        Grafico_Confinamiento.Series.Add(Serie_Confinamiento)
+        Dim Cont_Conf_I As Integer = 0
+        Dim Cont_NoConf_I As Integer = 0
 
-        Dim Punto_Confinados As New DataPoint
-        If Lista_MurosConfinados.Count > 0 Then
-            Punto_Confinados.YValues(0) = Lista_MurosConfinados.Count
-            Punto_Confinados.Label = "#PERCENT{P0}"
+        For i = 0 To Lista_MurosIntemedios.Count - 1
+            If Lista_MurosIntemedios(i).Confinamiento = "Si" Then
+                Cont_Conf_I += 1
+            Else
+                Cont_NoConf_I += 1
+            End If
+        Next
+
+        Dim Cont_Conf_C As Integer = 0
+        Dim Cont_NoConf_C As Integer = 0
+
+        For i = 0 To Lista_MurosCortos.Count - 1
+            If Lista_MurosCortos(i).Confinamiento = "Si" Then
+                Cont_Conf_C += 1
+            Else
+                Cont_NoConf_C += 1
+            End If
+        Next
+
+        Serie_MNoConfinados.IsValueShownAsLabel = True
+        Serie_MConfinados.IsValueShownAsLabel = True
+
+        Serie_MConfinados.LegendText = "Confinados"
+        Serie_MNoConfinados.LegendText = "No confinados"
+
+        Grafico_Confinamiento.ChartAreas("ChartArea1").AxisY.Maximum = Math.Max(Math.Max(Lista_MurosCortos.Count, Lista_MurosIntemedios.Count), Lista_MurosLargos.Count)
+        Grafico_Confinamiento.ChartAreas("ChartArea1").AxisY.Interval = 2
+        Grafico_Confinamiento.ChartAreas("ChartArea1").AxisY.MajorGrid.Enabled = True
+        Grafico_Confinamiento.ChartAreas("ChartArea1").AxisY.MajorGrid.LineDashStyle = ChartDashStyle.DashDot
+
+        Dim Punto_1C As New DataPoint
+        Punto_1C.SetValueXY("Largos", Cont_Conf_L)
+        If Cont_Conf_L = 0 Then
+            Punto_1C.IsValueShownAsLabel = False
         Else
-            Punto_Confinados.IsEmpty = True
+            Punto_1C.Label = Cont_Conf_L
+            'Punto_1C.Label = Cont_Conf_L / Lista_MurosLargos.Count * 100
         End If
-        Punto_Confinados.LegendText = "Confinados"
+        Serie_MConfinados.Points.Add(Punto_1C)
 
-        Dim Punto_NoConfinados As New DataPoint
-        If (1 - Lista_MurosConfinados.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count) * 100 > 0 Then
-            Punto_NoConfinados.YValues(0) = (Proyecto.Edificio.ListaMuros_Protagonicos.Count - Lista_MurosConfinados.Count)
-            'Punto_NoConfinados.YValues(0) = (1 - Lista_MurosConfinados.Count / Proyecto.Edificio.ListaMuros_Protagonicos.Count) * 100
-            Punto_NoConfinados.Label = "#PERCENT{P0}"
+        Dim Punto_2C As New DataPoint
+        Punto_2C.SetValueXY("Largos", Cont_NoConf_L)
+        If Cont_NoConf_L = 0 Then
+            Punto_2C.IsValueShownAsLabel = False
         Else
-            Punto_NoConfinados.IsEmpty = True
+            Punto_2C.Label = Cont_NoConf_L
+            'Punto_2C.Label = Cont_NoConf_L / Lista_MurosLargos.Count * 100
         End If
-        Punto_NoConfinados.LegendText = "Sin confinamiento"
+        Serie_MNoConfinados.Points.Add(Punto_2C)
 
-        Serie_Confinamiento.Points.Add(Punto_Confinados)
-        Serie_Confinamiento.Points.Add(Punto_NoConfinados)
-
-        '------------------------ Tipo de Muro ------------------------------
-        Grafico_Esbeltez.Series.Clear()
-        'Dim Lista_MurosLargos As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Largo")
-        'Dim Lista_MurosIntemedios As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Intermedio")
-        'Dim Lista_MurosCortos As List(Of Muro) = Proyecto.Edificio.ListaMuros_Protagonicos.FindAll(Function(P) P.Tipo_Muro = "Corto")
-
-        'Grafico_Esbeltez.Series.Clear()
-        'Dim Leyenda_Graf As New Legend
-        'Leyenda_Graf.Alignment = StringAlignment.Center
-        'Leyenda_Graf.DockedToChartArea = "ChartArea1"
-        'Leyenda_Graf.Docking = Docking.Bottom
-        'Leyenda_Graf.Font = New Drawing.Font("Arial", 9)
-        'Leyenda_Graf.IsDockedInsideChartArea = False
-        'Leyenda_Graf.Enabled = True
-        'Grafico_Esbeltez.Legends.Add(Leyenda_Graf)
-        Grafico_Tipo_Muro.Series("Series1").Points.Clear()
-
-        Dim Punto_Muros_Largos As New DataPoint
-        If Lista_MurosLargos.Count > 0 Then
-            Punto_Muros_Largos.YValues(0) = Lista_MurosLargos.Count
-            Punto_Muros_Largos.Label = "#PERCENT{P0}"
+        Dim Punto_3C As New DataPoint
+        Punto_3C.SetValueXY("Intermedios", Cont_Conf_I)
+        If Cont_Conf_I = 0 Then
+            Punto_3C.IsValueShownAsLabel = False
         Else
-            Punto_Muros_Largos.IsEmpty = True
+            Punto_3C.Label = Cont_Conf_I
+            'Punto_3C.Label = Cont_Conf_I / Lista_MurosIntemedios.Count * 100
         End If
-        Punto_Muros_Largos.LegendText = "Largos (Ar<=4)"
+        Serie_MConfinados.Points.Add(Punto_3C)
 
-        Dim Punto_Muros_Intermedios As New DataPoint
-
-        If Lista_MurosIntemedios.Count > 0 Then
-            Punto_Muros_Intermedios.YValues(0) = Lista_MurosIntemedios.Count
-            Punto_Muros_Intermedios.Label = "#PERCENT{P0}"
+        Dim Punto_4C As New DataPoint
+        Punto_4C.SetValueXY("Intermedios", Cont_NoConf_I)
+        If Cont_NoConf_I = 0 Then
+            Punto_4C.IsValueShownAsLabel = False
         Else
-            Punto_Muros_Intermedios.IsEmpty = True
+            Punto_4C.Label = Cont_NoConf_I
+            'Punto_4C.Label = Cont_NoConf_I / Lista_MurosIntemedios.Count * 100
         End If
-        Punto_Muros_Intermedios.LegendText = "Intermedios (4<Ar<=10)"
+        Serie_MNoConfinados.Points.Add(Punto_4C)
 
-        Dim Punto_Muros_Cortos As New DataPoint
-
-        If Lista_MurosCortos.Count > 0 Then
-            Punto_Muros_Cortos.YValues(0) = Lista_MurosCortos.Count
-            Punto_Muros_Cortos.Label = "#PERCENT{P0}"
+        Dim Punto_5C As New DataPoint
+        Punto_5C.SetValueXY("Cortos", Cont_Conf_C)
+        If Cont_Conf_C = 0 Then
+            Punto_5C.IsValueShownAsLabel = False
         Else
-            Punto_Muros_Cortos.IsEmpty = True
+            Punto_5C.Label = Cont_Conf_C
+            'Punto_5C.Label = Cont_Conf_C / Lista_MurosCortos.Count * 100
         End If
-        Punto_Muros_Cortos.LegendText = "Cortos (10<Ar)"
+        Serie_MConfinados.Points.Add(Punto_5C)
 
-        Grafico_Tipo_Muro.Series("Series1").Points.Add(Punto_Muros_Largos)
-        Grafico_Tipo_Muro.Series("Series1").Points.Add(Punto_Muros_Intermedios)
-        Grafico_Tipo_Muro.Series("Series1").Points.Add(Punto_Muros_Cortos)
+        Dim Punto_6C As New DataPoint
+        Punto_6C.SetValueXY("Cortos", Cont_NoConf_C)
+        If Cont_NoConf_C = 0 Then
+            Punto_6C.IsValueShownAsLabel = False
+        Else
+            Punto_6C.Label = Cont_NoConf_C
+            'Punto_6C.Label = Cont_NoConf_C / Lista_MurosCortos.Count * 100
+        End If
+        Serie_MNoConfinados.Points.Add(Punto_6C)
+
 
     End Sub
 
@@ -1533,8 +1464,6 @@ Public Class Form_00_Principal
         Grafico_Densidad.Visible = True
         Grafico_CargaAxial.Visible = False
         Grafico_Confinamiento.Visible = False
-        Grafico_Tipo_Muro.Visible = False
-
         Grafico_Densidad.Dock = DockStyle.Fill
     End Sub
 
@@ -1542,36 +1471,21 @@ Public Class Form_00_Principal
         Grafico_Densidad.Visible = False
         Grafico_CargaAxial.Visible = True
         Grafico_Confinamiento.Visible = False
-        Grafico_Tipo_Muro.Visible = False
-
         Grafico_CargaAxial.Dock = DockStyle.Fill
-    End Sub
-
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        Grafico_Densidad.Visible = False
-        Grafico_CargaAxial.Visible = False
-        Grafico_Confinamiento.Visible = False
-        'Grafico_Esbeltez.Visible = True
-        Grafico_Tipo_Muro.Visible = True
-
-        'Grafico_Esbeltez.Dock = DockStyle.Fill
-        Grafico_Tipo_Muro.Dock = DockStyle.Fill
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         Grafico_Densidad.Visible = False
         Grafico_CargaAxial.Visible = False
         Grafico_Confinamiento.Visible = True
-        Grafico_Tipo_Muro.Visible = False
         Grafico_Confinamiento.Dock = DockStyle.Fill
     End Sub
-
 
 
     '------------------------ CREAR REPORTE A PDF ------------------------
     Private Sub ExportarPDFToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportarPDFToolStripMenuItem.Click
         Dim pdfDoc As New Document
-        pdfDoc.SetMargins(40.0F, 40.0F, 70.0F, 40.0F)
+        pdfDoc.SetMargins(30.0F, 30.0F, 70.0F, 40.0F)
 
         Dim SaveAs As New SaveFileDialog
         SaveAs.Filter = "Archivo|*.pdf"
@@ -1586,32 +1500,73 @@ Public Class Form_00_Principal
 
         '------------------------ Fuentes para el documento ---------------------------
         Dim Arial As BaseFont = BaseFont.CreateFont("c:\windows\fonts\arial.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED)
-        Dim Font_Titulos As New Font(Arial, 12, FontStyle.Bold)
-        Dim Font_Titulos_11 As New Font(Arial, 11, FontStyle.Bold)
-        Dim Font_Titulos_10 As New Font(Arial, 10, FontStyle.Bold)
-        Dim Font_Figura As New Font(Arial, 10)
+        Dim Arial_12_N As New Font(Arial, 12, FontStyle.Bold)
+        Dim Arial_12_B As New Font(Arial, 12, FontStyle.Bold)
+        Dim Arial_11_N As New Font(Arial, 11, FontStyle.Bold)
+        Dim Arial_11_B As New Font(Arial, 11)
+        Dim Arial_10_N As New Font(Arial, 10, FontStyle.Bold)
+        Dim Arial_10 As New Font(Arial, 10)
+        Dim Arial_10_B As New Font(Arial, 10)
+        Dim Arial_11 As New Font(Arial, 11)
+
+        Arial_11_B.Color = BaseColor.WHITE
+        Arial_12_B.Color = BaseColor.WHITE
+        Arial_10_B.Color = BaseColor.WHITE
 
         pdfDoc.Add(Chunk.NEWLINE)
 
         Dim Parrafo As New Paragraph
         Parrafo.Alignment = Element.ALIGN_CENTER
-        Parrafo.Font = Font_Titulos
+        Parrafo.Font = Arial_12_N
+        Parrafo.SpacingBefore = 6
+        Parrafo.SpacingAfter = 12
         Parrafo.Add("DIAGNÓSTICO CONCEPTUAL DE LA CONFIGURACIÓN ESTRUCTURAL")
         pdfDoc.Add(Parrafo)
 
-        pdfDoc.Add(Chunk.NEWLINE)
+        pdfDoc.Add(Texto_Parrafo("La Red Colombiana de Investigación en Ingeniería Sísmica, CEER ha desarrollado una metodología simplificada " &
+            "basada en macro parámetros a partir de la cual se evalúa conceptualmente la concepción del diseño estructural de edificios de muros " &
+            "de concreto reforzado.  Para ello, se utilizan los principales parámetros geométricos y mecánicos que controlan el desempeño sísmico. " &
+            "El resultado de esta metodología permite identificar deficiencias o limitaciones desde el punto de vista del diseño estructural. En ningún " &
+            "caso la aplicación de esta metodología reemplaza los requerimientos establecidos por el Reglamento Colombiano de Construcciones Sismo Resistentes, " &
+            "NSR - 10. Los resultados contemplados en este informe no podrán ser utilizados con fines comerciales ni para justificar estudios de vulnerabilidad sísmica.", 40, 40, 10))
+
+        pdfDoc.Add(Texto_Parrafo("Para la evaluación conceptual, se definen los siguientes criterios de clasificación de los muros de acuerdo con su geometría y solicitaciones:", 40, 40, 10))
+
+        pdfDoc.Add(Texto_Parrafo("La relación de aspecto, Ar, se define como la relación entre la altura total del muro (Hw) y su longitud (Lw). De acuerdo a este valor, los muros se clasifican en tres tipos:", 40, 40, 6))
+
+        pdfDoc.Add(Texto_Parrafo("-  Cortos: Ar >= 10", 70, 40, 6))
+        pdfDoc.Add(Texto_Parrafo("-  Intermedios: 3 < Ar < 10", 70, 40, 6))
+        pdfDoc.Add(Texto_Parrafo("-  Largos: Ar <= 3", 70, 40, 10))
+
+        pdfDoc.Add(Texto_Parrafo("El nivel de carga axial, ALR, se obtiene como la relación entre la carga axial del muro y su resistencia a la compresión (f'c*Ag). De acuerdo a este valor, el nivel de carga se clasifica como:", 40, 40, 6))
+
+        pdfDoc.Add(Texto_Parrafo("-  Bajo: ALR <= 10%", 70, 40, 6))
+        pdfDoc.Add(Texto_Parrafo("-  Intermedio: 10% < ALR <= 20%", 70, 40, 6))
+        pdfDoc.Add(Texto_Parrafo("-  Alto: ALR > 20%", 70, 40, 10))
 
         Dim TablaInformacion As New PdfPTable(2)
-        'TablaInfo.TotalWidth = pdfDoc.PageSize.Width - pdfDoc.LeftMargin - pdfDoc.RightMargin
         Dim Lista As Single() = {30.0F, 70.0F}
 
+        TablaInformacion.DefaultCell.Border = Rectangle.NO_BORDER
         TablaInformacion.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT
         TablaInformacion.DefaultCell.VerticalAlignment = Element.ALIGN_CENTER
+        TablaInformacion.SpacingAfter = 10
+        TablaInformacion.PaddingTop = 2
+        TablaInformacion.KeepTogether = True
+
+        Dim Fondo_Titulo As New BaseColor(74, 74, 74)
+        Dim Fondo_Celda As New BaseColor(229, 234, 238)
 
         Dim Header As New PdfPCell
         Header.Colspan = 2
         Header.HorizontalAlignment = Element.ALIGN_CENTER
-        Header.Phrase = New Phrase("ASPECTOS GENERALES DEL PROYECTO", Font_Titulos)
+        Header.VerticalAlignment = Element.ALIGN_CENTER
+        Header.BackgroundColor = Fondo_Titulo
+        Header.Phrase = New Phrase("ASPECTOS GENERALES DEL PROYECTO", Arial_12_B)
+        Header.BorderColor = BaseColor.WHITE
+        Header.BorderWidth = 1
+        Header.PaddingTop = 2
+        Header.PaddingBottom = 6
 
         TablaInformacion.SetWidths(Lista)
         TablaInformacion.AddCell(Header)
@@ -1621,25 +1576,28 @@ Public Class Form_00_Principal
         Dim Imagen_Proyecto As Image = Image.GetInstance(Form_00_Principal.Proyecto.Ruta_Imagen)
         Imagen_Proyecto.ScalePercent(10.0F)
         Cell_Imagen.Image = Imagen_Proyecto
+        Cell_Imagen.BorderColor = BaseColor.WHITE
+        Cell_Imagen.BorderWidth = 1
         TablaInformacion.AddCell(Cell_Imagen)
 
-        TablaInformacion.AddCell(New Phrase("Nombre del Proyecto", Font_Titulos_11))
-        TablaInformacion.AddCell(Proyecto.Nombre)
+        TablaInformacion.AddCell(Texto_Tabla("Nombre del Proyecto", Arial_11_B, Fondo_Titulo, "Normal", 2, 6))
+        TablaInformacion.AddCell(Texto_Tabla(Proyecto.Nombre, Arial_11, Fondo_Celda, "Normal", 2, 6))
 
-        TablaInformacion.AddCell(New Phrase("Dirección", Font_Titulos_11))
-        TablaInformacion.AddCell(Proyecto.Direccion)
+        TablaInformacion.AddCell(Texto_Tabla("Dirección", Arial_11_B, Fondo_Titulo, "Normal", 2, 6))
+        TablaInformacion.AddCell(Texto_Tabla(Proyecto.Direccion, Arial_11, Fondo_Celda, "Normal", 2, 6))
 
-        TablaInformacion.AddCell(New Phrase("Ciudad/Municipio", Font_Titulos_11))
-        TablaInformacion.AddCell(Proyecto.Ciudad)
+        TablaInformacion.AddCell(Texto_Tabla("Ciudad/Municipio", Arial_11_B, Fondo_Titulo, "Normal", 2, 6))
+        TablaInformacion.AddCell(Texto_Tabla(Proyecto.Ciudad, Arial_11, Fondo_Celda, "Normal", 2, 6))
 
-        TablaInformacion.AddCell(New Phrase("Departamento", Font_Titulos_11))
-        TablaInformacion.AddCell(Proyecto.Departamento)
+        TablaInformacion.AddCell(Texto_Tabla("Departamento", Arial_11_B, Fondo_Titulo, "Normal", 2, 6))
+        TablaInformacion.AddCell(Texto_Tabla(Proyecto.Departamento, Arial_11, Fondo_Celda, "Normal", 2, 6))
 
         pdfDoc.Add(TablaInformacion)
 
-        pdfDoc.Add(Chunk.NEWLINE)
+        pdfDoc.Add(Texto_Parrafo("En la Tabla 1, se muestra la longitud de cada muro, su espesor,  la forma de cada muro, su esbeltez y el porcentaje aproximado de" &
+            " cortante basal que toman los muros del edificio en cada dirección Se reportan los muros que soportan hasta un XX % del sismo, de acuerdo con lo definido por el usuario.", 40, 40, 10))
 
-        Dim Tabla_MurosProtagonicos As New PdfPTable(6)
+        Dim Tabla_MurosProtagonicos As New PdfPTable(7)
         Tabla_MurosProtagonicos.SpacingAfter = 12
         Tabla_MurosProtagonicos.SpacingBefore = 2
         Tabla_MurosProtagonicos.PaddingTop = 0
@@ -1649,22 +1607,28 @@ Public Class Form_00_Principal
 
         pdfDoc.Add(Titulo_Figura("Tabla 1.   ", "Parámetros de Muros protagónicos - 1.", "Tabla"))
 
-        Tabla_MurosProtagonicos.AddCell(New Phrase("Nombre", Font_Titulos_10))
-        Tabla_MurosProtagonicos.AddCell(New Phrase("Forma", Font_Titulos_10))
-        Tabla_MurosProtagonicos.AddCell(New Phrase("Dirección", Font_Titulos_10))
-        Tabla_MurosProtagonicos.AddCell(New Phrase("Sismo X (%)", Font_Titulos_10))
-        Tabla_MurosProtagonicos.AddCell(New Phrase("Sismo Y (%)", Font_Titulos_10))
-        Tabla_MurosProtagonicos.AddCell(New Phrase("Esbeltez", Font_Titulos_10))
+        Tabla_MurosProtagonicos.AddCell(Texto_Tabla("Nombre", Arial_10_B, Fondo_Titulo, "Centrado", 2, 6))
+        Tabla_MurosProtagonicos.AddCell(Texto_Tabla("Forma", Arial_10_B, Fondo_Titulo, "Centrado", 2, 6))
+        Tabla_MurosProtagonicos.AddCell(Texto_Tabla("Longitud (m)", Arial_10_B, Fondo_Titulo, "Centrado", 2, 6))
+        Tabla_MurosProtagonicos.AddCell(Texto_Tabla("Espesor (mm)", Arial_10_B, Fondo_Titulo, "Centrado", 2, 6))
+        Tabla_MurosProtagonicos.AddCell(Texto_Tabla("Esbeltez", Arial_10_B, Fondo_Titulo, "Centrado", 2, 6))
+        Tabla_MurosProtagonicos.AddCell(Texto_Tabla("Sismo X (%)", Arial_10_B, Fondo_Titulo, "Centrado", 2, 6))
+        Tabla_MurosProtagonicos.AddCell(Texto_Tabla("Sismo Y (%)", Arial_10_B, Fondo_Titulo, "Centrado", 2, 6))
 
         For i = 0 To Proyecto.Edificio.ListaMuros_Protagonicos.Count - 1
-            Tabla_MurosProtagonicos.AddCell(New Phrase(Proyecto.Edificio.ListaMuros_Protagonicos(i).Name, Font_Figura))
-            Tabla_MurosProtagonicos.AddCell(New Phrase(TipodeMuro(Proyecto.Edificio.ListaMuros_Protagonicos(i).T_Muro), Font_Figura))
-            Tabla_MurosProtagonicos.AddCell(New Phrase(Proyecto.Edificio.ListaMuros_Protagonicos(i).Direccion, Font_Figura))
-            Tabla_MurosProtagonicos.AddCell(New Phrase(Math.Round(Proyecto.Edificio.ListaMuros_Protagonicos(i).SismoX * 100, 1), Font_Figura))
-            Tabla_MurosProtagonicos.AddCell(New Phrase(Math.Round(Proyecto.Edificio.ListaMuros_Protagonicos(i).SismoY * 100, 1), Font_Figura))
-            Tabla_MurosProtagonicos.AddCell(New Phrase(Math.Round(Proyecto.Edificio.ListaMuros_Protagonicos(i).Esbeltez, 0), Font_Figura))
+            Tabla_MurosProtagonicos.AddCell(Texto_Tabla(Proyecto.Edificio.ListaMuros_Protagonicos(i).Name, Arial_10, Fondo_Celda, "Centrado", 2, 6))
+            Tabla_MurosProtagonicos.AddCell(Texto_Tabla(TipodeMuro(Proyecto.Edificio.ListaMuros_Protagonicos(i).T_Muro), Arial_10, Fondo_Celda, "Centrado", 2, 6))
+            Tabla_MurosProtagonicos.AddCell(Texto_Tabla(Math.Round(Proyecto.Edificio.ListaMuros_Protagonicos(i).Lw, 2), Arial_10, Fondo_Celda, "Centrado", 2, 6))
+            Tabla_MurosProtagonicos.AddCell(Texto_Tabla(Math.Round(Proyecto.Edificio.ListaMuros_Protagonicos(i).tw * 1000, 0), Arial_10, Fondo_Celda, "Centrado", 2, 6))
+            Tabla_MurosProtagonicos.AddCell(Texto_Tabla(Math.Round(Proyecto.Edificio.ListaMuros_Protagonicos(i).Esbeltez, 0), Arial_10, Fondo_Celda, "Centrado", 2, 6))
+            Tabla_MurosProtagonicos.AddCell(Texto_Tabla(Math.Round(Proyecto.Edificio.ListaMuros_Protagonicos(i).SismoX * 100, 1), Arial_10, Fondo_Celda, "Centrado", 2, 6))
+            Tabla_MurosProtagonicos.AddCell(Texto_Tabla(Math.Round(Proyecto.Edificio.ListaMuros_Protagonicos(i).SismoY * 100, 1), Arial_10, Fondo_Celda, "Centrado", 2, 6))
         Next
+
         pdfDoc.Add(Tabla_MurosProtagonicos)
+
+        pdfDoc.Add(Texto_Parrafo("En la Tabla 2 se muestran la Relación de Aspecto (Ar,x) y (Ar,y), el tipo de muro de acuerdo con su longitud, el nivel de carga axial" &
+            " (Axial Load Ratio, ALR) y el detalle de si el muro está confinado o no. ", 40, 40, 10))
 
         Dim Tabla_MurosProtagonicos_1 As New PdfPTable(7)
         Tabla_MurosProtagonicos_1.SpacingBefore = 2
@@ -1675,64 +1639,79 @@ Public Class Form_00_Principal
         Tabla_MurosProtagonicos_1.HeaderRows = 1
 
         pdfDoc.Add(Titulo_Figura("Tabla 2.   ", "Parámetros de Muros protagónicos - 2.", "Tabla"))
-        Tabla_MurosProtagonicos_1.AddCell(New Phrase("Nombre", Font_Titulos_10))
-        Tabla_MurosProtagonicos_1.AddCell(New Phrase("Ar X", Font_Titulos_10))
-        Tabla_MurosProtagonicos_1.AddCell(New Phrase("Ar Y", Font_Titulos_10))
-        Tabla_MurosProtagonicos_1.AddCell(New Phrase("Tipo", Font_Titulos_10))
-        Tabla_MurosProtagonicos_1.AddCell(New Phrase("ALR (%)", Font_Titulos_10))
-        Tabla_MurosProtagonicos_1.AddCell(New Phrase("Nivel de carga", Font_Titulos_10))
-        Tabla_MurosProtagonicos_1.AddCell(New Phrase("Confinado", Font_Titulos_10))
+
+        Tabla_MurosProtagonicos_1.AddCell(Texto_Tabla("Nombre", Arial_10_B, Fondo_Titulo, "Centrado", 2, 6))
+        Tabla_MurosProtagonicos_1.AddCell(Texto_Tabla("Ar X", Arial_10_B, Fondo_Titulo, "Centrado", 2, 6))
+        Tabla_MurosProtagonicos_1.AddCell(Texto_Tabla("Ar Y", Arial_10_B, Fondo_Titulo, "Centrado", 2, 6))
+        Tabla_MurosProtagonicos_1.AddCell(Texto_Tabla("Tipo", Arial_10_B, Fondo_Titulo, "Centrado", 2, 6))
+        Tabla_MurosProtagonicos_1.AddCell(Texto_Tabla("ALR (%)", Arial_10_B, Fondo_Titulo, "Centrado", 2, 6))
+        Tabla_MurosProtagonicos_1.AddCell(Texto_Tabla("Nivel de carga", Arial_10_B, Fondo_Titulo, "Centrado", 2, 6))
+        Tabla_MurosProtagonicos_1.AddCell(Texto_Tabla("Confinado", Arial_10_B, Fondo_Titulo, "Centrado", 2, 6))
 
         For i = 0 To Proyecto.Edificio.ListaMuros_Protagonicos.Count - 1
-            Tabla_MurosProtagonicos_1.AddCell(New Phrase(Proyecto.Edificio.ListaMuros_Protagonicos(i).Name, Font_Figura))
-            Tabla_MurosProtagonicos_1.AddCell(New Phrase(Math.Round(Proyecto.Edificio.ListaMuros_Protagonicos(i).AR_X, 1), Font_Figura))
-            Tabla_MurosProtagonicos_1.AddCell(New Phrase(Math.Round(Proyecto.Edificio.ListaMuros_Protagonicos(i).AR_Y, 1), Font_Figura))
-            Tabla_MurosProtagonicos_1.AddCell(New Phrase(Proyecto.Edificio.ListaMuros_Protagonicos(i).Tipo_Muro, Font_Figura))
-            Tabla_MurosProtagonicos_1.AddCell(New Phrase(Math.Round(Proyecto.Edificio.ListaMuros_Protagonicos(i).ALR_CU, 1), Font_Figura))
-            Tabla_MurosProtagonicos_1.AddCell(New Phrase(Proyecto.Edificio.ListaMuros_Protagonicos(i).Nivel_Carga, Font_Figura))
-            Tabla_MurosProtagonicos_1.AddCell(New Phrase(Proyecto.Edificio.ListaMuros_Protagonicos(i).Confinamiento, Font_Figura))
+            Tabla_MurosProtagonicos_1.AddCell(Texto_Tabla(Proyecto.Edificio.ListaMuros_Protagonicos(i).Name, Arial_10, Fondo_Celda, "Centrado", 2, 6))
+            Tabla_MurosProtagonicos_1.AddCell(Texto_Tabla(Math.Round(Proyecto.Edificio.ListaMuros_Protagonicos(i).AR_X, 1), Arial_10, Fondo_Celda, "Centrado", 2, 6))
+            Tabla_MurosProtagonicos_1.AddCell(Texto_Tabla(Math.Round(Proyecto.Edificio.ListaMuros_Protagonicos(i).AR_Y, 1), Arial_10, Fondo_Celda, "Centrado", 2, 6))
+            Tabla_MurosProtagonicos_1.AddCell(Texto_Tabla(Proyecto.Edificio.ListaMuros_Protagonicos(i).Tipo_Muro, Arial_10, Fondo_Celda, "Centrado", 2, 6))
+            Tabla_MurosProtagonicos_1.AddCell(Texto_Tabla(Math.Round(Proyecto.Edificio.ListaMuros_Protagonicos(i).ALR_CU * 100, 1), Arial_10, Fondo_Celda, "Centrado", 2, 6))
+            Tabla_MurosProtagonicos_1.AddCell(Texto_Tabla(Proyecto.Edificio.ListaMuros_Protagonicos(i).Nivel_Carga, Arial_10, Fondo_Celda, "Centrado", 2, 6))
+            Tabla_MurosProtagonicos_1.AddCell(Texto_Tabla(Proyecto.Edificio.ListaMuros_Protagonicos(i).Confinamiento, Arial_10, Fondo_Celda, "Centrado", 2, 6))
         Next
+
         pdfDoc.Add(Tabla_MurosProtagonicos_1)
 
+        pdfDoc.Add(Texto_Parrafo("A continuación se muestra gráficamente el nivel de carga axial que tienen los muros cortos, intermedios y largos, así como su nivel de confinamiento.", 40, 40, 10))
+
         '-------------------------- INSERTAR TABLA CON GRÁFICOS DE PARÁMETROS GLOBALES DE LA ESTRUCTURA --------------------
-        Grafico_Densidad.Dock = DockStyle.Fill
         Grafico_CargaAxial.Dock = DockStyle.Fill
-        Grafico_Esbeltez.Dock = DockStyle.Fill
         Grafico_Confinamiento.Dock = DockStyle.Fill
 
-        Grafico_Densidad.BackColor = Color.White
         Grafico_CargaAxial.BackColor = Color.White
-        Grafico_Esbeltez.BackColor = Color.White
-        Grafico_Tipo_Muro.BackColor = Color.White
         Grafico_Confinamiento.BackColor = Color.White
 
-        Grafico_Densidad.SaveImage(Application.StartupPath & "\Densidad.bmp", System.Drawing.Imaging.ImageFormat.Bmp)
+        Dim Fuente_Grafico As New Drawing.Font("Arial", 26, FontStyle.Bold)
+        Dim Fuente_Grafico_ejes As New Drawing.Font("Arial", 18, FontStyle.Regular)
+
+        Grafico_CargaAxial.ChartAreas("ChartArea1").AxisX.TitleFont = Fuente_Grafico
+        Grafico_CargaAxial.ChartAreas("ChartArea1").AxisY.TitleFont = Fuente_Grafico
+        Grafico_CargaAxial.ChartAreas("ChartArea1").AxisX.LabelStyle.Font = Fuente_Grafico_ejes
+        Grafico_CargaAxial.ChartAreas("ChartArea1").AxisY.LabelStyle.Font = Fuente_Grafico_ejes
+
+        For i = 0 To Grafico_CargaAxial.Series.Count() - 1
+            Grafico_CargaAxial.Series(i).Font = Fuente_Grafico_ejes
+        Next
+
+        Grafico_CargaAxial.Legends("Legend1").Font = Fuente_Grafico_ejes
+        Grafico_CargaAxial.Size = New Size(1400, 700)
+
+        Grafico_Confinamiento.ChartAreas("ChartArea1").AxisX.TitleFont = Fuente_Grafico
+        Grafico_Confinamiento.ChartAreas("ChartArea1").AxisY.TitleFont = Fuente_Grafico
+        Grafico_Confinamiento.ChartAreas("ChartArea1").AxisX.LabelStyle.Font = Fuente_Grafico_ejes
+        Grafico_Confinamiento.ChartAreas("ChartArea1").AxisY.LabelStyle.Font = Fuente_Grafico_ejes
+        For i = 0 To Grafico_Confinamiento.Series.Count() - 1
+            Grafico_Confinamiento.Series(i).Font = Fuente_Grafico_ejes
+        Next
+        Grafico_Confinamiento.Legends("Legend1").Font = Fuente_Grafico_ejes
+        Grafico_Confinamiento.Size = New Size(1400, 700)
+
         Grafico_CargaAxial.SaveImage(Application.StartupPath & "\ALR.bmp", System.Drawing.Imaging.ImageFormat.Bmp)
-        'Grafico_Esbeltez.SaveImage(Application.StartupPath & "\Esbeltez.png", System.Drawing.Imaging.ImageFormat.Png)
-        Grafico_Tipo_Muro.SaveImage(Application.StartupPath & "\Esbeltez.bmp", System.Drawing.Imaging.ImageFormat.Bmp)
         Grafico_Confinamiento.SaveImage(Application.StartupPath & "\Confinamiento.bmp", System.Drawing.Imaging.ImageFormat.Bmp)
 
-        Dim Table As New PdfPTable(2)
+        Dim Table As New PdfPTable(1)
         Table.DefaultCell.Border = Rectangle.NO_BORDER
         Table.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
+        Table.KeepTogether = True
+        Table.SpacingAfter = 10
 
-        Table.AddCell(Insertar_Figura(Image.GetInstance(Application.StartupPath & "\Densidad.bmp")))
+        Table.AddCell("Densidad en 'X' = " & Form_00_Principal.Proyecto.Edificio.Densidad_X & "% - Densidad en 'Y' = " & Form_00_Principal.Proyecto.Edificio.Densidad_Y & "%")
         Table.AddCell(Insertar_Figura(Image.GetInstance(Application.StartupPath & "\ALR.bmp")))
-        Table.AddCell(Titulo_Figura("A.   ", "Densidad de muros.", "Figura"))
-        Table.AddCell(Titulo_Figura("B.   ", "Relación de carga axial.", "Figura"))
-        Table.AddCell("         ")
-        Table.AddCell("         ")
-
+        Table.AddCell(Titulo_Figura("A.   ", "Relación de carga axial.", "Figura"))
         Table.AddCell(Insertar_Figura(Image.GetInstance(Application.StartupPath & "\Confinamiento.bmp")))
-        Table.AddCell(Insertar_Figura(Image.GetInstance(Application.StartupPath & "\Esbeltez.bmp")))
-
-        Table.AddCell(Titulo_Figura("C.   ", "Confinamiento de muros.", "Figura"))
-        Table.AddCell(Titulo_Figura("D.   ", "Tipos de muros.", "Figura"))
+        Table.AddCell(Titulo_Figura("B.   ", "Confinamiento de muros.", "Figura"))
 
         pdfDoc.Add(Table)
-        pdfDoc.Add(Titulo_Figura("Figura 1.     ", "Parámetros globales de la estructura.", "Figura"))
 
-        pdfDoc.Add(Chunk.NEWLINE)
+        pdfDoc.Add(Texto_Parrafo("En la Tabla 3 se muestra una síntesis del proyecto en términos de los principales parámetros que controlan el comportamiento sísmico.", 40, 40, 10))
 
         '------------------------ IMPRIMIR TABLA CON CALIFICACIÓN --------------------------
         Dim Imagen_Semaforo As Image
@@ -1756,61 +1735,109 @@ Public Class Form_00_Principal
         Tabla_Calificaciones.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
         Tabla_Calificaciones.DefaultCell.VerticalAlignment = Element.ALIGN_CENTER
         Tabla_Calificaciones.PaddingTop = 0
-        Dim Ancho_Col_Cal As Single() = {35.0F, 40.0F, 25.0F}
+        Dim Ancho_Col_Cal As Single() = {30.0F, 40.0F, 30.0F}
         Tabla_Calificaciones.SetWidths(Ancho_Col_Cal)
-
-        pdfDoc.Add(Titulo_Figura("Tabla 3.   ", "Calificación de estructura.", "Tabla"))
+        Tabla_Calificaciones.Complete = True
+        Tabla_Calificaciones.KeepTogether = True
 
         Dim Cell_Semaforo As New PdfPCell
-        Cell_Semaforo.Rowspan = 8
+        Cell_Semaforo.Rowspan = 7
         Cell_Semaforo.Image = Imagen_Semaforo
+        Cell_Semaforo.BackgroundColor = Fondo_Celda
+        Cell_Semaforo.BorderColor = BaseColor.WHITE
+        Cell_Semaforo.BorderWidth = 1
 
-        Tabla_Calificaciones.AddCell(New Phrase("Parámetro", Font_Titulos_10))
-        Tabla_Calificaciones.AddCell(New Phrase("Descripción", Font_Titulos_10))
-        Tabla_Calificaciones.AddCell(New Phrase("Semáforo", Font_Titulos_10))
+        Dim Cell_Tituto As New PdfPCell
+        Cell_Tituto.Colspan = 3
+        Cell_Tituto.BackgroundColor = BaseColor.WHITE
+        Cell_Tituto.HorizontalAlignment = Element.ALIGN_LEFT
+        Cell_Tituto.PaddingBottom = 4
+        Cell_Tituto.Border = Rectangle.NO_BORDER
+        Cell_Tituto.PaddingTop = 2
+        Cell_Tituto.Phrase = Titulo_Figura("Tabla 3.   ", "Calificación de estructura.", "Tabla")
 
-        Tabla_Calificaciones.AddCell(New Phrase("Densidad", Font_Figura))
-        Tabla_Calificaciones.AddCell(New Phrase(Proyecto.Edificio.Calificaciones.Calificacion_Densidad, Font_Figura))
+        Tabla_Calificaciones.AddCell(Cell_Tituto)
+
+        Tabla_Calificaciones.AddCell(Texto_Tabla("Parámetro", Arial_10_B, Fondo_Titulo, "Centrado", 3, 6))
+        Tabla_Calificaciones.AddCell(Texto_Tabla("Descripción", Arial_10_B, Fondo_Titulo, "Centrado", 3, 6))
+        Tabla_Calificaciones.AddCell(Texto_Tabla("Semáforo", Arial_10_B, Fondo_Titulo, "Centrado", 3, 6))
+
+        Tabla_Calificaciones.AddCell(Texto_Tabla("Densidad", Arial_10, Fondo_Celda, "Centrado", 3, 6))
+        Tabla_Calificaciones.AddCell(Texto_Tabla(Proyecto.Edificio.Calificaciones.Calificacion_Densidad, Arial_10, Fondo_Celda, "Centrado", 3, 6))
         Tabla_Calificaciones.AddCell(Cell_Semaforo)
-
-        Tabla_Calificaciones.AddCell(New Phrase("Relación de aspecto (Ar)", Font_Figura))
-        Tabla_Calificaciones.AddCell(New Phrase(Proyecto.Edificio.Calificaciones.Calificacion_Ar, Font_Figura))
-
-        Tabla_Calificaciones.AddCell(New Phrase("Relación de carga axial (ALR)", Font_Figura))
-        Tabla_Calificaciones.AddCell(New Phrase(Proyecto.Edificio.Calificaciones.Calificacion_ALR, Font_Figura))
-
-        Tabla_Calificaciones.AddCell(New Phrase("Nivel de amenaza", Font_Figura))
-        Tabla_Calificaciones.AddCell(New Phrase(Proyecto.Edificio.Calificaciones.Calificacion_Amenaza, Font_Figura))
-
-        Tabla_Calificaciones.AddCell(New Phrase("Confinamiento", Font_Figura))
-        Tabla_Calificaciones.AddCell(New Phrase(Proyecto.Edificio.Calificaciones.Calificacion_Confinamiento, Font_Figura))
-
-        Tabla_Calificaciones.AddCell(New Phrase("Factor Forma", Font_Figura))
-        Tabla_Calificaciones.AddCell(New Phrase(Proyecto.Edificio.Calificaciones.Calificacion_FactorForma, Font_Figura))
-
-        Tabla_Calificaciones.AddCell(New Phrase("Esbeltez", Font_Figura))
-        Tabla_Calificaciones.AddCell(New Phrase(Proyecto.Edificio.Calificaciones.Calificacion_Esbeltez, Font_Figura))
-
-        Tabla_Calificaciones.AddCell(New Phrase("Total", Font_Titulos_10))
-        Tabla_Calificaciones.AddCell(New Phrase(Proyecto.Edificio.Calificaciones.ICE, Font_Titulos_10))
+        Tabla_Calificaciones.AddCell(Texto_Tabla("Tipos de muros", Arial_10, Fondo_Celda, "Centrado", 3, 6))
+        Tabla_Calificaciones.AddCell(Texto_Tabla(Proyecto.Edificio.Calificaciones.Calificacion_Ar, Arial_10, Fondo_Celda, "Centrado", 3, 6))
+        Tabla_Calificaciones.AddCell(Texto_Tabla("Nivel de carga axial", Arial_10, Fondo_Celda, "Centrado", 3, 6))
+        Tabla_Calificaciones.AddCell(Texto_Tabla(Proyecto.Edificio.Calificaciones.Calificacion_ALR, Arial_10, Fondo_Celda, "Centrado", 3, 6))
+        Tabla_Calificaciones.AddCell(Texto_Tabla("Nivel de amenaza", Arial_10, Fondo_Celda, "Centrado", 3, 6))
+        Tabla_Calificaciones.AddCell(Texto_Tabla(Proyecto.Edificio.Calificaciones.Calificacion_Amenaza, Arial_10, Fondo_Celda, "Centrado", 3, 6))
+        Tabla_Calificaciones.AddCell(Texto_Tabla("Confinamiento", Arial_10, Fondo_Celda, "Centrado", 3, 6))
+        Tabla_Calificaciones.AddCell(Texto_Tabla(Proyecto.Edificio.Calificaciones.Calificacion_Confinamiento, Arial_10, Fondo_Celda, "Centrado", 3, 6))
+        Tabla_Calificaciones.AddCell(Texto_Tabla("Factor de Forma", Arial_10, Fondo_Celda, "Centrado", 3, 6))
+        Tabla_Calificaciones.AddCell(Texto_Tabla(Proyecto.Edificio.Calificaciones.Calificacion_FactorForma, Arial_10, Fondo_Celda, "Centrado", 3, 6))
+        Tabla_Calificaciones.AddCell(Texto_Tabla("Esbeltez", Arial_10, Fondo_Celda, "Centrado", 3, 6))
+        Tabla_Calificaciones.AddCell(Texto_Tabla(Proyecto.Edificio.Calificaciones.Calificacion_Esbeltez, Arial_10, Fondo_Celda, "Centrado", 3, 6))
 
         pdfDoc.Add(Tabla_Calificaciones)
 
         pdfDoc.Add(Chunk.NEWLINE)
+
+        Dim Parrafo_Conclusion As New Paragraph
+        Parrafo_Conclusion.IndentationLeft = 50
+        Parrafo_Conclusion.IndentationRight = 50
+        Parrafo_Conclusion.Alignment = Element.ALIGN_JUSTIFIED
+        Parrafo_Conclusion.Font = Arial_11
+        Parrafo_Conclusion.SpacingAfter = 6
+
+        If Proyecto.Edificio.Calificaciones.ICE <= 50 Then
+            Parrafo_Conclusion.Add("Con base en la evaluación de estos parámetros, el índice de calificación estructural es igual a " & Proyecto.Edificio.Calificaciones.ICE &
+                ",el cual corresponde al color verde que aparece en el semáforo. Por lo tanto se concluye que este edificio posee un nivel de diseño y de concepción estructural adecuado y no requiere ningún tipo de revisión desde la parte conceptual.")
+        ElseIf Proyecto.Edificio.Calificaciones.ICE > 70 Then
+            Parrafo_Conclusion.Add("Con base en la evaluación de estos parámetros, el índice de calificación estructural es igual a " & Proyecto.Edificio.Calificaciones.ICE &
+                ", el cual corresponde al color rojo que aparece en el semáforo. Por lo tanto, se sugiere revisar la concepción estructural del edificio antes de comenzar con el detallado del refuerzo. En particular, se recomienda: ")
+        Else
+            Parrafo_Conclusion.Add("Con base en la evaluación de estos parámetros, el índice de calificación estructural es igual a " & Proyecto.Edificio.Calificaciones.ICE &
+                ", el cual corresponde al color amarillo que aparece en el semáforo. Por lo tanto, se sugiere revisar la concepción estructural del edificio antes de comenzar con el detallado del refuerzo. En particular, se recomienda: ")
+        End If
+        pdfDoc.Add(Parrafo_Conclusion)
+
+        If Proyecto.Edificio.Calificaciones.ICE > 50 Then
+            pdfDoc.Add(Texto_Parrafo("- Disminuir el nivel de carga axial de los muros, incrementando la densidad de muros.", 70, 50, 6))
+            pdfDoc.Add(Texto_Parrafo("- Aumentar la longitud de los muros, para lograr un mejor comportamiento sísmico.", 70, 50, 10))
+        End If
 
         pdfDoc.Close()
 
         Process.Start(SaveAs.FileName)
 
         '------------------- Eliminar archivos de ayuda ---------------
-        My.Computer.FileSystem.DeleteFile(Application.StartupPath & "\Densidad.bmp")
         My.Computer.FileSystem.DeleteFile(Application.StartupPath & "\ALR.bmp")
-        My.Computer.FileSystem.DeleteFile(Application.StartupPath & "\Esbeltez.bmp")
         My.Computer.FileSystem.DeleteFile(Application.StartupPath & "\Confinamiento.bmp")
 
+        '----------- Fuentes estandar ---------------
+        Dim Fuente_Grafico_Estandar As New Drawing.Font("Arial", 11, FontStyle.Bold)
+        Dim Fuente_Grafico_ejes_Estandar As New Drawing.Font("Arial", 9, FontStyle.Regular)
+
+        Grafico_CargaAxial.ChartAreas("ChartArea1").AxisX.TitleFont = Fuente_Grafico_Estandar
+        Grafico_CargaAxial.ChartAreas("ChartArea1").AxisY.TitleFont = Fuente_Grafico_Estandar
+        Grafico_CargaAxial.ChartAreas("ChartArea1").AxisX.LabelStyle.Font = Fuente_Grafico_ejes_Estandar
+        Grafico_CargaAxial.ChartAreas("ChartArea1").AxisY.LabelStyle.Font = Fuente_Grafico_ejes_Estandar
+
+        For i = 0 To Grafico_CargaAxial.Series.Count() - 1
+            Grafico_CargaAxial.Series(i).Font = Fuente_Grafico_ejes_Estandar
+        Next
+        Grafico_CargaAxial.Legends("Legend1").Font = Fuente_Grafico_ejes_Estandar
+
+        Grafico_Confinamiento.ChartAreas("ChartArea1").AxisX.TitleFont = Fuente_Grafico_Estandar
+        Grafico_Confinamiento.ChartAreas("ChartArea1").AxisY.TitleFont = Fuente_Grafico_Estandar
+        Grafico_Confinamiento.ChartAreas("ChartArea1").AxisX.LabelStyle.Font = Fuente_Grafico_ejes_Estandar
+        Grafico_Confinamiento.ChartAreas("ChartArea1").AxisY.LabelStyle.Font = Fuente_Grafico_ejes_Estandar
+        For i = 0 To Grafico_Confinamiento.Series.Count() - 1
+            Grafico_Confinamiento.Series(i).Font = Fuente_Grafico_ejes_Estandar
+        Next
+        Grafico_Confinamiento.Legends("Legend1").Font = Fuente_Grafico_ejes_Estandar
+
     End Sub
-
-
 
     Public Class MypageEvents
         Inherits PdfPageEventHelper
@@ -1824,11 +1851,9 @@ Public Class Form_00_Principal
             Imagen.Alignment = Image.ALIGN_RIGHT
 
             Documento.Add(Imagen)
-
         End Sub
 
     End Class
-
 
     Public Function Titulo_Figura(ByVal Figura1 As String, ByVal Figura2 As String, ByVal Tipo_Titulo As String)
         Dim arial As BaseFont = BaseFont.CreateFont("c:\windows\fonts\arial.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED)
@@ -1848,13 +1873,45 @@ Public Class Form_00_Principal
         Return Parrafo
     End Function
 
+    Public Function Texto_Tabla(ByVal Texto As String, ByVal Fuente As Font, ByVal Fondo As BaseColor, ByVal Alineacion As String, ByVal Top As Integer, ByVal Bottom As Integer)
+
+        Dim Text As New PdfPCell
+        Text.BackgroundColor = Fondo
+        Text.BorderColor = BaseColor.WHITE
+        Text.BorderWidth = 1
+        Text.PaddingTop = Top
+        Text.PaddingBottom = Bottom
+        Text.VerticalAlignment = Element.ALIGN_CENTER
+        If Alineacion = "Centrado" Then
+            Text.HorizontalAlignment = Element.ALIGN_CENTER
+        End If
+
+        Text.Phrase = New Phrase(Texto, Fuente)
+
+        Return Text
+
+    End Function
 
     Public Function Insertar_Figura(ByVal Imagen As Image)
         Imagen.Alignment = Element.ALIGN_CENTER
-        Imagen.ScalePercent(60.0F)
+        Imagen.ScalePercent(1000.0F)
         Return Imagen
     End Function
 
+    Public Function Texto_Parrafo(ByVal Texto As String, ByVal Identacion_I As Single, ByVal Identacion_D As Single, ByVal Espacio As Integer)
+        Dim arial As BaseFont = BaseFont.CreateFont("c:\windows\fonts\arial.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED)
+        Dim Font_Textos As New Font(arial, 11)
+        Dim Parrafo_Conclusion As New Paragraph
+        Parrafo_Conclusion.IndentationLeft = Identacion_I
+        Parrafo_Conclusion.IndentationRight = Identacion_D
+        Parrafo_Conclusion.Alignment = Element.ALIGN_JUSTIFIED
+        Parrafo_Conclusion.Font = Font_Textos
+        Parrafo_Conclusion.SpacingAfter = Espacio
+        Parrafo_Conclusion.Add(Texto)
+
+        Return Parrafo_Conclusion
+
+    End Function
 
     Public Function TipodeMuro(ByVal Text As String)
         If Text = "Muro Rectangular" Then
@@ -1910,5 +1967,27 @@ Public Class Form_00_Principal
     Private Sub InsertarMurosDesdeExcelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InsertarMurosDesdeExcelToolStripMenuItem.Click
         Form_08_DimMuros.Show()
     End Sub
+
+    Public Sub New()
+        InitializeComponent()
+        MenuStrip1.Renderer = New MiRenderizador()
+
+    End Sub
+
+    Private Class MiRenderizador
+        Inherits ToolStripProfessionalRenderer
+
+        Protected Overrides Sub OnRenderMenuItemBackground(ByVal e As ToolStripItemRenderEventArgs)
+            If Not e.Item.Selected Then
+                MyBase.OnRenderMenuItemBackground(e)
+            Else
+                Dim rc As System.Drawing.Rectangle
+                rc = New System.Drawing.Rectangle(Point.Empty, e.Item.Size)
+                e.Graphics.FillRectangle(Brushes.Gray, rc)
+                e.Graphics.DrawRectangle(Pens.Gray, 1, 0, rc.Width - 2, rc.Height - 1)
+            End If
+        End Sub
+    End Class
+
 End Class
 

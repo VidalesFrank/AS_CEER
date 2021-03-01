@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Revisar los valores de los atributos del ensamblado
 
-<Assembly: AssemblyTitle("AS_CEER")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("AS_CEER")>
-<Assembly: AssemblyCopyright("Copyright ©  2020")>
+<Assembly: AssemblyTitle("SER")>
+<Assembly: AssemblyDescription("Semárofo para Evalaución Rápida")>
+<Assembly: AssemblyCompany("Red Colombiana de Investigación en Ingeniería Sísmica, CEER")>
+<Assembly: AssemblyProduct("SER")>
+<Assembly: AssemblyCopyright("Copyright ©  2021")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

@@ -282,7 +282,9 @@
     <value>Este programa ha sido realizado para realizar un diagnóstico conceptual preliminar de la configuración estructural de edificios de muros industrializados de hormigón reforzado. El algoritmo ha sido desarrollado con base en macro parámetros geométricos y mecánicos básicos que pueden ser identificados o valorados a partir de una planta típica del edificio y sin necesidad de realizar un modelo estructural en un software comercial. El resultado de este algoritmo clasifica la estructura en tres colores, esto es: 
 
 Verde: Representa una configuración adecuada, para la cual es posible proporcionar un detallado de refuerzo que cumpla con los niveles de capacidad requeridos.
+
 Amarillo: Corresponde a una configuración que requiere de ajustes antes de comenzar con un diseño detallado del edificio, para evitar un comportamiento no deseado.
+
 Rojo: Representa una configuración ineficiente y con una probabilidad muy baja de atender los niveles de demanda sísmica. Se recomienda en estos casos realizar una re estructuración completa del proyecto.
 </value>
   </data>
