@@ -1153,6 +1153,9 @@ Partial Class Form_00_Principal
         Me.AcercaToolStripMenuItem.Name = "AcercaToolStripMenuItem"
         resources.ApplyResources(Me.AcercaToolStripMenuItem, "AcercaToolStripMenuItem")
         '
+        'Tool_Info
+        '
+        '
         'Panel_Geometria
         '
         Me.Panel_Geometria.BackColor = System.Drawing.SystemColors.Control
